@@ -46,7 +46,7 @@ public class City2View implements View {
 			System.out.println("Nome Città: " + cityDB.getName_City());
 			
 			
-			//Wait progetto to show
+
 			System.out.println("\nAttrazioni:");
 			MainDispatcher.getInstance().callView("Places2", request);
 			try {

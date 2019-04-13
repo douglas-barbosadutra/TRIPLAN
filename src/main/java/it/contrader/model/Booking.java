@@ -3,14 +3,14 @@ package it.contrader.model;
 public class Booking {
 
 	private int idBooking;
-	private String nomeBooking;
+	private String usernameBooking;
 
 	public Booking() {
 	}
 
-	public Booking(int idBooking, String nomeBooking) {
+	public Booking(int idBooking, String usernameBooking) {
 		this.idBooking = idBooking;
-		this.nomeBooking = nomeBooking;
+		this.usernameBooking = usernameBooking;
 	}
 
 	public int getIdBooking() {
@@ -21,24 +21,24 @@ public class Booking {
 		this.idBooking = idBooking;
 	}
 
-	public String getNomeBooking() {
-		return nomeBooking;
+	public String getUsernameBooking() {
+		return usernameBooking;
 	}
 
-	public void setNomeBooking(String nomeBooking) {
-		this.nomeBooking = nomeBooking;
+	public void setUsernameBooking(String usernameBooking) {
+		this.usernameBooking = usernameBooking;
 	}
 
 	@Override
 	public String toString() {
-		return this.getIdBooking() + "\t" + this.getNomeBooking();
+		return this.getIdBooking() + "\t" + this.getUsernameBooking();
 	}
 
 	public boolean equals(Booking bookingCompare) {
 		if (!(this.getIdBooking() == bookingCompare.getIdBooking())) {
 			return false;
 		}
-		if (!this.getNomeBooking().equals(bookingCompare.getNomeBooking())) {
+		if (!this.getUsernameBooking().equals(bookingCompare.getUsernameBooking())) {
 				return false;
 		}
 		return true;

@@ -25,14 +25,15 @@ public class PlacesInsertView implements View {
 	public void showOptions() {
 		int idplaces;
 		String nomeplaces;
-     
+        double longplaces;
+        double latplaces;
 		
 		
 		System.out.println("Digita il nome del monumento: ");
 		nomeplaces = getInput();
 		
 	
-			placesController.insertPlaces(new PlacesDTO(nomeplaces));
+			placesController.insertPlaces(new PlacesDTO());
 		
 	}
 

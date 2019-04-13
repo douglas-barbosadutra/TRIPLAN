@@ -24,16 +24,19 @@ public class PlacesReadView implements View {
 	@Override
 	public void showOptions() {
 		int idplacesToRead;
-
-		System.out.println("Inserisci l'ID del monumento:");
+		double latplacesread;
+		double longplacesread;
+		
+		System.out.println("Inserisci l'ID dell' attrazione:");
 
 		try {
 			idplacesToRead = Integer.parseInt(getInput());
 			PlacesDTO placesDB = placesController.readPlaces(idplacesToRead);
-
-			System.out.println("Id monumento: " + placesDB.getIdPlaces());
-			System.out.println("Nome monumento: " + placesDB.getNomePlaces());
 			
+			System.out.println("Id monumento: " + placesDB.getIdPlaces());
+			System.out.println("Attrazione: " + placesDB.getNomePlaces());
+			System.out.println("Latitudine: " + placesDB.getLatPlaces());
+			System.out.println("Longitudine: " + placesDB.getLongPlaces());
 			
 			//Wait places to show
 			System.out.println("Premi un tasto per continuare");

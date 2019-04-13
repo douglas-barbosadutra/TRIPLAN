@@ -18,10 +18,8 @@ public class PlacesDAO {
 	private final String QUERY_ALL = "select * from places";
 	private final String QUERY_INSERT = "insert into places (name_places) values (?)";
 	private final String QUERY_READ = "select * from places where idplaces=?";
-
 	private final String QUERY_UPDATE = "UPDATE places SET idplaces=?,name_places=? WHERE idplaces=?";
 	private final String QUERY_DELETE = "delete from places where idPlaces=?";
-
 	public PlacesDAO() {
 
 	}
@@ -35,8 +33,10 @@ public class PlacesDAO {
 			Places places;
 			while (resultSet.next()) {
 				int idPlaces = resultSet.getInt("idPlaces");
-				String name_places = resultSet.getString("name_places");
-				places = new Places(idPlaces, name_places);
+				String nomePlaces = resultSet.getString("name_places");
+				double latPlaces = resultSet.getDouble("latitude");
+				double longPlaces = resultSet.getDouble("longitude");
+				places = new Places(idPlaces, nomePlaces, latPlaces, longPlaces);
 				places.setIdPlaces(idPlaces);
 				placesList.add(places);
 			}
@@ -69,14 +69,16 @@ public class PlacesDAO {
 			resultSet.next();
 			int idplaces;
 			String nomeplaces;
+			double latplaces;
+			double longplaces;
 			
-
-			nomeplaces = resultSet.getString("nomeplaces");
+			nomeplaces = resultSet.getString("name_places");
 			idplaces = resultSet.getInt("idplaces");
+			latplaces = resultSet.getDouble("latitude");
+			longplaces = resultSet.getDouble("longitude");
 			
-			Places places = new Places(idplaces, nomeplaces);
+			Places places = new Places(idplaces, nomeplaces, latplaces, longplaces);
 			places.setIdPlaces(resultSet.getInt("idplaces"));
-
 			return places;
 		} catch (SQLException e) {
 			GestoreEccezioni.getInstance().gestisciEccezione(e);

@@ -35,6 +35,9 @@ System.out.println("[U]tenti [C]ittà [A]ttrazioni [E]sci");
         if (choice.equalsIgnoreCase("A")) {
         	MainDispatcher.getInstance().callView("Places", null);
         }
+        if (choice.equalsIgnoreCase("P")) {
+        	MainDispatcher.getInstance().callView("Booking", null);
+        }        
         if (choice.equalsIgnoreCase("L"))
             MainDispatcher.getInstance().callAction("Login", "doControl", null);
         else {

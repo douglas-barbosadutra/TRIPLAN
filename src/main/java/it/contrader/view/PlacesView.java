@@ -28,7 +28,7 @@ public class PlacesView implements View {
 		
 		System.out.println("\n------ Scegli cosa modficare -------\n");
 		
-		System.out.println("ID\tNome Monumeto");
+		System.out.println("ID\tNome Attrazione\t\tLatitudine\tLongitudine");
 		System.out.print("------------------------------------------------------");
 		List<Places> placess = placesController.getAllPlaces();
 		System.out.println();

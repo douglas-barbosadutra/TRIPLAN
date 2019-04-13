@@ -28,7 +28,7 @@ public class Places2View implements View {
 		
 		System.out.println("\n------ Scegli cosa visitare -------\n");
 		
-		System.out.println("ID\tNome_Monumeto");
+		System.out.println("ID\tNome Attrazione");
 		System.out.print("------------------------------------------------------");
 		List<Places> placess = placesController.getAllPlaces();
 		System.out.println();

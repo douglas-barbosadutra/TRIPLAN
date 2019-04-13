@@ -3,11 +3,11 @@ package it.contrader.dto;
 public class BookingDTO {
 
 	private int idbooking;
-	private String nomebooking;
+	private String usernamebooking;
 
-	public BookingDTO(String nomebooking) {
+	public BookingDTO(String usernamebooking) {
 	this.idbooking = idbooking;
-	this.nomebooking = nomebooking;
+	this.usernamebooking = usernamebooking;
 		
 	}
 
@@ -21,12 +21,12 @@ public class BookingDTO {
 		this.idbooking = idbooking;
 	}
 
-	public String getNomeBooking() {
-		return nomebooking;
+	public String getUsernameBooking() {
+		return usernamebooking;
 	}
 
-	public void setNomeBooking(String nomebooking) {
-		this.nomebooking = nomebooking;
+	public void setUsernameBooking(String usernamebooking) {
+		this.usernamebooking = usernamebooking;
 	}
 
 }

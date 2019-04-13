@@ -26,7 +26,8 @@ public class ConverterPlaces {
 			places = new Places();
 			places.setIdPlaces(placesDTO.getIdPlaces());
 			places.setNomePlaces(placesDTO.getNomePlaces());
-			
+			places.setLatPlaces(placesDTO.getLatPlaces());
+			places.setLongPlaces(placesDTO.getLongPlaces());			
 		}
 		return places;
 	}

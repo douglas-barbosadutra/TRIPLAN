@@ -14,7 +14,7 @@ public class ConverterBooking {
 		if (booking != null) {
 			bookingDTO = new BookingDTO();
 			bookingDTO.setIdBooking(booking.getIdBooking());
-			bookingDTO.setNomeBooking(booking.getNomeBooking());
+			bookingDTO.setUsernameBooking(booking.getUsernameBooking());
 			
 		}
 		return bookingDTO;
@@ -25,7 +25,7 @@ public class ConverterBooking {
 		if (bookingDTO != null) {
 			booking = new Booking();
 			booking.setIdBooking(bookingDTO.getIdBooking());
-			booking.setNomeBooking(bookingDTO.getNomeBooking());
+			booking.setUsernameBooking(bookingDTO.getUsernameBooking());
 			
 		}
 		return booking;
