@@ -10,47 +10,47 @@ import java.util.List;
 
 import it.contrader.controller.GestoreEccezioni;
 import it.contrader.main.ConnectionSingleton;
-import it.contrader.model.City;
+import it.contrader.model.Places;
 
 
-public class CityDAO {
+public class PlacesDAO {
 
-	private final String QUERY_ALL = "select * from city";
-	private final String QUERY_INSERT = "insert into city (name_city) values (?)";
-	private final String QUERY_READ = "select * from city where idcity=?";
+	private final String QUERY_ALL = "select * from places";
+	private final String QUERY_INSERT = "insert into places (name_places) values (?)";
+	private final String QUERY_READ = "select * from places where idplaces=?";
 
-	private final String QUERY_UPDATE = "UPDATE city SET idcity=?,name_city=? WHERE idcity=?";
-	private final String QUERY_DELETE = "delete from city where idcity=?";
-	
-	public CityDAO() {
+	private final String QUERY_UPDATE = "UPDATE places SET idplaces=?,name_places=? WHERE idplaces=?";
+	private final String QUERY_DELETE = "delete from places where idPlaces=?";
+
+	public PlacesDAO() {
 
 	}
 
-	public List<City> getAllCity() {
-		List<City> cityList = new ArrayList<>();
+	public List<Places> getAllPlaces() {
+		List<Places> placesList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
-			City city;
+			Places places;
 			while (resultSet.next()) {
-				int idCity = resultSet.getInt("idCity");
-				String name_city = resultSet.getString("name_city");
-				city = new City(idCity, name_city);
-				city.setIdCity(idCity);
-				cityList.add(city);
+				int idPlaces = resultSet.getInt("idPlaces");
+				String name_places = resultSet.getString("name_places");
+				places = new Places(idPlaces, name_places);
+				places.setIdPlaces(idPlaces);
+				placesList.add(places);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return cityList;
+		return placesList;
 	}
 
-	public boolean insertCity(City city) {
+	public boolean insertPlaces(Places places) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT);
-			preparedStatement.setString(1, city.getNomeCity());
+			preparedStatement.setString(1, places.getNomePlaces());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -60,24 +60,24 @@ public class CityDAO {
 
 	}
 
-	public City readCity(int idCity) {
+	public Places readPlaces(int idPlaces) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, idCity);
+			preparedStatement.setInt(1, idPlaces);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			int idcity;
-			String nomecity;
+			int idplaces;
+			String nomeplaces;
 			
 
-			nomecity = resultSet.getString("name_city");
-			idcity = resultSet.getInt("idcity");
+			nomeplaces = resultSet.getString("nomeplaces");
+			idplaces = resultSet.getInt("idplaces");
 			
-			City city = new City(idcity, nomecity);
-			city.setIdCity(resultSet.getInt("idcity"));
+			Places places = new Places(idplaces, nomeplaces);
+			places.setIdPlaces(resultSet.getInt("idplaces"));
 
-			return city;
+			return places;
 		} catch (SQLException e) {
 			GestoreEccezioni.getInstance().gestisciEccezione(e);
 			return null;
@@ -85,28 +85,28 @@ public class CityDAO {
 
 	}
 
-	public boolean updateCity(City cityToUpdate) {
+	public boolean updatePlaces(Places placesToUpdate) {
 		Connection connection = ConnectionSingleton.getInstance();
 
 		// Check if id is present
-		if (cityToUpdate.getIdCity() == 0)
+		if (placesToUpdate.getIdPlaces() == 0)
 			return false;
 
 		
-		City cityRead = readCity(cityToUpdate.getIdCity());
-		if (!cityRead.equals(cityToUpdate)) {
+		Places placesRead = readPlaces(placesToUpdate.getIdPlaces());
+		if (!placesRead.equals(placesToUpdate)) {
 			try {
-				// Fill the cityToUpdate object
-				if (cityToUpdate.getNomeCity() == null || cityToUpdate.getNomeCity().equals("")) {
-					cityToUpdate.setNomeCity(cityRead.getNomeCity());
+				// Fill the placesToUpdate object
+				if (placesToUpdate.getNomePlaces() == null || placesToUpdate.getNomePlaces().equals("")) {
+					placesToUpdate.setNomePlaces(placesRead.getNomePlaces());
 				
 				}
 				
-				// Update the city
+				// Update the places
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-				preparedStatement.setInt(1, cityToUpdate.getIdCity());
-				preparedStatement.setString(2, cityToUpdate.getNomeCity());
-			    preparedStatement.setInt(3, cityToUpdate.getIdCity());
+				preparedStatement.setInt(1, placesToUpdate.getIdPlaces());
+				preparedStatement.setString(2, placesToUpdate.getNomePlaces());
+			    preparedStatement.setInt(3, placesToUpdate.getIdPlaces());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;
@@ -122,7 +122,7 @@ public class CityDAO {
 		
 	}
 
-	public boolean deleteCity(Integer id) {
+	public boolean deletePlaces(Integer id) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);

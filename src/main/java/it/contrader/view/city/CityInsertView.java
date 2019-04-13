@@ -24,16 +24,14 @@ public class CityInsertView implements View {
 	@Override
 	public void showOptions() {
 		int idcity;
-		String namecity;
-     
-		System.out.println("Inserisci i campi dell città:");
-		
+		String nomecity;
+  	
 		
 		System.out.println("Digita il nome della città: ");
-		namecity = getInput();
+		nomecity = getInput();
 		
 	
-			cityController.insertCity(new CityDTO(namecity));
+			cityController.insertCity(new CityDTO(nomecity));
 		
 	}
 

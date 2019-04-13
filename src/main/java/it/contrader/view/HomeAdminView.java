@@ -21,7 +21,7 @@ public class HomeAdminView implements View {
     public void showOptions() {
         System.out.println("-------MENU-------\n");
         System.out.println("Seleziona cosa vuoi gestire:");
-        System.out.println("[U]tenti [E]sci");
+System.out.println("[U]tenti [C]ittà [A]ttrazioni [E]sci");
         this.choice = this.getInput();
     }
 
@@ -29,7 +29,12 @@ public class HomeAdminView implements View {
         if (choice.equalsIgnoreCase("U")) {
         	MainDispatcher.getInstance().callView("User", null);
         }
-        
+        if (choice.equalsIgnoreCase("C")) {
+        	MainDispatcher.getInstance().callView("City", null);
+        }
+        if (choice.equalsIgnoreCase("A")) {
+        	MainDispatcher.getInstance().callView("Places", null);
+        }
         if (choice.equalsIgnoreCase("L"))
             MainDispatcher.getInstance().callAction("Login", "doControl", null);
         else {

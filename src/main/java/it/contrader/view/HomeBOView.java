@@ -20,14 +20,14 @@ public class HomeBOView implements View {
 
     public void showOptions() {
         System.out.println("-------MENU-------\n");
-        System.out.println("Cosa vuoi fare?:");
+        System.out.println("Cosa vuoi fare?");
         System.out.println("[V]iaggia [P]renotazioni [E]sci");
         this.choice = this.getInput();
     }
 
     public void submit() {
         if (choice.equalsIgnoreCase("V")) {
-        	MainDispatcher.getInstance().callView("City", null);
+        	MainDispatcher.getInstance().callView("City2", null);
         }
         if (choice.equalsIgnoreCase("P")) {
         	MainDispatcher.getInstance().callView("Booking", null);

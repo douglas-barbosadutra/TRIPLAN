@@ -3,12 +3,12 @@ package it.contrader.dto;
 public class CityDTO {
 
 	private int idcity;
-	private String namecity;
+	private String name_city;
 	
 
-	public CityDTO(String namecity) {
+	public CityDTO(String name_city) {
 		this.idcity = idcity;
-		this.namecity = namecity;
+		this.name_city = name_city;
 		
 	}
 	
@@ -22,12 +22,12 @@ public class CityDTO {
 		this.idcity = idcity;
 	}
 
-	public String getNameCity() {
-		return namecity;
+	public String getName_City() {
+		return name_city;
 	}
 
-	public void setNameCity(String namecity) {
-		this.namecity = namecity;
+	public void setName_City(String name_city) {
+		this.name_city = name_city;
 	}
 
 }

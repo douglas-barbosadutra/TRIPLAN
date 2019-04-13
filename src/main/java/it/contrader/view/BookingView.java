@@ -5,18 +5,18 @@ import java.util.Scanner;
 
 
 import it.contrader.controller.Request;
-import it.contrader.controller.CityController;
+import it.contrader.controller.BookingController;
 import it.contrader.main.MainDispatcher;
-import it.contrader.model.City;
+import it.contrader.model.Booking;
 
-public class CityView implements View {
+public class BookingView implements View {
 
-	private CityController cityController;
+	private BookingController bookingController;
 	private Request request;
 	private String choice;
 	
-	public CityView() {
-		this.cityController = new CityController();
+	public BookingView() {
+		this.bookingController = new BookingController();
 	}
 
 	@Override
@@ -27,11 +27,11 @@ public class CityView implements View {
 	public void showOptions() {
 		
 		
-		System.out.println("ID\tCittà");
+		System.out.println("ID\tViaggio Prenotato");
 		System.out.print("------------------");
-		List<City> città = cityController.getAllCity();
+		List<Booking> prenotazione = bookingController.getAllBooking();
 		System.out.println();
-		città.forEach(city -> System.out.println(city.toString()));
+		prenotazione.forEach(booking -> System.out.println(booking.toString()));
 		System.out.println();
 		
 		System.out.println("Scegli l'operazione da effettuare:");
@@ -54,7 +54,7 @@ public class CityView implements View {
 
 	@Override
 	public void submit() {
-		    MainDispatcher.getInstance().callAction("City", "doControl", this.request);
+		    MainDispatcher.getInstance().callAction("Booking", "doControl", this.request);
 	}
 
 }

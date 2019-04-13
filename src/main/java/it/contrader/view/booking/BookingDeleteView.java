@@ -1,4 +1,4 @@
-package it.contrader.view.city;
+package it.contrader.view.booking;
 
 import java.util.List;
 import java.util.Scanner;
@@ -6,21 +6,21 @@ import java.util.Scanner;
 import com.mysql.cj.util.StringUtils;
 
 import it.contrader.controller.Request;
-import it.contrader.controller.CityController;
+import it.contrader.controller.BookingController;
 import it.contrader.main.MainDispatcher;
-import it.contrader.model.City2;
+import it.contrader.model.Booking;
 import it.contrader.view.View;
 
-public class CityDeleteView implements View {
+public class BookingDeleteView implements View {
 	
 
 	
 
-		private CityController cityController;
+		private BookingController bookingController;
 		private Request request;
 
-		public CityDeleteView() {
-			this.cityController = new CityController();
+		public BookingDeleteView() {
+			this.bookingController = new BookingController();
 		}
 
 		@Override
@@ -29,19 +29,19 @@ public class CityDeleteView implements View {
 
 		@Override
 		public void showOptions() {
-			//List<City> cirt;
-			//String idcity;
+			//List<Booking> cirt;
+			//String idbooking;
 
-			//city = cityController.getAllCity();
-			System.out.println("Inserisci l'ID dela citta da eliminare : ");
+			//Booking = bookingController.getAllBooking();
+			System.out.println("Inserisci l'ID dela prenotazione da cancellare : ");
 			//System.out.println();
 			//progetto.forEach(city -> System.out.println(city));
 			//System.out.println();
-			//System.out.println("Digita l'ID della città:");
-			String idcity = getInput();
+			//System.out.println("Digita l'ID della prenotazione:");
+			String idbooking = getInput();
 
-			if (idcity != null && StringUtils.isStrictlyNumeric(idcity)) {
-				cityController.deleteCity(Integer.parseInt(idcity));
+			if (idbooking != null && StringUtils.isStrictlyNumeric(idbooking)) {
+				bookingController.deleteBooking(Integer.parseInt(idbooking));
 			} else {
 				System.out.println("Valore inserito errato");
 			}

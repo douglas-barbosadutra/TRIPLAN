@@ -1,16 +1,16 @@
 package it.contrader.model;
 
-public class City {
+public class City2 {
 
 	private int idCity;
-	private String nomeCity;
+	private String name_City;
 
-	public City() {
+	public City2() {
 	}
 
-	public City(int idCity, String nomeCity) {
+	public City2(int idCity, String nomeCity) {
 		this.idCity = idCity;
-		this.nomeCity = nomeCity;
+		this.name_City = nomeCity;
 	}
 
 	public int getIdCity() {
@@ -22,11 +22,11 @@ public class City {
 	}
 
 	public String getNomeCity() {
-		return nomeCity;
+		return name_City;
 	}
 
 	public void setNomeCity(String nomeCity) {
-		this.nomeCity = nomeCity;
+		this.name_City = nomeCity;
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class City {
 		return this.getIdCity() + "\t" + this.getNomeCity();
 	}
 
-	public boolean equals(City cityCompare) {
+	public boolean equals(City2 cityCompare) {
 		if (!(this.getIdCity() == cityCompare.getIdCity())) {
 			return false;
 		}

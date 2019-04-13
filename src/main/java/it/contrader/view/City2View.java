@@ -1,19 +1,23 @@
-package it.contrader.view.city;
+package it.contrader.view;
 
+import java.util.List;
 import java.util.Scanner;
 
-import it.contrader.controller.CityController;
+
 import it.contrader.controller.Request;
 import it.contrader.dto.CityDTO;
+import it.contrader.controller.CityController;
 import it.contrader.main.MainDispatcher;
-import it.contrader.view.View;
+import it.contrader.model.City;
 
-public class CityReadView implements View {
+
+public class City2View implements View {
 
 	private CityController cityController;
 	private Request request;
-
-	public CityReadView() {
+	private String choice;
+	
+	public City2View() {
 		this.cityController = new CityController();
 	}
 
@@ -23,10 +27,17 @@ public class CityReadView implements View {
 
 	@Override
 	public void showOptions() {
-		int idcityToRead;
-
-		System.out.println("Inserisci l'ID dela città:");
-
+		int idcityToRead;	
+		
+		System.out.println("ID\tCittà");
+		System.out.print("------------------");
+		List<City> città = cityController.getAllCity();
+		System.out.println();
+		città.forEach(city -> System.out.println(city.toString()));
+		System.out.println();
+		
+		System.out.println("Dove vuoi andare?");
+		System.out.println("Scegli l'ID della città");
 		try {
 			idcityToRead = Integer.parseInt(getInput());
 			CityDTO cityDB = cityController.readCity(idcityToRead);
@@ -36,13 +47,14 @@ public class CityReadView implements View {
 			
 			
 			//Wait progetto to show
-			System.out.println("Premi un tasto per continuare");
+			System.out.println("\nAttrazioni:");
+			MainDispatcher.getInstance().callView("Places2", request);
 			try {
 				getInput();
 			} catch (Exception e) {
 				
 			}
-
+			
 		} catch (Exception e) {
 			System.out.println("Valore inserito errato.");
 		}
@@ -55,6 +67,7 @@ public class CityReadView implements View {
 		return scanner.nextLine().trim();
 	}
 
+	
 	@Override
 	public void submit() {
 		request = new Request();
@@ -64,5 +77,7 @@ public class CityReadView implements View {
 	}
 
 }
+
+
 
 

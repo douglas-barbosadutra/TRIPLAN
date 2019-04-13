@@ -5,18 +5,18 @@ import java.util.Scanner;
 
 
 import it.contrader.controller.Request;
-import it.contrader.controller.CityController;
+import it.contrader.controller.PlacesController;
 import it.contrader.main.MainDispatcher;
-import it.contrader.model.City;
+import it.contrader.model.Places;
 
-public class CityView implements View {
+public class PlacesView implements View {
 
-	private CityController cityController;
+	private PlacesController placesController;
 	private Request request;
 	private String choice;
 	
-	public CityView() {
-		this.cityController = new CityController();
+	public PlacesView() {
+		this.placesController = new PlacesController();
 	}
 
 	@Override
@@ -26,12 +26,13 @@ public class CityView implements View {
 	@Override
 	public void showOptions() {
 		
+		System.out.println("\n------ Scegli cosa modficare -------\n");
 		
-		System.out.println("ID\tCittà");
-		System.out.print("------------------");
-		List<City> città = cityController.getAllCity();
+		System.out.println("ID\tNome Monumeto");
+		System.out.print("------------------------------------------------------");
+		List<Places> placess = placesController.getAllPlaces();
 		System.out.println();
-		città.forEach(city -> System.out.println(city.toString()));
+		placess.forEach(places -> System.out.println(places.toString()));
 		System.out.println();
 		
 		System.out.println("Scegli l'operazione da effettuare:");
@@ -54,7 +55,7 @@ public class CityView implements View {
 
 	@Override
 	public void submit() {
-		    MainDispatcher.getInstance().callAction("City", "doControl", this.request);
+		    MainDispatcher.getInstance().callAction("Places", "doControl", this.request);
 	}
 
 }
