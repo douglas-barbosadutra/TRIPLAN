@@ -31,6 +31,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `db.triplan`.`tab_user`
 -- -----------------------------------------------------
+<<<<<<< HEAD
 DROP TABLE IF EXISTS `tab_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -53,6 +54,18 @@ INSERT INTO `tab_user` VALUES (1,'admin','admin','superuser'),(2,'alex','alex','
 /*!40000 ALTER TABLE `tab_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
+=======
+CREATE TABLE IF NOT EXISTS `db.triplan`.`tab_user` (
+  `userId` INT(11) NOT NULL auto_increment,
+  `username` VARCHAR(45) NULL DEFAULT NULL,
+  `password` VARCHAR(45) NULL DEFAULT NULL,
+  `usertype` VARCHAR(45) NULL,
+  PRIMARY KEY (`userId`),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+>>>>>>> 57efc7a313cbae6846893a132dbf6da43b75e2c9
 
 -- -----------------------------------------------------
 -- Table `db.triplan`.`booking`
@@ -114,10 +127,15 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 -- Data for table `db.triplan`.`city`
 -- -----------------------------------------------------
+<<<<<<< HEAD
 SET FOREIGN_KEY_CHECKS = 0; 
 TRUNCATE table city; 
 SET FOREIGN_KEY_CHECKS = 1;
 
+=======
+truncate table city;
+truncate table places;
+>>>>>>> 57efc7a313cbae6846893a132dbf6da43b75e2c9
 START TRANSACTION;
 USE `db.triplan`;
 INSERT INTO `db.triplan`.`city` (`idcity`,`name_city`, `stato`) VALUES ( 1,'roma', 'italia');
@@ -266,4 +284,8 @@ INSERT INTO `db.triplan`.`places` (`idplaces`, `name_places`, `city_places`, `la
 
 COMMIT;
 
+<<<<<<< HEAD
 select places.name_places, places.city_places  from places join city on places.city_idcity=city.idcity ;
+=======
+select places.name_places, places.city_places  from places join city on places.city_idcity=city.idcity where city.name_city="roma";
+>>>>>>> 57efc7a313cbae6846893a132dbf6da43b75e2c9
