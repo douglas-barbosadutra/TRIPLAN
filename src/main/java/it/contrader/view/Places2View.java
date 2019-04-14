@@ -7,7 +7,7 @@ import java.util.Scanner;
 import it.contrader.controller.Request;
 import it.contrader.controller.PlacesController;
 import it.contrader.main.MainDispatcher;
-import it.contrader.model.Places;
+import it.contrader.model.Places2;
 
 public class Places2View implements View {
 
@@ -30,9 +30,9 @@ public class Places2View implements View {
 		
 		System.out.println("ID\tNome Attrazione");
 		System.out.print("------------------------------------------------------");
-		List<Places> placess = placesController.getAllPlaces();
+		List<Places2> placess2 = placesController.getSelectPlaces();
 		System.out.println();
-		placess.forEach(places -> System.out.println(places.toString()));
+		placess2.forEach(places2 -> System.out.println(places2.toString()));
 		System.out.println();
 		
 		System.out.println("\n---- Scegli gli Id delle attrazioni da visitare -----\n");

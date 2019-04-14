@@ -11,15 +11,17 @@ import java.util.List;
 import it.contrader.controller.GestoreEccezioni;
 import it.contrader.main.ConnectionSingleton;
 import it.contrader.model.Places;
+import it.contrader.model.Places2;
 
 
 public class PlacesDAO {
 
 	private final String QUERY_ALL = "select * from places";
-	private final String QUERY_INSERT = "insert into places (name_places) values (?)";
+	private final String QUERY_INSERT = "insert into places (name_places, latitude, longitude) value (?,?,?)";
 	private final String QUERY_READ = "select * from places where idplaces=?";
-	private final String QUERY_UPDATE = "UPDATE places SET idplaces=?,name_places=? WHERE idplaces=?";
+	private final String QUERY_UPDATE = "UPDATE places SET idplaces=?,name_places=?,latitude=?,longitude=? WHERE idplaces=?";
 	private final String QUERY_DELETE = "delete from places where idPlaces=?";
+	private final String QUERY_SELECT = "select places.idplaces, places.name_places FROM places INNER JOIN city on places.city_idcity=city.idcity";
 	public PlacesDAO() {
 
 	}
@@ -32,10 +34,10 @@ public class PlacesDAO {
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			Places places;
 			while (resultSet.next()) {
-				int idPlaces = resultSet.getInt("idPlaces");
+				int idPlaces = resultSet.getInt("idplaces");
 				String nomePlaces = resultSet.getString("name_places");
-				double latPlaces = resultSet.getDouble("latitude");
-				double longPlaces = resultSet.getDouble("longitude");
+				String latPlaces = resultSet.getString("latitude");
+				String longPlaces = resultSet.getString("longitude");
 				places = new Places(idPlaces, nomePlaces, latPlaces, longPlaces);
 				places.setIdPlaces(idPlaces);
 				placesList.add(places);
@@ -45,12 +47,32 @@ public class PlacesDAO {
 		}
 		return placesList;
 	}
-
+	public List<Places2> getSelectPlaces() {
+		List<Places2> placesList2 = new ArrayList<>();
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(QUERY_SELECT);
+			Places2 places2;
+			while (resultSet.next()) {
+				int idPlaces = resultSet.getInt("idplaces");
+				String nomePlaces = resultSet.getString("name_places");
+				places2 = new Places2(idPlaces, nomePlaces);
+				places2.setIdPlaces(idPlaces);
+				placesList2.add(places2);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return placesList2;
+	}
 	public boolean insertPlaces(Places places) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT);
 			preparedStatement.setString(1, places.getNomePlaces());
+			preparedStatement.setString(2, places.getLatPlaces());
+			preparedStatement.setString(3, places.getLongPlaces());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -69,13 +91,13 @@ public class PlacesDAO {
 			resultSet.next();
 			int idplaces;
 			String nomeplaces;
-			double latplaces;
-			double longplaces;
+			String latplaces;
+			String longplaces;
 			
 			nomeplaces = resultSet.getString("name_places");
 			idplaces = resultSet.getInt("idplaces");
-			latplaces = resultSet.getDouble("latitude");
-			longplaces = resultSet.getDouble("longitude");
+			latplaces = resultSet.getString("latitude");
+			longplaces = resultSet.getString("longitude");
 			
 			Places places = new Places(idplaces, nomeplaces, latplaces, longplaces);
 			places.setIdPlaces(resultSet.getInt("idplaces"));
@@ -84,8 +106,7 @@ public class PlacesDAO {
 			GestoreEccezioni.getInstance().gestisciEccezione(e);
 			return null;
 		}
-
-	}
+		}
 
 	public boolean updatePlaces(Places placesToUpdate) {
 		Connection connection = ConnectionSingleton.getInstance();
@@ -108,8 +129,10 @@ public class PlacesDAO {
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setInt(1, placesToUpdate.getIdPlaces());
 				preparedStatement.setString(2, placesToUpdate.getNomePlaces());
-			    preparedStatement.setInt(3, placesToUpdate.getIdPlaces());
-				int a = preparedStatement.executeUpdate();
+				preparedStatement.setString(3, placesToUpdate.getLatPlaces());
+				preparedStatement.setString(4, placesToUpdate.getLongPlaces());
+			    preparedStatement.setInt(5, placesToUpdate.getIdPlaces());
+			    int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;
 				else

@@ -4,10 +4,10 @@ public class PlacesDTO {
 
 	private int idplaces;
 	private String nomeplaces;
-	private double latplaces;
-	private double longplaces;
+	private String latplaces;
+	private String longplaces;
 
-	public PlacesDTO(String nomeplaces) {
+	public PlacesDTO(String nomeplaces, String latplaces, String longplaces) {
 		this.idplaces = idplaces;
 		this.nomeplaces = nomeplaces;
 		this.latplaces = latplaces;
@@ -31,18 +31,18 @@ public class PlacesDTO {
 	public void setNomePlaces(String nomeplaces) {
 		this.nomeplaces = nomeplaces;
 	}
-	public double getLatPlaces() {
+	public String getLatPlaces() {
 		return latplaces;
 	}
 
-	public void setLatPlaces(double latplaces) {
+	public void setLatPlaces(String latplaces) {
 		this.latplaces = latplaces;
 	}
-	public double getLongPlaces() {
+	public String getLongPlaces() {
 		return longplaces;
 	}
 
-	public void setLongPlaces(double longplaces) {
+	public void setLongPlaces(String longplaces) {
 		this.longplaces = longplaces;
 	}
 }

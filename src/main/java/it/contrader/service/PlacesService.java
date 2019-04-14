@@ -5,6 +5,7 @@ import it.contrader.converter.ConverterPlaces;
 import it.contrader.dao.PlacesDAO;
 import it.contrader.dto.PlacesDTO;
 import it.contrader.model.Places;
+import it.contrader.model.Places2;
 
 public class PlacesService {
 	
@@ -18,7 +19,11 @@ private PlacesDAO placesDAO;
 		public List<Places> getAllPlaces() {
 			return this.placesDAO.getAllPlaces();
 		}
-
+		
+		public List<Places2> getSelectPlaces() {
+			return this.placesDAO.getSelectPlaces();
+		}
+		
 		public boolean insertPlaces(PlacesDTO placesDTO) {
 			return this.placesDAO.insertPlaces(ConverterPlaces.toEntity(placesDTO));
 		}
@@ -26,15 +31,13 @@ private PlacesDAO placesDAO;
 		public PlacesDTO readPlaces(int idplaces) {
 			return ConverterPlaces.toDTO(this.placesDAO.readPlaces(idplaces));
 		}
-		
+
 		public boolean updatePlaces(PlacesDTO placesDTO) {
 			return this.placesDAO.updatePlaces(ConverterPlaces.toEntity(placesDTO));
 		}
 		
 		public boolean deletePlaces(int idplaces) {
 			return this.placesDAO.deletePlaces(idplaces);
-		}
-		
-		
+		}		
 	}
 

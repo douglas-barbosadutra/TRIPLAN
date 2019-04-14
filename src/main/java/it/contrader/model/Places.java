@@ -4,17 +4,15 @@ public class Places {
 
 	private int idPlaces;
 	private String nomePlaces;
-	private double latPlaces;
-	private double longPlaces;
+	private String latPlaces;
+	private String longPlaces;
+
 	
-	public Places(int idPlaces, String nomePlaces, double latPlaces, double longPlaces) {
+	public Places(int idPlaces, String nomePlaces, String latPlaces, String longPlaces) {
 		this.idPlaces = idPlaces;
 		this.nomePlaces = nomePlaces;
 		this.latPlaces = latPlaces;
 		this.longPlaces = longPlaces;
-	}
-
-	public Places() {
 	}
 
 	public int getIdPlaces() {
@@ -33,19 +31,19 @@ public class Places {
 		this.nomePlaces = nomePlaces;
 	}
 	
-	public double getLatPlaces() {
+	public String getLatPlaces() {
 		return latPlaces;
 	}
 
-	public void setLatPlaces(double latPlaces) {
+	public void setLatPlaces(String latPlaces) {
 		this.latPlaces = latPlaces;
 	}
 	
-	public double getLongPlaces() {
+	public String getLongPlaces() {
 		return longPlaces;
 	}
 
-	public void setLongPlaces(double longPlaces) {
+	public void setLongPlaces(String longPlaces) {
 		this.longPlaces = longPlaces;
 	}	
 	@Override

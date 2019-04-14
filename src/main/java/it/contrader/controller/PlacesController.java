@@ -5,6 +5,7 @@ import java.util.List;
 import it.contrader.dto.PlacesDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.model.Places;
+import it.contrader.model.Places2;
 import it.contrader.service.PlacesService;
 
 public class PlacesController implements Controller {
@@ -20,11 +21,15 @@ public class PlacesController implements Controller {
 	public List<Places> getAllPlaces() {
 		return this.placesService.getAllPlaces();
 	}
+	
+	public List<Places2> getSelectPlaces() {
+		return this.placesService.getSelectPlaces();
+	}
 
 	public PlacesDTO readPlaces(int idplaces) {
 		return this.placesService.readPlaces(idplaces);
 	}
-
+	
 	public boolean insertPlaces(PlacesDTO placesDTO) {
 		return this.placesService.insertPlaces(placesDTO);
 	}

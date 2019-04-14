@@ -27,7 +27,7 @@ public class BookingInsertView implements View {
 		int idbooking;
 		String usernamebooking;
 		
-		System.out.println("Digita il nome della prenotazione: ");
+		System.out.println("Digita il dell'utente: ");
 		usernamebooking = getInput();
 		bookingController.insertBooking(new BookingDTO(usernamebooking));
 	}

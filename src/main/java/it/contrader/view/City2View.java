@@ -49,11 +49,6 @@ public class City2View implements View {
 
 			System.out.println("\nAttrazioni:");
 			MainDispatcher.getInstance().callView("Places2", request);
-			try {
-				getInput();
-			} catch (Exception e) {
-				
-			}
 			
 		} catch (Exception e) {
 			System.out.println("Valore inserito errato.");
