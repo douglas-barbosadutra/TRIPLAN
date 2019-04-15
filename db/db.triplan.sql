@@ -31,16 +31,27 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `db.triplan`.`tab_user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db.triplan`.`tab_user` (
-  `userId` INT(11) NOT NULL auto_increment,
-  `username` VARCHAR(45) NULL DEFAULT NULL,
-  `password` VARCHAR(45) NULL DEFAULT NULL,
-  `usertype` VARCHAR(45) NULL,
-  PRIMARY KEY (`userId`),
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+DROP TABLE IF EXISTS `tab_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tab_user` (
+  `userId` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `usertype` varchar(45) NOT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tab_user`
+--
+
+LOCK TABLES `tab_user` WRITE;
+/*!40000 ALTER TABLE `tab_user` DISABLE KEYS */;
+INSERT INTO `tab_user` VALUES (1,'admin','admin','superuser'),(2,'alex','alex','user');
+/*!40000 ALTER TABLE `tab_user` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 -- -----------------------------------------------------
@@ -103,8 +114,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 -- Data for table `db.triplan`.`city`
 -- -----------------------------------------------------
-truncate table city;
-truncate table places;
+SET FOREIGN_KEY_CHECKS = 0; 
+TRUNCATE table city; 
+SET FOREIGN_KEY_CHECKS = 1;
+
 START TRANSACTION;
 USE `db.triplan`;
 INSERT INTO `db.triplan`.`city` (`idcity`,`name_city`, `stato`) VALUES ( 1,'roma', 'italia');
@@ -253,4 +266,4 @@ INSERT INTO `db.triplan`.`places` (`idplaces`, `name_places`, `city_places`, `la
 
 COMMIT;
 
-select places.name_places, places.city_places  from places join city on places.city_idcity=city.idcity where city.name_city="roma";
+select places.name_places, places.city_places  from places left join city on places.city_idcity=city.idcity where city.name_city='roma' ;

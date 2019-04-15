@@ -1,0 +1,48 @@
+package it.contrader.model;
+
+public class Places2 {
+
+	private int idPlaces;
+	private String nomePlaces;
+	
+	public Places2(int idPlaces, String nomePlaces) {
+		this.idPlaces = idPlaces;
+		this.nomePlaces = nomePlaces;
+	}
+
+	public Places2() {
+	}
+
+	public int getIdPlaces() {
+		return idPlaces;
+	}
+
+	public void setIdPlaces(int idPlaces) {
+		this.idPlaces = idPlaces;
+	}
+
+	public String getNomePlaces() {
+		return nomePlaces;
+	}
+
+	public void setNomePlaces(String nomePlaces) {
+		this.nomePlaces = nomePlaces;
+	}
+	
+	@Override
+	public String toString() {
+		return this.getIdPlaces() + "\t" + this.getNomePlaces();
+	}
+
+	public boolean equals(Places2 placesCompare) {
+		if (!(this.getIdPlaces() == placesCompare.getIdPlaces())) {
+			return false;
+		}
+		if (!this.getNomePlaces().equals(placesCompare.getNomePlaces())) {
+				return false;
+	    }
+		return true;
+
+	}
+
+}

@@ -14,7 +14,7 @@ public class ConverterCity {
 		if (city != null) {
 			cityDTO = new CityDTO();
 			cityDTO.setIdCity(city.getIdCity());
-			cityDTO.setNameCity(city.getNameCity());
+			cityDTO.setName_City(city.getNomeCity());
 			
 		}
 		return cityDTO;
@@ -25,7 +25,7 @@ public class ConverterCity {
 		if (cityDTO != null) {
 			city = new City();
 			city.setIdCity(cityDTO.getIdCity());
-			city.setNameCity(cityDTO.getNameCity());
+			city.setNomeCity(cityDTO.getName_City());
 			
 		}
 		return city;

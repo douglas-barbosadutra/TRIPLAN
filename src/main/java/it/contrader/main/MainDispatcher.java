@@ -50,4 +50,13 @@ public class MainDispatcher {
 		
 
 	}
-}
+
+	public void callController(String string, Request request) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+		
+	}
+

@@ -1,20 +1,20 @@
-package it.contrader.view.city;
+package it.contrader.view.places;
 
 import java.util.Scanner;
 
-import it.contrader.controller.CityController;
+import it.contrader.controller.PlacesController;
 import it.contrader.controller.Request;
-import it.contrader.dto.CityDTO;
+import it.contrader.dto.PlacesDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.view.View;
 
-public class CityReadView implements View {
+public class PlacesReadView implements View {
 
-	private CityController cityController;
+	private PlacesController placesController;
 	private Request request;
 
-	public CityReadView() {
-		this.cityController = new CityController();
+	public PlacesReadView() {
+		this.placesController = new PlacesController();
 	}
 
 	@Override
@@ -23,19 +23,19 @@ public class CityReadView implements View {
 
 	@Override
 	public void showOptions() {
-		int idcityToRead;
+		int idplacesToRead;
 
-		System.out.println("Inserisci l'ID dela città:");
+		System.out.println("Inserisci l'ID del monumento:");
 
 		try {
-			idcityToRead = Integer.parseInt(getInput());
-			CityDTO cityDB = cityController.readCity(idcityToRead);
+			idplacesToRead = Integer.parseInt(getInput());
+			PlacesDTO placesDB = placesController.readPlaces(idplacesToRead);
 
-			System.out.println("Id Città: " + cityDB.getIdCity());
-			System.out.println("Nome Città: " + cityDB.getName_City());
+			System.out.println("Id monumento: " + placesDB.getIdPlaces());
+			System.out.println("Nome monumento: " + placesDB.getNomePlaces());
 			
 			
-			//Wait progetto to show
+			//Wait places to show
 			System.out.println("Premi un tasto per continuare");
 			try {
 				getInput();
@@ -60,7 +60,7 @@ public class CityReadView implements View {
 		request = new Request();
 		request.put("mode", "menu");
 		request.put("choice", "");
-		MainDispatcher.getInstance().callAction("City", "doControl", request);
+		MainDispatcher.getInstance().callAction("Places", "doControl", request);
 	}
 
 }

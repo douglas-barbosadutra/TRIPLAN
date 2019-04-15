@@ -5,17 +5,21 @@ import java.util.Scanner;
 
 
 import it.contrader.controller.Request;
+import it.contrader.dto.CityDTO;
+import it.contrader.dto.PlacesDTO;
 import it.contrader.controller.CityController;
 import it.contrader.main.MainDispatcher;
 import it.contrader.model.City;
 
-public class CityView implements View {
+
+public class City2View implements View {
 
 	private CityController cityController;
+	//private Places2Controller places2Controller;
 	private Request request;
 	private String choice;
 	
-	public CityView() {
+	public City2View() {
 		this.cityController = new CityController();
 	}
 
@@ -25,7 +29,7 @@ public class CityView implements View {
 
 	@Override
 	public void showOptions() {
-		
+		int idcityToRead;	
 		
 		System.out.println("ID\tCittà");
 		System.out.print("------------------");
@@ -34,27 +38,35 @@ public class CityView implements View {
 		città.forEach(city -> System.out.println(city.toString()));
 		System.out.println();
 		
-		System.out.println("Scegli l'operazione da effettuare:");
-		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [E]sci");
+		System.out.println("Dove vuoi andare?");
+		System.out.println("Scegli l'ID della città");
+
+		
 		try {
-			this.choice = getInput();
-		} catch(Exception e) {
-			this.choice = "";
-		}
-		request = new Request();
-		request.put("choice", choice);
-		request.put("mode", "");
-	}
+			idcityToRead = Integer.parseInt(getInput());
+			request = new Request();
+			request.put("mode", "viewListPlaces");
+			request.put("choice","Z");
+			request.put("id",idcityToRead);
+			CityDTO cityDB = cityController.readCity(idcityToRead);
+			MainDispatcher.getInstance().callView("Places2",request);
+			//MainDispatcher.getInstance().callAction("Places", "doControl",request);
+		} catch (Exception e) {
+		System.out.println("Valore inserito errato.");
+		}}
+
+
 
 	@Override
 	public String getInput() {
 		Scanner scanner = new Scanner(System.in);
-		return scanner.nextLine();
+		return scanner.nextLine().trim();
 	}
 
 	@Override
 	public void submit() {
-		    MainDispatcher.getInstance().callAction("City", "doControl", this.request);
+		// TODO Auto-generated method stub
+		
 	}
 
 }

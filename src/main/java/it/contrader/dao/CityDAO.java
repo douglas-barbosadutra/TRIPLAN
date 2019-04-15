@@ -16,12 +16,12 @@ import it.contrader.model.City;
 public class CityDAO {
 
 	private final String QUERY_ALL = "select * from city";
-	private final String QUERY_INSERT = "insert into city (nomeCity) values (?)";
+	private final String QUERY_INSERT = "insert into city (name_city) values (?)";
 	private final String QUERY_READ = "select * from city where idcity=?";
 
 	private final String QUERY_UPDATE = "UPDATE city SET idcity=?,name_city=? WHERE idcity=?";
 	private final String QUERY_DELETE = "delete from city where idcity=?";
-
+	
 	public CityDAO() {
 
 	}
@@ -35,8 +35,8 @@ public class CityDAO {
 			City city;
 			while (resultSet.next()) {
 				int idCity = resultSet.getInt("idCity");
-				String nameCity = resultSet.getString("nameCity");
-				city = new City(idCity, nameCity);
+				String name_city = resultSet.getString("name_city");
+				city = new City(idCity, name_city);
 				city.setIdCity(idCity);
 				cityList.add(city);
 			}
@@ -50,7 +50,7 @@ public class CityDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT);
-			preparedStatement.setString(1, city.getNameCity());
+			preparedStatement.setString(1, city.getNomeCity());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -68,13 +68,13 @@ public class CityDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			int idcity;
-			String namecity;
+			String nomecity;
 			
 
-			namecity = resultSet.getString("namecity");
+			nomecity = resultSet.getString("name_city");
 			idcity = resultSet.getInt("idcity");
 			
-			City city = new City(idcity, namecity);
+			City city = new City(idcity, nomecity);
 			city.setIdCity(resultSet.getInt("idcity"));
 
 			return city;
@@ -97,15 +97,15 @@ public class CityDAO {
 		if (!cityRead.equals(cityToUpdate)) {
 			try {
 				// Fill the cityToUpdate object
-				if (cityToUpdate.getNameCity() == null || cityToUpdate.getNameCity().equals("")) {
-					cityToUpdate.setNameCity(cityRead.getNameCity());
+				if (cityToUpdate.getNomeCity() == null || cityToUpdate.getNomeCity().equals("")) {
+					cityToUpdate.setNomeCity(cityRead.getNomeCity());
 				
 				}
 				
 				// Update the city
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setInt(1, cityToUpdate.getIdCity());
-				preparedStatement.setString(2, cityToUpdate.getNameCity());
+				preparedStatement.setString(2, cityToUpdate.getNomeCity());
 			    preparedStatement.setInt(3, cityToUpdate.getIdCity());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)

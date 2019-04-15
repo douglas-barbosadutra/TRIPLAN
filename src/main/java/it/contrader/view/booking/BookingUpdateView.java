@@ -1,21 +1,21 @@
-package it.contrader.view.city;
+package it.contrader.view.booking;
 
 import java.util.Scanner;
 
-import it.contrader.controller.CityController;
+import it.contrader.controller.BookingController;
 import it.contrader.controller.Request;
 import it.contrader.controller.UserController;
-import it.contrader.dto.CityDTO;
+import it.contrader.dto.BookingDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.view.View;
 
-public class CityUpdateView implements View {
+public class BookingUpdateView implements View {
 
-	private CityController cityController;
+	private BookingController bookingController;
 	private Request request;
 
-	public CityUpdateView() {
-		this.cityController = new CityController();
+	public BookingUpdateView() {
+		this.bookingController = new BookingController();
 	}
 
 	@Override
@@ -24,31 +24,31 @@ public class CityUpdateView implements View {
 
 	@Override
 	public void showOptions() {
-		int idcityToUpdate;
-		String nomecity;
+		int idbookingToUpdate;
+		String nomebooking;
 
 		/*
 		 * List<City> city; Integer idcity; city = cityController.getAllCity();
 		 * 
 		 */
-		System.out.println("\n----- Seleziona la città da modificare  -----\n");
+		System.out.println("\n----- Seleziona la prenotazione da modificare  -----\n");
 		// System.out.println();
 		// city.forEach(us_type -> System.out.println(us_type.toString()));
 		// System.out.println();
-		CityDTO cityDTO = new CityDTO();
+		BookingDTO bookingDTO = new BookingDTO();
 
-		System.out.println("Digita l'Id della città da modificare:");
+		System.out.println("Digita l'Id della prenotazione da modificare:");
 		try {
-			idcityToUpdate = Integer.parseInt(getInput());
-			if (idcityToUpdate != 0) {
-				cityDTO.setIdCity(idcityToUpdate);
+			idbookingToUpdate = Integer.parseInt(getInput());
+			if (idbookingToUpdate != 0) {
+				bookingDTO.setIdBooking(idbookingToUpdate);
 
-				System.out.println("Digita il nuovo Nome della città:");
-				nomecity = getInput();
-				if (!nomecity.equals(""))
-					cityDTO.setName_City(nomecity);
+				System.out.println("Digita il nuovo Nome della prenotazione:");
+				nomebooking = getInput();
+				if (!nomebooking.equals(""))
+					bookingDTO.setNomeBooking(nomebooking);
 
-				cityController.updateCity(cityDTO);
+				bookingController.updateBooking(bookingDTO);
 
 			}
 		} catch (Exception e) {
