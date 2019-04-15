@@ -3,7 +3,10 @@ package it.contrader.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import it.contrader.dto.CityPlacesDTO;
+=======
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 import it.contrader.dto.PlacesDTO;
 import it.contrader.model.Places;
 
@@ -27,7 +30,12 @@ public class ConverterPlaces {
 			places = new Places();
 			places.setIdPlaces(placesDTO.getIdPlaces());
 			places.setNomePlaces(placesDTO.getNomePlaces());
+<<<<<<< HEAD
 			
+=======
+			places.setLatPlaces(placesDTO.getLatPlaces());
+			places.setLongPlaces(placesDTO.getLongPlaces());			
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 		}
 		return places;
 	}

@@ -25,11 +25,19 @@ public class BookingInsertView implements View {
 	@Override
 	public void showOptions() {
 		int idbooking;
+<<<<<<< HEAD
 		String nomebooking;
 		
 		System.out.println("Digita lo username della prenotazione: ");
 		nomebooking = getInput();
 		bookingController.insertBooking(new BookingDTO(nomebooking));
+=======
+		String usernamebooking;
+		
+		System.out.println("Digita il dell'utente: ");
+		usernamebooking = getInput();
+		bookingController.insertBooking(new BookingDTO(usernamebooking));
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 	}
 
 	@Override

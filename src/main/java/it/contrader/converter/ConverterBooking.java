@@ -14,7 +14,11 @@ public class ConverterBooking {
 		if (booking != null) {
 			bookingDTO = new BookingDTO();
 			bookingDTO.setIdBooking(booking.getIdBooking());
+<<<<<<< HEAD
 			bookingDTO.setNomeBooking(booking.getNomeBooking());
+=======
+			bookingDTO.setUsernameBooking(booking.getUsernameBooking());
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 			
 		}
 		return bookingDTO;
@@ -25,7 +29,11 @@ public class ConverterBooking {
 		if (bookingDTO != null) {
 			booking = new Booking();
 			booking.setIdBooking(bookingDTO.getIdBooking());
+<<<<<<< HEAD
 			booking.setNomeBooking(bookingDTO.getNomeBooking());
+=======
+			booking.setUsernameBooking(bookingDTO.getUsernameBooking());
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 			
 		}
 		return booking;

@@ -45,4 +45,11 @@ public class Places2 {
 
 	}
 
+<<<<<<< HEAD
+=======
+	public void setIdPlaces2(int idPlaces2) {
+		// TODO Auto-generated method stub
+		
+	}
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 }

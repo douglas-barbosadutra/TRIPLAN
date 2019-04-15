@@ -6,7 +6,10 @@ import java.util.Scanner;
 
 import it.contrader.controller.Request;
 import it.contrader.dto.CityDTO;
+<<<<<<< HEAD
 import it.contrader.dto.PlacesDTO;
+=======
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 import it.contrader.controller.CityController;
 import it.contrader.main.MainDispatcher;
 import it.contrader.model.City;
@@ -15,7 +18,10 @@ import it.contrader.model.City;
 public class City2View implements View {
 
 	private CityController cityController;
+<<<<<<< HEAD
 	//private Places2Controller places2Controller;
+=======
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 	private Request request;
 	private String choice;
 	
@@ -40,6 +46,7 @@ public class City2View implements View {
 		
 		System.out.println("Dove vuoi andare?");
 		System.out.println("Scegli l'ID della città");
+<<<<<<< HEAD
 
 		
 		try {
@@ -56,6 +63,25 @@ public class City2View implements View {
 		}}
 
 
+=======
+		try {
+			idcityToRead = Integer.parseInt(getInput());
+			CityDTO cityDB = cityController.readCity(idcityToRead);
+
+			System.out.println("Id Città: " + cityDB.getIdCity());
+			System.out.println("Nome Città: " + cityDB.getName_City());
+			
+			
+
+			System.out.println("\nAttrazioni:");
+			MainDispatcher.getInstance().callView("Places2", request);
+			
+		} catch (Exception e) {
+			System.out.println("Valore inserito errato.");
+		}
+
+	}
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 
 	@Override
 	public String getInput() {
@@ -63,10 +89,20 @@ public class City2View implements View {
 		return scanner.nextLine().trim();
 	}
 
+<<<<<<< HEAD
 	@Override
 	public void submit() {
 		// TODO Auto-generated method stub
 		
+=======
+	
+	@Override
+	public void submit() {
+		request = new Request();
+		request.put("mode", "menu");
+		request.put("choice", "");
+		MainDispatcher.getInstance().callAction("City", "doControl", request);
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 	}
 
 }

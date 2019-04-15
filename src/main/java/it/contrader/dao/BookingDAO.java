@@ -18,7 +18,10 @@ public class BookingDAO {
 	private final String QUERY_ALL = "select * from booking";
 	private final String QUERY_INSERT = "insert into booking (book_usename, book_city) values (?)";
 	private final String QUERY_READ = "select * from booking where idbooking=?";
+<<<<<<< HEAD
 
+=======
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 	private final String QUERY_UPDATE = "UPDATE booking SET idbooking=?,book_city=? WHERE idbooking=?";
 	private final String QUERY_DELETE = "delete from booking where idbooking=?";
 	
@@ -35,9 +38,14 @@ public class BookingDAO {
 			Booking booking;
 			while (resultSet.next()) {
 				int idBooking = resultSet.getInt("idbooking");
+<<<<<<< HEAD
 				String book_city = resultSet.getString("book_city");
 				String book_username = resultSet.getString("book_username");
 				booking = new Booking(idBooking, book_city);
+=======
+				String book_username = resultSet.getString("book_username");
+				booking = new Booking(idBooking, book_username);
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 				booking.setIdBooking(idBooking);
 				bookingList.add(booking);
 			}
@@ -51,7 +59,11 @@ public class BookingDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT);
+<<<<<<< HEAD
 			preparedStatement.setString(1, booking.getNomeBooking());
+=======
+			preparedStatement.setString(1, booking.getUsernameBooking());
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -69,6 +81,7 @@ public class BookingDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			int idbooking;
+<<<<<<< HEAD
 			String nomebooking;
 			
 
@@ -76,6 +89,15 @@ public class BookingDAO {
 			idbooking = resultSet.getInt("idboking");
 			
 			Booking booking = new Booking(idbooking, nomebooking);
+=======
+			String usernamebooking;
+			
+
+			usernamebooking = resultSet.getString("book_username");
+			idbooking = resultSet.getInt("idbooking");
+			
+			Booking booking = new Booking(idbooking, usernamebooking);
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 			booking.setIdBooking(resultSet.getInt("idbooking"));
 
 			return booking;
@@ -98,15 +120,24 @@ public class BookingDAO {
 		if (!BookingRead.equals(bookingToUpdate)) {
 			try {
 				// Fill the booking Update object
+<<<<<<< HEAD
 				if (bookingToUpdate.getNomeBooking() == null || bookingToUpdate.getNomeBooking().equals("")) {
 					bookingToUpdate.setNomeBooking(BookingRead.getNomeBooking());
+=======
+				if (bookingToUpdate.getUsernameBooking() == null || bookingToUpdate.getUsernameBooking().equals("")) {
+					bookingToUpdate.setUsernameBooking(BookingRead.getUsernameBooking());
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 				
 				}
 				
 				// Update the Booking
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setInt(1, bookingToUpdate.getIdBooking());
+<<<<<<< HEAD
 				preparedStatement.setString(2, bookingToUpdate.getNomeBooking());
+=======
+				preparedStatement.setString(2, bookingToUpdate.getUsernameBooking());
+>>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 			    preparedStatement.setInt(3, bookingToUpdate.getIdBooking());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
