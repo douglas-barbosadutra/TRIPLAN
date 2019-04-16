@@ -25,11 +25,7 @@ public class BookingUpdateView implements View {
 	@Override
 	public void showOptions() {
 		int idbookingToUpdate;
-<<<<<<< HEAD
 		String nomebooking;
-=======
-		String usernamebooking;
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 
 		/*
 		 * List<City> city; Integer idcity; city = cityController.getAllCity();
@@ -48,15 +44,9 @@ public class BookingUpdateView implements View {
 				bookingDTO.setIdBooking(idbookingToUpdate);
 
 				System.out.println("Digita il nuovo Nome della prenotazione:");
-<<<<<<< HEAD
 				nomebooking = getInput();
 				if (!nomebooking.equals(""))
 					bookingDTO.setNomeBooking(nomebooking);
-=======
-				usernamebooking = getInput();
-				if (!usernamebooking.equals(""))
-					bookingDTO.setUsernameBooking(usernamebooking);
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 
 				bookingController.updateBooking(bookingDTO);
 

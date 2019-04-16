@@ -32,11 +32,7 @@ public class BookingReadView implements View {
 			BookingDTO bookingDB = bookingController.readBooking(idbookingToRead);
 
 			System.out.println("Id Prenotazione: " + bookingDB.getIdBooking());
-<<<<<<< HEAD
 			System.out.println("Nome Prenotazione: " + bookingDB.getNomeBooking());
-=======
-			System.out.println("Nome Prenotazione: " + bookingDB.getUsernameBooking());
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 			
 			
 			//Wait prenotazione to show

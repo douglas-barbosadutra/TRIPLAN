@@ -25,7 +25,7 @@ public class PlacesInsertView implements View {
 	public void showOptions() {
 		int idplaces;
 		String nomeplaces;
-<<<<<<< HEAD
+     
 		
 		
 		System.out.println("Digita il nome del monumento: ");
@@ -33,20 +33,6 @@ public class PlacesInsertView implements View {
 		
 	
 			placesController.insertPlaces(new PlacesDTO(nomeplaces));
-=======
-        String longplaces;
-        String latplaces;
-		
-		
-		System.out.println("Digita il nome dell'attrazione: ");
-		nomeplaces = getInput();
-		System.out.println("Digita la latitudine: ");
-		longplaces = getInput();
-		System.out.println("Digita la longitudine: ");
-		latplaces = getInput();
-	
-			placesController.insertPlaces(new PlacesDTO());
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 		
 	}
 

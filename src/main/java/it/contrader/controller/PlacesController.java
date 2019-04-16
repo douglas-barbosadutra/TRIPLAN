@@ -2,17 +2,10 @@ package it.contrader.controller;
 
 import java.util.List;
 
-<<<<<<< HEAD
 import it.contrader.dto.CityPlacesDTO;
 import it.contrader.dto.PlacesDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.model.Places;
-=======
-import it.contrader.dto.PlacesDTO;
-import it.contrader.main.MainDispatcher;
-import it.contrader.model.Places;
-import it.contrader.model.Places2;
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 import it.contrader.service.PlacesService;
 
 public class PlacesController implements Controller {
@@ -28,22 +21,11 @@ public class PlacesController implements Controller {
 	public List<Places> getAllPlaces() {
 		return this.placesService.getAllPlaces();
 	}
-<<<<<<< HEAD
-=======
-	
-	public List<Places2> getSelectPlaces() {
-		return this.placesService.getSelectPlaces();
-	}
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 
 	public PlacesDTO readPlaces(int idplaces) {
 		return this.placesService.readPlaces(idplaces);
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 	public boolean insertPlaces(PlacesDTO placesDTO) {
 		return this.placesService.insertPlaces(placesDTO);
 	}
@@ -55,11 +37,11 @@ public class PlacesController implements Controller {
 	public boolean deletePlaces(Integer idplaces) {
 		return this.placesService.deletePlaces(idplaces);
 	}
-
-<<<<<<< HEAD
-
-=======
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
+	
+	public List<Places> getCityPlaces(Integer idcity) {
+		return this.placesService.getCityPlaces(idcity);
+	}
+	//fino a qui
 	@Override
 	public void doControl(Request request) {
 		String mode = (String) request.get("mode");
@@ -84,13 +66,6 @@ public class PlacesController implements Controller {
 			case "E":
 				MainDispatcher.getInstance().callView("Login", null);
 				break;
-<<<<<<< HEAD
-			case "Z":
-				Integer id = (Integer) request.get("id");
-				MainDispatcher.getInstance().callView("Places2", null);
-				break;
-=======
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 			default:
 				MainDispatcher.getInstance().callView("Login", null);
 				break;
@@ -98,8 +73,4 @@ public class PlacesController implements Controller {
 		}
 	}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> da47f7a87b5e44a5e8262e05cb280c70e51fbc2f
 }
