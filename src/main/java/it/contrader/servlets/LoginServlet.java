@@ -8,12 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import it.contrader.dto.UsersDTO;
-import it.contrader.service.UsersServiceDTO;
+import it.contrader.dto.UserDTO;
+import it.contrader.service.UserService;
+import it.contrader.utils.GestoreEccezioni;
 
 public class LoginServlet extends HttpServlet {
 
-	private final UsersServiceDTO usersServiceDTO = new UsersServiceDTO();
+	private final UserService userServiceDTO = new UserService();
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,28 +23,43 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("utente", null);
 
 		if (request != null) {
-			final String nomeUtente = request.getParameter("username").toString();
-			final String password = request.getParameter("password").toString();
+			try {
+			final String nomeUtente = request.getParameter("username").toString().trim();
+			final String password = request.getParameter("password").toString().trim();
 			// recuperiamo l'utente
-			final UsersDTO usersDTO = usersServiceDTO.getUserByUsernameAndPasword(nomeUtente, password);
+			final UserDTO userDTO = userServiceDTO.getUserByUsernameAndPasword(nomeUtente, password);
 
-			if (usersDTO != null)
-				session.setAttribute("utente", usersDTO);
+			if (userDTO != null)
+				session.setAttribute("utente", userDTO);
+			final int idu = userDTO.getUserId();
 
 			// verifichiamo che tipo di ruolo ha all'interno dell'applicazione
 			// e lo reindirizziamo nella jsp opportuna
-			switch (usersDTO.getRuolo()) {
-			case "ADMIN":
-				getServletContext().getRequestDispatcher("/home.jsp").forward(request, response);
+			try {
+			switch (userDTO.getUsertype().toLowerCase()) {
+			case "superuser":
+				getServletContext().getRequestDispatcher("/homeAdmin.jsp").forward(request, response);
 				break;
-			case "CHAT MASTER":
-				getServletContext().getRequestDispatcher("/home.jsp").forward(request, response);
+			case "user":
+				request.setAttribute("idu", idu);
+				getServletContext().getRequestDispatcher("/homeUser.jsp").forward(request, response);
 				break;
 			default:
 				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 				break;
 			}
+			} catch (Exception e) {
+				
+				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+			}
+			
+			}catch (Exception e) {
+				
+				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+			}
+		}
+	
 		}
 	}
 
-}
+

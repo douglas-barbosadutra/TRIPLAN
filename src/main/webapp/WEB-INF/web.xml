@@ -8,16 +8,39 @@
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
-		<servlet-class>com.virtualpairprogrammers.servlets.LoginServlet</servlet-class>
+		<servlet-class>it.contrader.servlets.LoginServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>LogoutServlet</servlet-name>
-		<servlet-class>com.virtualpairprogrammers.servlets.LogoutServlet</servlet-class>
+		<servlet-class>it.contrader.servlets.LogoutServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>NodesServlet</servlet-name>
-		<servlet-class>com.virtualpairprogrammers.servlets.NodesServlet</servlet-class>
+		<servlet-class>it.contrader.servlets.NodesServlet</servlet-class>
 	</servlet>	
+	<servlet>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.UserServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UtenteFinaleServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.UtenteFinaleServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>DossierServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.DossierServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ProgettoServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.ProgettoServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>MomServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.MomServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
@@ -30,6 +53,29 @@
 		<servlet-name>NodesServlet</servlet-name>
 		<url-pattern>/NodesServlet</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/UserServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UtenteFinaleServlet</servlet-name>
+		<url-pattern>/UtenteFinaleServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DossierServlet</servlet-name>
+		<url-pattern>/DossierServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProgettoServlet</servlet-name>
+		<url-pattern>/ProgettoServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MomServlet</servlet-name>
+		<url-pattern>/MomServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
 	<session-config>
 		<session-timeout>4000</session-timeout>
 	</session-config>

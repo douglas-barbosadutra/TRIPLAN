@@ -10,9 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import it.contrader.converter.UsersConverter;
-import it.contrader.dto.UsersDTO;
-import it.contrader.service.UsersServiceDTO;
+import it.contrader.dto.UserDTO;
+import it.contrader.service.UserService;
 
 
 /**
@@ -22,8 +21,8 @@ import it.contrader.service.UsersServiceDTO;
  */
 public class UsersServlet extends HttpServlet {
 
-	private final UsersServiceDTO usersServiceDTO = new UsersServiceDTO();
-	private List<UsersDTO> allUsers= new ArrayList<>();
+	private final UserService userService = new UserService();
+	private List<UserDTO> allUsers= new ArrayList<>();
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,69 +32,80 @@ public class UsersServlet extends HttpServlet {
 
 		switch (scelta) {
 
-		case "UsersManager":
-			allUsers = this.usersServiceDTO.getAllUsers();
-			request.setAttribute("allUsers", allUsers);
-			getServletContext().getRequestDispatcher("/users.jsp").forward(request, response);
-			break;			
+		case "UserManager":
+			
+			allUsers = this.userService.getAllUser();
+			request.setAttribute("allUser", allUsers);
+			getServletContext().getRequestDispatcher("/user/manageUser.jsp").forward(request, response);
+			break;
+
+		case "insertRedirect":
+			response.sendRedirect("user/insertUser.jsp");
+			break;
 
 		case "insert":
-			final Integer id = Integer.parseInt(request.getParameter("id"));
-			final String username = request.getParameter("username");
-			final String password = request.getParameter("password");
-			final String ruolo = request.getParameter("ruolo");
-			final UsersDTO users = new UsersDTO(id,username, password, ruolo);
-			usersServiceDTO.insertUsers(users);
+			// final Integer id = Integer.parseInt(request.getParameter("user_id"));
+			final String username = request.getParameter("user_user");
+			final String password = request.getParameter("user_pass");
+			final String usertype = request.getParameter("user_type");
+			final UserDTO users = new UserDTO(username, password, usertype);
+			userService.insertUser(users);
 			showAllUsers(request, response);
 			break;
-					
-		case "update":
-			System.out.println("id: "+Integer.parseInt(request.getParameter("id")));
-			System.out.println("username: "+request.getParameter("username"));
-			System.out.println("password: "+request.getParameter("password"));
-			System.out.println("ruolo: "+request.getParameter("ruolo"));
 
-		     	
-			final Integer idUpdate = Integer.parseInt(request.getParameter("id"));
-			final String usernameUpdate = request.getParameter("username");
-			final String passwordUpdate = request.getParameter("password");
-			final String ruoloUpdate = request.getParameter("ruolo");
-			final UsersDTO user = new UsersDTO(idUpdate, usernameUpdate,passwordUpdate, ruoloUpdate);
-					
-				
-					
-			usersServiceDTO.updateUsers(user);
+		case "updateRedirect":
+			int id = Integer.parseInt(request.getParameter("id"));
+			UserDTO userUpdate = new UserDTO("", "", "");
+			userUpdate.setUserId(id);
+
+			userUpdate = this.userService.readUser(id);
+			request.setAttribute("userUpdate", userUpdate);
+			getServletContext().getRequestDispatcher("/user/updateUser.jsp").forward(request, response);
+
+			break;
+
+		case "update":
+			//System.out.println("ID: " + Integer.parseInt(request.getParameter("user_id")));
+			//System.out.println("username: " + request.getParameter("user_user"));
+			//System.out.println("password: " + request.getParameter("user_pass"));
+			//System.out.println("Tipo utente: " + request.getParameter("user_type"));
+
+			final Integer idUpdate = Integer.parseInt(request.getParameter("user_id"));
+			final String usernameUpdate = request.getParameter("user_user");
+			final String passwordUpdate = request.getParameter("user_pass");
+			final String usertypeUpdate = request.getParameter("user_type");
+			final UserDTO user = new UserDTO(usernameUpdate, passwordUpdate, usertypeUpdate);
+			user.setUserId(idUpdate);
+
+			userService.updateUser(user);
 			showAllUsers(request, response);
 			break;
 
 		case "delete":
-			final Integer idUpdat = Integer.parseInt(request.getParameter("id"));
-			
-			final UsersDTO use = new UsersDTO(idUpdat,"" ,"","");
-			usersServiceDTO.deleteUsers(use);
+			final Integer deleteId = Integer.parseInt(request.getParameter("id"));
+
+			final UserDTO userdelete = new UserDTO("", "", "");
+			userdelete.setUserId(deleteId);
+			userService.deleteUser(deleteId);
 			showAllUsers(request, response);
 			break;
 
-		case "Indietro":
-			response.sendRedirect("home.jsp");
+		case "indietro":
+			response.sendRedirect("homeAdmin.jsp");
 			break;
 
-		case "LogsMenu":
-			response.sendRedirect("homeLogs.jsp");
+		case "logsMenu":
+			response.sendRedirect("index.jsp");
 			break;
 
-				}
+		}
 
-			}
+	}
 
-		
-
-	
-
-private void showAllUsers(HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
-	allUsers = this.usersServiceDTO.getAllUsers();
-	request.setAttribute("allUsers", allUsers);
-	getServletContext().getRequestDispatcher("/users.jsp").forward(request, response);
-}
+	private void showAllUsers(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		allUsers = this.userService.getAllUser();
+		request.setAttribute("allUser", allUsers);
+		getServletContext().getRequestDispatcher("/user/manageUser.jsp").forward(request, response);
+	}
 }
