@@ -19,7 +19,7 @@ import it.contrader.service.UserService;
  * Per chi farà User dovrà anche occuparsi del Login che abbiamo lasciato come struttura e va modificata in modo opportuno
  *
  */
-public class UsersServlet extends HttpServlet {
+public class UserServlet extends HttpServlet {
 
 	private final UserService userService = new UserService();
 	private List<UserDTO> allUsers= new ArrayList<>();
