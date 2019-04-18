@@ -11,7 +11,7 @@
 <meta charset="ISO-8859-1">
 <title>Home BO</title>
 <% 
-int idBO =  (Integer) request.getAttribute("idBO");
+int idU =  (Integer) request.getAttribute("idU");
 %>
 </head>
 <body>
