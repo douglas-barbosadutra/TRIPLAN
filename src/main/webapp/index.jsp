@@ -1,6 +1,17 @@
 <html>
 <head>
-<title>Login Trader</title>
+<title>Benvenuti in TRIPLAN</title>
+<style>
+body {
+	background-image:
+		url("http://1.bp.blogspot.com/-FLsi6FOuXJ8/UHHBwqDTLNI/AAAAAAAAEG0/KTBA9VtfDl0/s1600/viaggio-a-Paris.gif");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	text-align: center;
+	color: black;
+}
+</style>
 </head>
 <body>
 	<div align=center>

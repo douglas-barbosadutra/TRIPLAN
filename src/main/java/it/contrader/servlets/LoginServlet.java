@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 
 			if (userDTO != null)
 				session.setAttribute("utente", userDTO);
-			final int idu = userDTO.getUserId();
+			final int idU = userDTO.getUserId();
 
 			// verifichiamo che tipo di ruolo ha all'interno dell'applicazione
 			// e lo reindirizziamo nella jsp opportuna
@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 				getServletContext().getRequestDispatcher("/homeAdmin.jsp").forward(request, response);
 				break;
 			case "user":
-				request.setAttribute("idu", idu);
+				request.setAttribute("idU", idU);
 				getServletContext().getRequestDispatcher("/homeUser.jsp").forward(request, response);
 				break;
 			default:

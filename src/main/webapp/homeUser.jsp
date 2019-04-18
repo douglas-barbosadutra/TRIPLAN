@@ -9,20 +9,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home BO</title>
+<title>Home User</title>
 <% 
-int idBO =  (Integer) request.getAttribute("idBO");
+int idu =  (Integer) request.getAttribute("idu");
 %>
 </head>
 <body>
 
 
-	<p>Welcome!</p>
+	<p>Benvenuto!</p>
+	<p> Cosa vuoi fare? </p>
 
 
-
-	<a href="UtenteFinaleServlet?richiesta=UtenteFinaleManager&idBO=<%=idBO%>"><span class="fs">
-			Utente Finale Management </span></a>
+	<a href=""=<%=idu%>"><span class="fs">
+			Viaggia </span></a>
 	<br>
 	<br>
 	<br>
