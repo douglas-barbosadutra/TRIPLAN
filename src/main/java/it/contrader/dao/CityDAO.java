@@ -10,6 +10,7 @@ import java.util.List;
 
 import it.contrader.utils.GestoreEccezioni;
 import it.contrader.utils.ConnectionSingleton;
+import it.contrader.dto.CityDTO;
 import it.contrader.model.City;
 
 

@@ -3,7 +3,7 @@ package it.contrader.converter;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.contrader.dto.CityPlacesDTO;
+import it.contrader.dto.PlacesDTO;
 import it.contrader.dto.PlacesDTO;
 import it.contrader.model.Places;
 

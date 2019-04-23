@@ -18,9 +18,9 @@ public class CityDTO {
 		return idcity;
 	}
 
-	
-	
-
+	public void setIdCity(int idcity) {
+		this.idcity = idcity;
+	}
 	public String getName_City() {
 		return name_city;
 	}

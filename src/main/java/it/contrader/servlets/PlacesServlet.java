@@ -49,7 +49,7 @@ public class PlacesServlet extends HttpServlet {
 			final String nomePlaces = request.getParameter("nomePlaces");
 			final PlacesDTO places = new PlacesDTO(nomePlaces);
 			placesService.insertPlaces(places);
-			showAllProgetto(request, response);
+			showAllPlaces(request, response);
 			break;
 
 		case "updateRedirect":

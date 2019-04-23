@@ -48,16 +48,15 @@ body {
 </style>
 </head>
 <%
-	List<ProgettoDTO> allProgetto = (List<ProgettoDTO>) request.getAttribute("allProgetto");
-	final int idUtenteFinale =  (Integer) request.getAttribute("id");
-	final int idBO= (Integer) request.getAttribute("idBO");
+	List<PlacesDTO> allPlaces = (List<PlacesDTO>) request.getAttribute("allPlaces");
+	final int idU= (Integer) request.getAttribute("idU");
 %>
 </head>
 <body>
 
 	<div class="pre_contenitore">
 
-		<p>Progetto Management</p>
+		<p>Gestione Attrazioni</p>
 
 	</div>
 	<br>
@@ -68,18 +67,18 @@ body {
 
 	<table>
 		<tr>
-			<th>ID Progetto</th>
-			<th>Nome Progetto</th>	
+			<th>ID Attraziob</th>
+			<th>Nome Attrzioni</th>	
 		</tr>
 		<%
-			for (ProgettoDTO progetto : allProgetto) {
+			for (PlacesDTO places : allPlaces) {
 		%>
 		<tr>
-			<td><%=progetto.getIdProgetto()%></td>
-			<td><%=progetto.getNomeProgetto()%></td>
+			<td><%=places.getIdPlaces()%></td>
+			<td><%=places.getNomePlaces()%></td>
 			
-			<td class="center"><a href="/JspApp/ProgettoServlet?richiesta=updateRedirect&updateId=<%=progetto.getIdProgetto()%>&id=<%=idUtenteFinale %>&idBO=<%=idBO%>"><i class="fas fa-edit" title="Update"></i></a></td>
-			<td class="center"><a href="/JspApp/ProgettoServlet?richiesta=delete&deleteId=<%=progetto.getIdProgetto()%>&id=<%=idUtenteFinale %>&idBO=<%=idBO%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+			<td class="center"><a href="/JspApp/PlacesServlet?richiesta=updateRedirect&updateId=<%=places.getIdPlaces()%>&idU=<%=idU%>"><i class="fas fa-edit" title="Update"></i></a></td>
+			<td class="center"><a href="/JspApp/PlacesServlet?richiesta=delete&deleteId=<%=places.getIdPlaces()%>&idU=<%=idU%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 
 		</tr>
 		<%
@@ -88,11 +87,8 @@ body {
 	</table>
 	<br>
 	<br>
-	<a href="/JspApp/ProgettoServlet?richiesta=insertRedirect&id=<%=idUtenteFinale%>&idBO=<%=idBO%>"><i class="fas fa-plus-circle fa-lg"> New Progetto</i></a>
-
 	<br>
-	<br>
-	<a href="/JspApp/UtenteFinaleServlet?richiesta=UtenteFinaleManager&idBO=<%=idBO%>"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/JspApp/UsersServlet?richiesta=UserManager&idU=<%=idU%>"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 
 </body>

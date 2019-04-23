@@ -3,7 +3,6 @@ package it.contrader.service;
 import java.util.List;
 import it.contrader.converter.ConverterPlaces;
 import it.contrader.dao.PlacesDAO;
-import it.contrader.dto.CityPlacesDTO;
 import it.contrader.dto.PlacesDTO;
 import it.contrader.model.Places;
 

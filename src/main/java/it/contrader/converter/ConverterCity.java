@@ -8,14 +8,12 @@ import it.contrader.model.City;
 
 public class ConverterCity {
 
-
 	public static CityDTO toDTO(City city) {
 		CityDTO cityDTO = null;
 		if (city != null) {
 			cityDTO = new CityDTO();
 			cityDTO.setIdCity(city.getIdCity());
 			cityDTO.setName_City(city.getNomeCity());
-			
 		}
 		return cityDTO;
 	}
@@ -26,7 +24,6 @@ public class ConverterCity {
 			city = new City();
 			city.setIdCity(cityDTO.getIdCity());
 			city.setNomeCity(cityDTO.getName_City());
-			
 		}
 		return city;
 	}
