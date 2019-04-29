@@ -33,12 +33,17 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("utente", userDTO);
 			final int idU = userDTO.getUserId();
 			final int idTO = userDTO.getUserId();
+			final int idSU = userDTO.getUserId();
 
 
 			// verifichiamo che tipo di ruolo ha all'interno dell'applicazione
 			// e lo reindirizziamo nella jsp opportuna
 			try {
 			switch (userDTO.getUsertype().toLowerCase()) {
+			case "superuser":
+				request.setAttribute("idSU", idSU);
+				getServletContext().getRequestDispatcher("/homeSU.jsp").forward(request, response);
+				break;
 			case "touroperator":
 				request.setAttribute("idTO", idTO);
 				getServletContext().getRequestDispatcher("/homeTO.jsp").forward(request, response);

@@ -17,6 +17,7 @@ public class UserDAO {
 	private final String QUERY_UPDATE = "UPDATE tab_user SET username=?, password=?, usertype=? WHERE userId=?";
 	private final String QUERY_DELETE = "DELETE FROM tab_user WHERE userId=?";
 	private final String QUERY_LOGIN = "select * from tab_user where username=(?) and password=(?)";
+	private final String QUERY_TOUR = "SELECT * FROM tab_user where usertype='touroperator'";
 	public UserDAO() {
 
 	}
@@ -164,4 +165,25 @@ public class UserDAO {
 		return false;
 	}
 
+	public List<User> getAllTour() {
+		List<User> usersList = new ArrayList<>();
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(QUERY_TOUR);
+			User user;
+			while (resultSet.next()) {
+				int userId = resultSet.getInt("userId");
+				String username = resultSet.getString("username");
+				String password = resultSet.getString("password");
+				String usertype = resultSet.getString("usertype");
+				user = new User(username, password, usertype);
+				user.setUserId(userId);
+				usersList.add(user);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return usersList;
+	}
 }

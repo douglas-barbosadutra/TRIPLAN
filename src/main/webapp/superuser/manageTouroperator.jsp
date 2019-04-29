@@ -1,8 +1,6 @@
 <%@ include file="../header.jsp"%>
 <%!
 private String convertUsertype(String userType) {
-		if (userType.equals("superuser"))
-			return "SuperUser";
 		if (userType.equals("touroperator"))
 			return "TourOperator";
 		else
@@ -12,7 +10,7 @@ private String convertUsertype(String userType) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Gestione Utenti</title>
+<title>Gestione Touroperator</title>
 <style>
 body {
 	background-image:
@@ -42,14 +40,14 @@ font-color:black;
 </style>
 </head>
 <%
-	List<UserDTO> allUser = (List<UserDTO>) request.getAttribute("allUser");
+	List<UserDTO> allTour = (List<UserDTO>) request.getAttribute("allTour");
 %>
 </head>
 <body>
 
 	<div class="titolo">
 
-		<p>Gestione Utenti</p>
+		<p>Gestione Touroperator</p>
 
 	</div>
 	<br>
@@ -67,15 +65,15 @@ font-color:black;
 			<th>Delete</th>
 		</tr>
 		<%
-			for (UserDTO user : allUser) {
+			for (UserDTO user : allTour) {
 		%>
 		<tr>
 			<td><%=user.getUserId()%></td>
 			<td><%=user.getUsername()%></td>
 			<td><%=user.getPassword()%></td>
 			<td><%=convertUsertype(user.getUsertype())%></td>
-			<td class="center"><a href="/JspApp/TourOperatorServlet?richiesta=updateRedirect&id=<%=user.getUserId()%>"><i class="fas fa-edit" title="Update"></i></a></td>
-			<td class="center"><a href="/JspApp/TourOperatorServlet?richiesta=delete&id=<%=user.getUserId()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+			<td class="center"><a href="/JspApp/SuperuserServlet?richiesta=updateRedirect&id=<%=user.getUserId()%>"><i class="fas fa-edit" title="Update"></i></a></td>
+			<td class="center"><a href="/JspApp/SuperuserServlet?richiesta=delete&id=<%=user.getUserId()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>
 		<%
 			}
@@ -83,11 +81,11 @@ font-color:black;
 	</table>
 	<br>
 	<br>
-	<a href="/JspApp/TourOperatorServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Utente </i></a>
+	<a href="/JspApp/SuperuserServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Utente </i></a>
 
 	<br>
 	<br>
-	<a href="/JspApp/TourOperatorServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/JspApp/SuperuserServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 
 </body>

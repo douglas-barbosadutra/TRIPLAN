@@ -26,6 +26,11 @@
 		<servlet-name>CityServlet</servlet-name>
 		<servlet-class>it.contrader.servlets.CityServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>SuperuserServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.SuperuserServlet</servlet-class>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
@@ -46,6 +51,11 @@
 		<servlet-name>CityServlet</servlet-name>
 		<url-pattern>/CityServlet</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SuperuserServlet</servlet-name>
+		<url-pattern>/SuperuserServlet</url-pattern>
+	</servlet-mapping>
+
 	
 	
 	
