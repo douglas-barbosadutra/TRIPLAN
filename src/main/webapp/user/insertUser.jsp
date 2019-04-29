@@ -20,8 +20,6 @@ body {
 	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/JspApp/css/style.css">
 <style>
-
-
 .titolo {
 color: balck;
 	text-align: center;
@@ -48,7 +46,7 @@ color: balck;
 	<form method="POST" action="/JspApp/UserServlet?richiesta=insert">
 
 		User type: <select style="width: 275px;" name="user_type">
-			<option value="superuser"> TourOperator </option>
+			<option value="touroperator"> TourOperator </option>
 			<option value="user"> User </option>
 		</select>
 		<br>

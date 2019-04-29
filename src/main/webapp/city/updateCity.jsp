@@ -1,7 +1,7 @@
 <%@ include file="../header.jsp"%>
 <html>
 <head>
-<title>Modifica Attrazione</title>
+<title>Modifica Città</title>
 <style>
 body {
 	background-image:
@@ -34,32 +34,25 @@ color: balck;
 </style>
 
 <%
-	PlacesDTO updatePlaces = (PlacesDTO) request.getAttribute("placesUpdate");
+	CityDTO updateCity = (CityDTO) request.getAttribute("cityUpdate");
 %>
 </head>
+
 <body>
 
 		<div class="titolo">
 
-			<p>Modifica Attrazione</p>
+			<p>Modifica Città</p>
 
 		</div>
 			<div class="body">
 		<br>
 		<br>
-		<form method="POST" action="/JspApp/PlacesServlet?richiesta=update">
-			<input type="hidden" name="idplaces" value="<%=updatePlaces.getIdPlaces()%>" />
+		<form method="POST" action="/JspApp/CityServlet?richiesta=update">
 			<br>
-			Nome Attrazione: <input type="text" size="40" maxlength="40" name="name_places" value="<%=updatePlaces.getNomePlaces()%>" />
+			<input type="hidden" name="idcity" value="<%=updateCity.getIdCity()%>" />
 			<br>
-			<br>
-			Città Attrazione: <input type="text" size="40" maxlength="40" name="city_places" value="<%=updatePlaces.getCityPlaces()%>" />
-			<br>
-			<br>
-			Latitudine <input type="number" name="latitude" step="0.001" min="0" max="9999" value="<%=updatePlaces.getLatitude()%>" />
-			<br>
-			<br>
-			Logitudine: <input type="number" name="longitude" step="0.001" min="0" max="9999" value="<%=updatePlaces.getLongitude()%>" />
+			Nome Città: <input type="text" size="40" maxlength="40" name="name_city" value="<%=updateCity.getName_City()%>" />
 			<br>
 			<br>
 			<br>
@@ -69,7 +62,7 @@ color: balck;
 
 			<br>
 			<br>
-			<a href="/JspApp/PlacesServlet?richiesta=PlacesManager&"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+			<a href="/JspApp/CityServlet?richiesta=CityManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 		</form>
 		

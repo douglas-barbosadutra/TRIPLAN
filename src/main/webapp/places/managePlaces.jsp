@@ -1,60 +1,44 @@
-<%@ include file="/header.jsp"%>
-<%!
-private String convertUsertype(String userType) {
-		if (userType.equals("admin"))
-			return "Admin";
-		else
-			return "Business Owner";
-	}%>
+<%@ include file="../header.jsp"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>Gestione Utenti</title>
+<title>Gestione Attrazioni</title>
 <style>
 body {
 	background-image:
-		url("https://i1.wp.com/www.deteched.com/wp-content/uploads/2017/10/Space-Vortex-4K-Abstract-Wallpapers.jpg");
+		url("http://1.bp.blogspot.com/-FLsi6FOuXJ8/UHHBwqDTLNI/AAAAAAAAEG0/KTBA9VtfDl0/s1600/viaggio-a-Paris.gif");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	text-align: center;
-	color: white;
+	color: black;
 }
 </style>
-<link rel="stylesheet" type="text/css" href="/JspApp/css/style.css">
+<link rel="stylesheet" type="text/css" href="/wmesjsp/css/style.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <style>
-
-.pre_contenitore {
-	width: 320px;
-	margin: auto;
-	height: 50px;
-	border: 1px solid black;
-	border-radius: 40px 40px 40px 40px;
-	background-color: rgba(0, 0, 0, 0.9);
-	box-shadow: 20px 30px 20px #000000;
-	padding: 20px;
+.tabella {
+font-color:black;
 }
 
-.pre_contenitore p {
-	color: orange;
+
+.titolo {
+	color: balck;
 	text-align: center;
 	font-size: 1.9em;
 	font-family: arial;
-	line-height: 2px;
 }
 </style>
 </head>
 <%
 	List<PlacesDTO> allPlaces = (List<PlacesDTO>) request.getAttribute("allPlaces");
-	final int idU= (Integer) request.getAttribute("idU");
 %>
 </head>
 <body>
 
-	<div class="pre_contenitore">
+	<div class="titolo">
 
 		<p>Gestione Attrazioni</p>
 
@@ -64,11 +48,13 @@ body {
 
 
 	<br />
-
-	<table>
+	<table style="margin:20px auto;" >
 		<tr>
-			<th>ID Attraziob</th>
-			<th>Nome Attrzioni</th>	
+			<th>ID</th>
+			<th>Nome Attrazione</th>
+			<th>Città Attrazione</th>
+			<th>Latitudine</th>
+			<th>Longitudine</th>
 		</tr>
 		<%
 			for (PlacesDTO places : allPlaces) {
@@ -76,10 +62,11 @@ body {
 		<tr>
 			<td><%=places.getIdPlaces()%></td>
 			<td><%=places.getNomePlaces()%></td>
-			
-			<td class="center"><a href="/JspApp/PlacesServlet?richiesta=updateRedirect&updateId=<%=places.getIdPlaces()%>&idU=<%=idU%>"><i class="fas fa-edit" title="Update"></i></a></td>
-			<td class="center"><a href="/JspApp/PlacesServlet?richiesta=delete&deleteId=<%=places.getIdPlaces()%>&idU=<%=idU%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-
+			<td><%=places.getCityPlaces()%></td>
+			<td><%=places.getLatitude()%></td>
+			<td><%=places.getLongitude()%></td>
+			<td class="center"><a href="/JspApp/PlacesServlet?richiesta=updateRedirect&id=<%=places.getIdPlaces()%>"><i class="fas fa-edit" title="Update"></i></a></td>
+			<td class="center"><a href="/JspApp/PlacesServlet?richiesta=delete&id=<%=places.getIdPlaces()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>
 		<%
 			}
@@ -87,8 +74,11 @@ body {
 	</table>
 	<br>
 	<br>
+	<a href="/JspApp/PlacesServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuova Attrazione </i></a>
+
 	<br>
-	<a href="/JspApp/UsersServlet?richiesta=UserManager&idU=<%=idU%>"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<br>
+	<a href="/JspApp/PlacesServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 
 </body>

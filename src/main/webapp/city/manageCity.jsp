@@ -1,11 +1,4 @@
 <%@ include file="../header.jsp"%>
-<%!
-private String convertUsertype(String userType) {
-		if (userType.equals("superuser"))
-		return "TourOperator";
-		else
-			return "User";
-	}%>
 
 <!DOCTYPE html>
 <html>
@@ -14,27 +7,29 @@ private String convertUsertype(String userType) {
 <style>
 body {
 	background-image:
-		url("https://i1.wp.com/www.deteched.com/wp-content/uploads/2017/10/Space-Vortex-4K-Abstract-Wallpapers.jpg");
+		url("http://1.bp.blogspot.com/-FLsi6FOuXJ8/UHHBwqDTLNI/AAAAAAAAEG0/KTBA9VtfDl0/s1600/viaggio-a-Paris.gif");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	text-align: center;
-	color: white;
+	color: black;
 }
 </style>
-<link rel="stylesheet" type="text/css" href="/JspApp/css/style.css">
+<link rel="stylesheet" type="text/css" href="/wmesjsp/css/style.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <style>
 .tabella {
 font-color:black;
-	}
+}
+
+
 .titolo {
 	color: balck;
 	text-align: center;
 	font-size: 1.9em;
 	font-family: arial;
-	}
+}
 </style>
 </head>
 <%
@@ -43,21 +38,16 @@ font-color:black;
 </head>
 <body>
 
-	<div class=titolo>
+	<div class="titolo">
 
 		<p>Gestione Città</p>
 
 	</div>
-	<br>
 
-
-
-	<br />
-
-	<table>
+	<table style="margin:20px auto"; cellspacing=8;>
 		<tr>
-			<th>ID Città</th>
-			<th>Nome Città</th>	
+			<th>ID</th>
+			<th>Nome Città</th>
 		</tr>
 		<%
 			for (CityDTO city : allCity) {
@@ -65,8 +55,8 @@ font-color:black;
 		<tr>
 			<td><%=city.getIdCity()%></td>
 			<td><%=city.getName_City()%></td>
-			<td class="center"><a href="/JspApp/UserServlet?richiesta=updateRedirect&id=<%=city.getIdCity()%>"><i class="fas fa-edit" title="Update"></i></a></td>
-			<td class="center"><a href="/JspApp/UserServlet?richiesta=delete&id=<%=city.getIdCity()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+			<td class="center"><a href="/JspApp/CityServlet?richiesta=updateRedirect&id=<%=city.getIdCity()%>"><i class="fas fa-edit" title="Update"></i></a></td>
+			<td class="center"><a href="/JspApp/CityServlet?richiesta=delete&id=<%=city.getIdCity()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>
 		<%
 			}

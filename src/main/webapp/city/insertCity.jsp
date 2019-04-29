@@ -31,10 +31,6 @@ color: balck;
 
 	}
 </style>
-<%
-	final int idU= (Integer) request.getAttribute("idU");
-%>
-
 </head>
 <body>
 	<div class="titolo">
@@ -45,12 +41,11 @@ color: balck;
 	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/CityServlet?richiesta=insert&idU=<%=idU%>">
+	<form method="POST" action="/JspApp/CityServlet?richiesta=insert">
 
 	
 		<br>
-		Nome Città: <input type="text" size="40" maxlength="40" name="nomePlaces" />
-		
+		Nome Città: <input type="text" size="40" maxlength="40" name="name_city"/>
 		<br>
 		<br>
 		<br>
@@ -59,7 +54,7 @@ color: balck;
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/JspApp/ProgettoServlet?richiesta=PlacesManager&idU=<%=idU%>"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+		<a href="/JspApp/CityServlet?richiesta=CityManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</div>
 	</form>
 </body>

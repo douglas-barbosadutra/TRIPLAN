@@ -37,7 +37,6 @@ color: balck;
 	UserDTO updateUser = (UserDTO) request.getAttribute("userUpdate");
 %>
 </head>
-
 <body>
 
 		<div class="titolo">
@@ -61,7 +60,7 @@ color: balck;
 			%>
 			User type: <select style="width: 270px;" name="user_type">
 
-				<option <%=adminSelected%> value="superuser">TourOperatorr</option>
+				<option <%=adminSelected%> value="touroperator">TourOperator</option>
 				<option <%=boSelected%> value="user">User</option>
 
 
@@ -82,7 +81,7 @@ color: balck;
 
 			<br>
 			<br>
-			<a href="/JspApp/UserServlet?richiesta=UserManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+			<a href="/JspApp/UserServlet?richiesta=UserManager&"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 		</form>
 		
