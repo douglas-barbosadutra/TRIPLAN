@@ -19,8 +19,8 @@
 		<servlet-class>it.contrader.servlets.PlacesServlet</servlet-class>
 	</servlet>	
 	<servlet>
-		<servlet-name>UserServlet</servlet-name>
-		<servlet-class>it.contrader.servlets.UserServlet</servlet-class>
+		<servlet-name>TourOperatorServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.TourOperatorServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>CityServlet</servlet-name>
@@ -39,8 +39,8 @@
 		<url-pattern>/PlacesServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>UserServlet</servlet-name>
-		<url-pattern>/UserServlet</url-pattern>
+		<servlet-name>TourOperatorServlet</servlet-name>
+		<url-pattern>/TourOperatorServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>CityServlet</servlet-name>

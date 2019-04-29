@@ -47,7 +47,7 @@ color: balck;
 			<div class="body">
 		<br>
 		<br>
-		<form method="POST" action="/JspApp/UserServlet?richiesta=update">
+		<form method="POST" action="/JspApp/TourOperatorServlet?richiesta=update">
 
 			<%
 				String selected = "selected=\"selected\"";
@@ -81,7 +81,7 @@ color: balck;
 
 			<br>
 			<br>
-			<a href="/JspApp/UserServlet?richiesta=UserManager&"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+			<a href="/JspApp/TourOperatorServlet?richiesta=UserManager&"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 		</form>
 		

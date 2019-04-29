@@ -14,7 +14,7 @@ import it.contrader.dto.UserDTO;
 import it.contrader.service.UserService;
 
 
-public class UserServlet extends HttpServlet {
+public class TourOperatorServlet extends HttpServlet {
 
 	private final UserService userService = new UserService();
 	private List<UserDTO> allUsers = new ArrayList<>();
@@ -29,11 +29,11 @@ public class UserServlet extends HttpServlet {
 		case "UserManager":
 			allUsers = this.userService.getAllUser();
 			request.setAttribute("allUser", allUsers);
-			getServletContext().getRequestDispatcher("/user/manageUser.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/touroperator/manageUser.jsp").forward(request, response);
 			break;
 
 		case "insertRedirect":
-			response.sendRedirect("user/insertUser.jsp");
+			response.sendRedirect("touroperator/insertUser.jsp");
 			break;
 
 		case "insert":
@@ -51,7 +51,7 @@ public class UserServlet extends HttpServlet {
 			userUpdate.setUserId(id);
 			userUpdate = this.userService.readUser(id);
 			request.setAttribute("userUpdate", userUpdate);
-			getServletContext().getRequestDispatcher("/user/updateUser.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/touroperator/updateUser.jsp").forward(request, response);
 
 			break;
 
@@ -90,6 +90,6 @@ public class UserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		allUsers = this.userService.getAllUser();
 		request.setAttribute("allUser", allUsers);
-		getServletContext().getRequestDispatcher("/user/manageUser.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/touroperator/manageUser.jsp").forward(request, response);
 	}
 }

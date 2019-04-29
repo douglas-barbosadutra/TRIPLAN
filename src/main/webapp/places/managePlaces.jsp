@@ -48,7 +48,7 @@ font-color:black;
 
 
 	<br />
-	<table style="margin:20px auto;" >
+	<table style="margin:20px auto;" cellspacing=5;>
 		<tr>
 			<th>ID</th>
 			<th>Nome Attrazione</th>

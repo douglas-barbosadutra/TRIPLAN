@@ -45,7 +45,7 @@ text-aling:center;
 	</div>
 
 	<div class="body">
-	<a href="UserServlet?richiesta=UserManager"><span class="fs"> Gestione Utenti </span></a>
+	<a href="TourOperatorServlet?richiesta=UserManager"><span class="fs"> Gestione Utenti </span></a>
 	<br>
 	<br>
 	<a href="CityServlet?richiesta=CityManager"><span class="fs"> Gestione Città </span></a>
