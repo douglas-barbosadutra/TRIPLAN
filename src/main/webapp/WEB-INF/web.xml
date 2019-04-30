@@ -30,6 +30,10 @@
 		<servlet-name>SuperuserServlet</servlet-name>
 		<servlet-class>it.contrader.servlets.SuperuserServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.UserServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
@@ -55,6 +59,11 @@
 		<servlet-name>SuperuserServlet</servlet-name>
 		<url-pattern>/SuperuserServlet</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/UserServlet</url-pattern>
+	</servlet-mapping>
+
 
 	
 	

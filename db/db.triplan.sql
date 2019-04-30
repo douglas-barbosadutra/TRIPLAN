@@ -49,7 +49,7 @@ CREATE TABLE `tab_user` (
 
 LOCK TABLES `tab_user` WRITE;
 /*!40000 ALTER TABLE `tab_user` DISABLE KEYS */;
-INSERT INTO `tab_user` VALUES (1,'admin','admin','touroperator'),(2,'alex','alex','user');
+INSERT INTO `tab_user` VALUES (1,'admin','admin','touroperator'),(2,'alex','alex','user'),(3,'super','super','superuser');
 /*!40000 ALTER TABLE `tab_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
