@@ -43,7 +43,7 @@ color: balck;
 	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/UserServlet?richiesta=insert">
+	<form method="POST" action="/JspApp/TourOperatorServlet?richiesta=insert">
 
 		User type: <select style="width: 275px;" name="user_type">
 			<option value="touroperator"> TourOperator </option>
@@ -62,7 +62,7 @@ color: balck;
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/JspApp/UserServlet?richiesta=UserManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+		<a href="/JspApp/TourOperatorServlet?richiesta=UserManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</form>
 	</div>
 </body>

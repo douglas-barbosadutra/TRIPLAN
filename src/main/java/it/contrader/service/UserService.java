@@ -31,6 +31,17 @@ public class UserService {
 		return listDTO;
 	}
 	
+	public List<UserDTO> getAllTour() {
+
+		List<User> list = userDAO.getAllTour();
+		List<UserDTO> listDTO = new ArrayList<>();
+
+		for (User user : list) {
+			listDTO.add(ConverterUser.toDTO(user));
+		}
+
+		return listDTO;
+	}
 
 	public UserDTO getUserByUsernameAndPasword(String username, String password) {
 		return ConverterUser.toDTO(userDAO.login(username, password));

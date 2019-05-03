@@ -10,25 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import it.contrader.dto.CityDTO;
-import it.contrader.dto.PlacesDTO;
-import it.contrader.model.Places;
-import it.contrader.service.CityService;
-import it.contrader.service.PlacesService;
+import it.contrader.dto.UserDTO;
+import it.contrader.service.UserService;
 
 
+public class TourOperatorServlet extends HttpServlet {
 
-public class UserServlet extends HttpServlet {
-
-<<<<<<< HEAD
 	private final UserService userService = new UserService();
 	private List<UserDTO> allUsers = new ArrayList<>();
-=======
-	private final CityService cityService = new CityService();
-	private List<CityDTO> allCitys = new ArrayList<>();
-	private final PlacesService placesService = new PlacesService();
-	private List<Places> CityPlacess = new ArrayList<>();
->>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,15 +26,14 @@ public class UserServlet extends HttpServlet {
 		final HttpSession session = request.getSession(true);
 		switch (scelta) {
 
-<<<<<<< HEAD
 		case "UserManager":
 			allUsers = this.userService.getAllUser();
 			request.setAttribute("allUser", allUsers);
-			getServletContext().getRequestDispatcher("/user/manageUser.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/touroperator/manageUser.jsp").forward(request, response);
 			break;
 
 		case "insertRedirect":
-			response.sendRedirect("user/insertUser.jsp");
+			response.sendRedirect("touroperator/insertUser.jsp");
 			break;
 
 		case "insert":
@@ -63,7 +51,7 @@ public class UserServlet extends HttpServlet {
 			userUpdate.setUserId(id);
 			userUpdate = this.userService.readUser(id);
 			request.setAttribute("userUpdate", userUpdate);
-			getServletContext().getRequestDispatcher("/user/updateUser.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/touroperator/updateUser.jsp").forward(request, response);
 
 			break;
 
@@ -88,17 +76,6 @@ public class UserServlet extends HttpServlet {
 
 		case "indietro":
 			response.sendRedirect("homeTO.jsp");
-=======
-		case "City":
-			allCitys = this.cityService.getAllCity();
-			request.setAttribute("allCity", allCitys);
-			getServletContext().getRequestDispatcher("/user/Viaggia.jsp").forward(request, response);
-			break;
-			
-			
-		case "indietro":
-			response.sendRedirect("homeUser.jsp");
->>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 			break;
 
 		case "logsMenu":
@@ -109,10 +86,10 @@ public class UserServlet extends HttpServlet {
 
 	}
 
-	private void showAllCitys(HttpServletRequest request, HttpServletResponse response)
+	private void showAllUsers(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		allCitys = this.cityService.getAllCity();
-		request.setAttribute("allCity", allCitys);
-		getServletContext().getRequestDispatcher("/user/Viaggia.jsp").forward(request, response);
+		allUsers = this.userService.getAllUser();
+		request.setAttribute("allUser", allUsers);
+		getServletContext().getRequestDispatcher("/touroperator/manageUser.jsp").forward(request, response);
 	}
 }

@@ -19,13 +19,30 @@
 		<servlet-class>it.contrader.servlets.PlacesServlet</servlet-class>
 	</servlet>	
 	<servlet>
+<<<<<<< HEAD
 		<servlet-name>UserServlet</servlet-name>
 		<servlet-class>it.contrader.servlets.UserServlet</servlet-class>
+=======
+		<servlet-name>TourOperatorServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.TourOperatorServlet</servlet-class>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 	</servlet>
 	<servlet>
 		<servlet-name>CityServlet</servlet-name>
 		<servlet-class>it.contrader.servlets.CityServlet</servlet-class>
+<<<<<<< HEAD
+=======
 	</servlet>
+	<servlet>
+		<servlet-name>SuperuserServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.SuperuserServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.UserServlet</servlet-class>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
@@ -39,13 +56,26 @@
 		<url-pattern>/PlacesServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>UserServlet</servlet-name>
-		<url-pattern>/UserServlet</url-pattern>
+		<servlet-name>TourOperatorServlet</servlet-name>
+		<url-pattern>/TourOperatorServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>CityServlet</servlet-name>
 		<url-pattern>/CityServlet</url-pattern>
+<<<<<<< HEAD
+=======
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SuperuserServlet</servlet-name>
+		<url-pattern>/SuperuserServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/UserServlet</url-pattern>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
+	</servlet-mapping>
+
+
 	
 	
 	

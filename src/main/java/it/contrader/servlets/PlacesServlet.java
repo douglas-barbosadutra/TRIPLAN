@@ -39,14 +39,25 @@ public class PlacesServlet extends HttpServlet {
 
 		case "insert":
 			final String nameplaces = request.getParameter("name_places");
+<<<<<<< HEAD
 			final PlacesDTO placess = new PlacesDTO(nameplaces);
+=======
+			final String cityplaces = request.getParameter("city_places");
+			final double latitude = Double.parseDouble(request.getParameter("latitude"));
+			final double longitude = Double.parseDouble(request.getParameter("longitude"));
+			final PlacesDTO placess = new PlacesDTO(nameplaces, cityplaces, latitude, longitude);
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 			placesService.insertPlaces(placess);
 			showAllPlacess(request, response);
 			break;
 
 		case "updateRedirect":
 			int id = Integer.parseInt(request.getParameter("id"));
+<<<<<<< HEAD
 			PlacesDTO placesUpdate = new PlacesDTO("");
+=======
+			PlacesDTO placesUpdate = new PlacesDTO("", "", null , null);
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 			placesUpdate.setIdPlaces(id);
 			placesUpdate = this.placesService.readPlaces(id);
 			request.setAttribute("placesUpdate", placesUpdate);
@@ -57,7 +68,14 @@ public class PlacesServlet extends HttpServlet {
 		case "update":
 			final Integer idUpdate = Integer.parseInt(request.getParameter("idplaces"));
 			final String nameplacesUpdate = request.getParameter("name_places");
+<<<<<<< HEAD
 			final PlacesDTO places = new PlacesDTO(nameplacesUpdate);
+=======
+			final String cityplacesUpdate = request.getParameter("city_places");
+			final Double latitudeUpdate = Double.parseDouble(request.getParameter("latitude"));
+			final Double longitudeUpdate = Double.parseDouble(request.getParameter("longitude"));
+			final PlacesDTO places = new PlacesDTO(nameplacesUpdate, cityplacesUpdate, latitudeUpdate, longitudeUpdate);
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 			places.setIdPlaces(idUpdate);
 			placesService.updatePlaces(places);
 			showAllPlacess(request, response);
@@ -65,7 +83,11 @@ public class PlacesServlet extends HttpServlet {
 
 		case "delete":
 			final Integer deleteId = Integer.parseInt(request.getParameter("id"));
+<<<<<<< HEAD
 			final PlacesDTO placesdelete = new PlacesDTO("");
+=======
+			final PlacesDTO placesdelete = new PlacesDTO("", "", null, null);
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 			placesdelete.setIdPlaces(deleteId);
 			placesService.deletePlaces(deleteId);
 			showAllPlacess(request, response);

@@ -1,6 +1,11 @@
 <%@ include file="../header.jsp"%>
 <%!
 private String convertUsertype(String userType) {
+<<<<<<< HEAD:src/main/webapp/user/manageUser.jsp
+=======
+		if (userType.equals("superuser"))
+			return "SuperUser";
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5:src/main/webapp/touroperator/manageUser.jsp
 		if (userType.equals("touroperator"))
 			return "TourOperator";
 		else
@@ -72,8 +77,13 @@ font-color:black;
 			<td><%=user.getUsername()%></td>
 			<td><%=user.getPassword()%></td>
 			<td><%=convertUsertype(user.getUsertype())%></td>
+<<<<<<< HEAD:src/main/webapp/user/manageUser.jsp
 			<td class="center"><a href="/JspApp/UserServlet?richiesta=updateRedirect&id=<%=user.getUserId()%>"><i class="fas fa-edit" title="Update"></i></a></td>
 			<td class="center"><a href="/JspApp/UserServlet?richiesta=delete&id=<%=user.getUserId()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+=======
+			<td class="center"><a href="/JspApp/TourOperatorServlet?richiesta=updateRedirect&id=<%=user.getUserId()%>"><i class="fas fa-edit" title="Update"></i></a></td>
+			<td class="center"><a href="/JspApp/TourOperatorServlet?richiesta=delete&id=<%=user.getUserId()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5:src/main/webapp/touroperator/manageUser.jsp
 		</tr>
 		<%
 			}
@@ -81,11 +91,15 @@ font-color:black;
 	</table>
 	<br>
 	<br>
+<<<<<<< HEAD:src/main/webapp/user/manageUser.jsp
 	<a href="/JspApp/UserServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Utente </i></a>
+=======
+	<a href="/JspApp/TourOperatorServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Utente </i></a>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5:src/main/webapp/touroperator/manageUser.jsp
 
 	<br>
 	<br>
-	<a href="/JspApp/UserServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/JspApp/TourOperatorServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 
 </body>
