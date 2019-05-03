@@ -1,7 +1,7 @@
 <%@ include file="../header.jsp"%>
 <%!
 private String convertUsertype(String userType) {
-		if (userType.equals("superuser"))
+		if (userType.equals("touroperator"))
 			return "TourOperator";
 		else
 			return "User";
@@ -74,7 +74,6 @@ font-color:black;
 			<td><%=convertUsertype(user.getUsertype())%></td>
 			<td class="center"><a href="/JspApp/UserServlet?richiesta=updateRedirect&id=<%=user.getUserId()%>"><i class="fas fa-edit" title="Update"></i></a></td>
 			<td class="center"><a href="/JspApp/UserServlet?richiesta=delete&id=<%=user.getUserId()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
-
 		</tr>
 		<%
 			}
@@ -82,7 +81,7 @@ font-color:black;
 	</table>
 	<br>
 	<br>
-	<a href="/JspApp/UserServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> New User</i></a>
+	<a href="/JspApp/UserServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Utente </i></a>
 
 	<br>
 	<br>

@@ -1,9 +1,14 @@
 package it.contrader.service;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import it.contrader.converter.ConverterCity;
 import it.contrader.converter.ConverterPlaces;
 import it.contrader.dao.PlacesDAO;
+import it.contrader.dto.CityDTO;
 import it.contrader.dto.PlacesDTO;
+import it.contrader.model.City;
 import it.contrader.model.Places;
 
 public class PlacesService {
@@ -15,8 +20,16 @@ private PlacesDAO placesDAO;
 			this.placesDAO = new PlacesDAO();
 		}
 
-		public List<Places> getAllPlaces() {
-			return this.placesDAO.getAllPlaces();
+		public List<PlacesDTO> getAllPlaces() {
+
+			List<Places> list = placesDAO.getAllPlaces();
+			List<PlacesDTO> listDTO = new ArrayList<>();
+
+			for (Places places : list) {
+				listDTO.add(ConverterPlaces.toDTO(places));
+			}
+
+			return listDTO;
 		}
 
 		public boolean insertPlaces(PlacesDTO placesDTO) {
@@ -36,17 +49,16 @@ private PlacesDAO placesDAO;
 		}
 		
 		//codice da eliminare se non va
-		public List<Places> getCityPlaces(Integer idcity) {
-			return this.placesDAO.CityPlaces(idcity);
-		}	
+			public List<Places> getCityPlaces(Integer idcity) {
+				return this.placesDAO.CityPlaces(idcity);
+			}	
 		
-		public PlacesDTO readPlaces2(int city_idcity) {
-			return ConverterPlaces.toDTO(this.placesDAO.readPlaces(city_idcity));
-		}
-		
-		public List<Places> getPlaces(Integer Idcity) {
-			return this.placesDAO.Places(Idcity);
-		}
+			public PlacesDTO readPlaces2(int city_idcity) {
+				return ConverterPlaces.toDTO(this.placesDAO.readPlaces(city_idcity));
+			}
+					public List<Places> getPlaces(Integer Idcity) {
+				return this.placesDAO.Places(Idcity);
+			}
 
 }
 

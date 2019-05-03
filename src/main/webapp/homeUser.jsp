@@ -11,7 +11,7 @@
 <meta charset="ISO-8859-1">
 <title>Home User</title>
 <% 
-int idu =  (Integer) request.getAttribute("idu");
+int idU =  (Integer) request.getAttribute("idU");
 %>
 </head>
 <body>
@@ -21,7 +21,7 @@ int idu =  (Integer) request.getAttribute("idu");
 	<p> Cosa vuoi fare? </p>
 
 
-	<a href=""=<%=idu%>"><span class="fs">
+	<a href=""=<%=idU%>"><span class="fs">
 			Viaggia </span></a>
 	<br>
 	<br>

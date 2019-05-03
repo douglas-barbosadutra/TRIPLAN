@@ -9,7 +9,6 @@ public class Places {
 	}
 
 	public Places(int idPlaces, String nomePlaces) {
-		super();
 		this.idPlaces = idPlaces;
 		this.nomePlaces = nomePlaces;
 	}

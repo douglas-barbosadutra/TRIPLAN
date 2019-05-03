@@ -3,12 +3,12 @@ package it.contrader.dto;
 public class PlacesDTO {
 
 	private int idplaces;
-	private String nomeplaces;
+	private String name_places;
 	
 
-	public PlacesDTO(String nomeplaces) {
+	public PlacesDTO(String name_places) {
 		this.idplaces = idplaces;
-		this.nomeplaces = nomeplaces;
+		this.name_places = name_places;
 		
 	}
 	
@@ -23,11 +23,11 @@ public class PlacesDTO {
 	}
 
 	public String getNomePlaces() {
-		return nomeplaces;
+		return name_places;
 	}
 
-	public void setNomePlaces(String nomeplaces) {
-		this.nomeplaces = nomeplaces;
+	public void setNomePlaces(String name_places) {
+		this.name_places = name_places;
 	}
 
 }

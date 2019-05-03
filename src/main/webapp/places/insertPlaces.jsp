@@ -5,50 +5,46 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Inserisci nuova attrazione</title>
+<style>
+body {
+	background-image:
+		url("http://1.bp.blogspot.com/-FLsi6FOuXJ8/UHHBwqDTLNI/AAAAAAAAEG0/KTBA9VtfDl0/s1600/viaggio-a-Paris.gif");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	text-align: center;
+	color: black;
+}
+</style>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/JspApp/css/style.css">
 <style>
-.pre_contenitore {
-	width: 320px;
-	margin: auto;
-	height: 50px;
-	border: 1px solid black;
-	border-radius: 40px 40px 40px 40px;
-	background-color: rgba(0, 0, 0, 0.9);
-	box-shadow: 20px 30px 20px #000000;
-	padding: 20px;
-}
-
-.pre_contenitore p {
-	color: white;
+.titolo {
+color: balck;
 	text-align: center;
 	font-size: 1.9em;
 	font-family: arial;
-	line-height: 2px;
+}
+.body{
+	text-align: center;
+
+
+
 }
 </style>
-<%
-	final int idU= (Integer) request.getAttribute("idU");
-%>
-
 </head>
 <body>
-	<div class="pre_contenitore">
+	<div class="titolo">
 
-		<p>Inserisci nuova attrazione</p>
+		<p>Nuova Attrazione</p>
 
 	</div>
-
+	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/PlacesServlet?richiesta=insert&idU=<%=idU%>">
-
-	
-		<br>
-		Nome Attrazione: <input type="text" size="40" maxlength="40" name="nomePlaces" />
-		
-		<br>
+	<form method="POST" action="/JspApp/PlacesServlet?richiesta=insert">
+		Nome Attrazione: <input type="text" size="40" maxlength="40" name="name_places" />
 		<br>
 		<br>
 		<br>
@@ -56,8 +52,8 @@
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/JspApp/ProgettoServlet?richiesta=PlacesManager&idU=<%=idU%>"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
-
+		<a href="/JspApp/PlacesServlet?richiesta=PlacesManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</form>
+	</div>
 </body>
 </html>

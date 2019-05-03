@@ -10,54 +10,44 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import it.contrader.dto.CityDTO;
 import it.contrader.dto.PlacesDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.service.PlacesService;
 
-/** 
- * La servlet si occupa di parlare con la JSP e utilizza i servizi opportuni.
- * Per chi farà User dovrà anche occuparsi del Login che abbiamo lasciato come
- * struttura e va modificata in modo opportuno
- *
- */
+
 public class PlacesServlet extends HttpServlet {
 
 	private final PlacesService placesService = new PlacesService();
-	private List<PlacesDTO> allPlaces = new ArrayList<>();
+	private List<PlacesDTO> allPlacess = new ArrayList<>();
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		final String scelta = request.getParameter("richiesta");
-		final int idU = Integer.parseInt(request.getParameter("idU"));
-		
-		
-		
 		final HttpSession session = request.getSession(true);
-
 		switch (scelta) {
 
+		case "PlacesManager":
+			allPlacess = this.placesService.getAllPlaces();
+			request.setAttribute("allPlaces", allPlacess);
+			getServletContext().getRequestDispatcher("/places/managePlaces.jsp").forward(request, response);
+			break;
 
 		case "insertRedirect":
-			request.setAttribute("idU", idU);
-			request.setAttribute("id",Integer.parseInt(request.getParameter("id")));
-			getServletContext().getRequestDispatcher("/progetto/insertPlaces.jsp").forward(request, response);
+			response.sendRedirect("places/insertPlaces.jsp");
 			break;
 
 		case "insert":
-			request.setAttribute("idU", idU);
-			final String nomePlaces = request.getParameter("nomePlaces");
-			final PlacesDTO places = new PlacesDTO(nomePlaces);
-			placesService.insertPlaces(places);
-			showAllPlaces(request, response);
+			final String nameplaces = request.getParameter("name_places");
+			final PlacesDTO placess = new PlacesDTO(nameplaces);
+			placesService.insertPlaces(placess);
+			showAllPlacess(request, response);
 			break;
 
 		case "updateRedirect":
-			request.setAttribute("idU", idU);
-			int id = Integer.parseInt(request.getParameter("updateId"));
+			int id = Integer.parseInt(request.getParameter("id"));
 			PlacesDTO placesUpdate = new PlacesDTO("");
 			placesUpdate.setIdPlaces(id);
-
 			placesUpdate = this.placesService.readPlaces(id);
 			request.setAttribute("placesUpdate", placesUpdate);
 			getServletContext().getRequestDispatcher("/places/updatePlaces.jsp").forward(request, response);
@@ -65,34 +55,25 @@ public class PlacesServlet extends HttpServlet {
 			break;
 
 		case "update":
-			request.setAttribute("idU", idU);
-			// System.out.println("ID: " +
-			// Integer.parseInt(request.getParameter("user_id")));
-			// System.out.println("username: " + request.getParameter("user_user"));
-			// System.out.println("password: " + request.getParameter("user_pass"));
-			// System.out.println("Tipo utente: " + request.getParameter("user_type"));
-
-			final Integer idplacesUpdate = Integer.parseInt(request.getParameter("idPlaces"));
-			final String nomeplacesUpdate = request.getParameter("nomePlaces");
-		    
-
-			final PlacesDTO placesUp = new PlacesDTO(nomeplacesUpdate);
-			placesUp.setIdPlaces(idplacesUpdate);
-			placesService.updatePlaces(placesUp);
-			showAllPlaces(request, response);
+			final Integer idUpdate = Integer.parseInt(request.getParameter("idplaces"));
+			final String nameplacesUpdate = request.getParameter("name_places");
+			final PlacesDTO places = new PlacesDTO(nameplacesUpdate);
+			places.setIdPlaces(idUpdate);
+			placesService.updatePlaces(places);
+			showAllPlacess(request, response);
 			break;
 
 		case "delete":
-			request.setAttribute("idU", idU);
-			final Integer deleteId = Integer.parseInt(request.getParameter("deleteId"));
+			final Integer deleteId = Integer.parseInt(request.getParameter("id"));
+			final PlacesDTO placesdelete = new PlacesDTO("");
+			placesdelete.setIdPlaces(deleteId);
 			placesService.deletePlaces(deleteId);
-			showAllPlaces(request, response);
+			showAllPlacess(request, response);
 			break;
 
+
 		case "indietro":
-			request.setAttribute("idU", idU);
-			getServletContext().getRequestDispatcher("homeUser.jsp").forward(request, response);
-		
+			response.sendRedirect("homeTO.jsp");
 			break;
 
 		case "logsMenu":
@@ -103,13 +84,10 @@ public class PlacesServlet extends HttpServlet {
 
 	}
 
-	
-	private void showAllPlaces(HttpServletRequest request, HttpServletResponse response)
+	private void showAllPlacess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		final int idU = Integer.parseInt(request.getParameter("idU"));
-		request.setAttribute("idU", idU);
-		request.setAttribute("allPlaces", allPlaces);
+		allPlacess = this.placesService.getAllPlaces();
+		request.setAttribute("allPlaces", allPlacess);
 		getServletContext().getRequestDispatcher("/places/managePlaces.jsp").forward(request, response);
 	}
 }

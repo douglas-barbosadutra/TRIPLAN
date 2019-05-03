@@ -49,7 +49,7 @@ CREATE TABLE `tab_user` (
 
 LOCK TABLES `tab_user` WRITE;
 /*!40000 ALTER TABLE `tab_user` DISABLE KEYS */;
-INSERT INTO `tab_user` VALUES (1,'admin','admin','superuser'),(2,'alex','alex','user');
+INSERT INTO `tab_user` VALUES (1,'admin','admin','touroperator'),(2,'alex','alex','user');
 /*!40000 ALTER TABLE `tab_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -265,5 +265,3 @@ INSERT INTO `db.triplan`.`places` (`idplaces`, `name_places`, `city_places`, `la
 INSERT INTO `db.triplan`.`places` (`idplaces`, `name_places`, `city_places`, `latitude`, `longitude`, `city_idcity`) VALUES (124, 'kennedy center', 'washington', 38.5345, 77.0321, 10);
 
 COMMIT;
-
-select places.name_places, places.city_places  from places left join city on places.city_idcity=city.idcity where city.name_city='roma' ;
