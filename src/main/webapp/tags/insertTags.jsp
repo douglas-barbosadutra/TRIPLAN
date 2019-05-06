@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Inserisci nuovo utente</title>
+<title>Inserisci Nuovo Tag</title>
 <style>
 body {
 	background-image:
@@ -25,46 +25,38 @@ color: balck;
 	text-align: center;
 	font-size: 1.9em;
 	font-family: arial;
-}
+	}
 .body{
 	text-align: center;
 
-
-
-}
+	}
 </style>
 </head>
 <body>
 	<div class="titolo">
 
-		<p>Nuovo Utente</p>
+		<p>Inserisci Nuovo Tag</p>
 
 	</div>
 	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/TourOperatorServlet?richiesta=insert">
+	<form method="POST" action="/JspApp/TagsServlet?richiesta=insert">
 
-		User type: <select style="width: 275px;" name="user_type">
-			<option value="touroperator"> TourOperator </option>
-			<option value="user"> User </option>
-				<option value="gestorehotel"> Gestore Hotel </option>
-		</select>
+	
+		<br>
+		Nome Tag: <input type="text" size="40" maxlength="40" name="name_tag"/>
 		<br>
 		<br>
-		Username: <input type="text" size="40" maxlength="40" name="user_user" />
-		<br>
-		<br>
-		Password: <input type="text" size="40" maxlength="40" name="user_pass" />
-		<br>
+		Nome Monumento: <input type="text" size="40" maxlength="40" name="name_place_tag"/>
 		<br>
 		<br>
 		<br>
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/JspApp/TourOperatorServlet?richiesta=UserManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
-	</form>
+		<a href="/JspApp/TagsServlet?richiesta=TagsManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</div>
+	</form>
 </body>
 </html>

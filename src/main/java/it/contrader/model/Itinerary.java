@@ -1,20 +1,19 @@
 package it.contrader.model;
 
-public class Places {
+public class Itinerary {
 
 	private int idPlaces;
-	private int idCityPlaces;
 	private String nomePlaces;
 	private String cityPlaces;
-	public Double latitude;
-	public Double longitude;
+	private Double latitude;
+	private Double longitude;
 	private static final double R= 6378.1370D;
 	private static final double CONVERT_DEGREE_TO_RADIANS = Math.PI/180D;
 
-	public Places() {
+	public Itinerary() {
 	}
 	
-	public Places(int idPlaces, String nomePlaces, String cityPlaces, Double latitude, Double longitude) {
+	public Itinerary(int idPlaces, String nomePlaces, String cityPlaces, Double latitude, Double longitude) {
 		this.idPlaces = idPlaces;
 		this.nomePlaces = nomePlaces;
 		this.cityPlaces = cityPlaces;
@@ -61,20 +60,13 @@ public class Places {
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
-	
-	public void setIdCityPlaces(int idCityPlaces) {
-		this.idCityPlaces = idCityPlaces;
-	}
 
-	public int getIdCityPlaces() {
-		return idCityPlaces;
-	}
 	@Override
 	public String toString() {
 		return this.getIdPlaces() + "\t" + this.getNomePlaces() + "\t" + this.getCPlaces()  + "\t" + this.getLatitude() + "\t" + this.getLongitude();
 	}
 
-	public boolean equals(Places placesCompare) {
+	public boolean equals(Itinerary placesCompare) {
 		if (!(this.getIdPlaces() == placesCompare.getIdPlaces())) {
 			return false;
 		}
@@ -96,7 +88,7 @@ public class Places {
 	
 
 	
-	public double distanceTo(Places b){
+	public double distanceTo(Itinerary b){
 		double deltaLat = (b.latitude - this.latitude);
 		double deltaLon = (b.longitude - this.longitude);
 		 double a = Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2)

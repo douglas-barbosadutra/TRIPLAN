@@ -33,12 +33,17 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("utente", userDTO);
 			final int idU = userDTO.getUserId();
 			final int idTO = userDTO.getUserId();
-
+			final int idSU = userDTO.getUserId();
+			final int idGH = userDTO.getUserId();
 
 			// verifichiamo che tipo di ruolo ha all'interno dell'applicazione
 			// e lo reindirizziamo nella jsp opportuna
 			try {
 			switch (userDTO.getUsertype().toLowerCase()) {
+			case "superuser":
+				request.setAttribute("idSU", idSU);
+				getServletContext().getRequestDispatcher("/homeSU.jsp").forward(request, response);
+				break;
 			case "touroperator":
 				request.setAttribute("idTO", idTO);
 				getServletContext().getRequestDispatcher("/homeTO.jsp").forward(request, response);
@@ -46,6 +51,10 @@ public class LoginServlet extends HttpServlet {
 			case "user":
 				request.setAttribute("idU", idU);
 				getServletContext().getRequestDispatcher("/homeUser.jsp").forward(request, response);
+				break;
+			case "gestorehotel":
+				request.setAttribute("idGH", idGH);
+				getServletContext().getRequestDispatcher("/homeGH.jsp").forward(request, response);
 				break;
 			default:
 				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);

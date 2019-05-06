@@ -51,10 +51,13 @@ text-aling:center;
 	<a href="CityServlet?richiesta=CityManager"><span class="fs"> Gestione Città </span></a>
 	<br>
 	<br>
-	<br>
 	<a href="PlacesServlet?richiesta=PlacesManager"><span class="fs"> Gestione Attrazioni </span></a>
 	<br>
 	<br>
+	<a href="TagsServlet?richiesta=TagsManager"><span class="fs"> Gestione Tag </span></a>
+	<br>
+	<br>
+	
 	<a href="LogoutServlet" ><span class="fs">
 			Logout </span></a>
 	</div>

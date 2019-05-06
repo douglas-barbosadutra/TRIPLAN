@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.dto.PlacesDTO;
-import it.contrader.dto.PlacesDTO;
 import it.contrader.model.Places;
 
-public class ConverterPlaces {
+public class ConverterCityPlaces {
 
 
 	public static PlacesDTO toDTO(Places places) {
@@ -16,9 +15,6 @@ public class ConverterPlaces {
 			placesDTO = new PlacesDTO();
 			placesDTO.setIdPlaces(places.getIdPlaces());
 			placesDTO.setNomePlaces(places.getNomePlaces());
-			placesDTO.setCPlaces(places.getCPlaces());
-			placesDTO.setLatitude(places.getLatitude());
-			placesDTO.setLongitude(places.getLongitude());
 			
 		}
 		return placesDTO;
@@ -30,9 +26,7 @@ public class ConverterPlaces {
 			places = new Places();
 			places.setIdPlaces(placesDTO.getIdPlaces());
 			places.setNomePlaces(placesDTO.getNomePlaces());
-			placesDTO.setCPlaces(places.getCPlaces());
-			placesDTO.setLatitude(places.getLatitude());
-			placesDTO.setLongitude(places.getLongitude());
+			
 		}
 		return places;
 	}
@@ -41,7 +35,7 @@ public class ConverterPlaces {
 		List<PlacesDTO> listPlacesDTO = new ArrayList<>();
 		if (!list.isEmpty()) {
 			for (Places places : list) {
-				listPlacesDTO.add(ConverterPlaces.toDTO(places));
+				listPlacesDTO.add(ConverterCityPlaces.toDTO(places));
 			}
 		}
 		return listPlacesDTO;
@@ -51,7 +45,7 @@ public class ConverterPlaces {
 		List<Places> list = new ArrayList<>();
 		if (!listPlacesDTO.isEmpty()) {
 			for (PlacesDTO placesDTO : listPlacesDTO) {
-				list.add(ConverterPlaces.toEntity(placesDTO));
+				list.add(ConverterCityPlaces.toEntity(placesDTO));
 			}
 		}
 		return list;

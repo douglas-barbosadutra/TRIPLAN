@@ -6,7 +6,7 @@ private String convertUsertype(String userType) {
 		if (userType.equals("touroperator"))
 			return "TourOperator";
 		if (userType.equals("gestorehotel"))
-			return "Gestore Hotel";
+			return "GestoreHotel";
 		else
 			return "User";
 	}%>
@@ -14,7 +14,7 @@ private String convertUsertype(String userType) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Gestione Utenti</title>
+<title>Gestione Hotel</title>
 <style>
 body {
 	background-image:
@@ -44,14 +44,14 @@ font-color:black;
 </style>
 </head>
 <%
-	List<UserDTO> allUser = (List<UserDTO>) request.getAttribute("allUser");
+	List<HotelDTO> allHotel = (List<HotelDTO>) request.getAttribute("allHotel");
 %>
 </head>
 <body>
 
 	<div class="titolo">
 
-		<p>Gestione Utenti</p>
+		<p>Gestione Hotel</p>
 
 	</div>
 	<br>
@@ -62,22 +62,28 @@ font-color:black;
 	<table style="margin:20px auto;" >
 		<tr>
 			<th>ID</th>
-			<th>Username</th>
-			<th>Password</th>
-			<th>User Type</th>
+			<th>Nome Hotel</th>
+			<th>Città</th>
+			<th>Numero Stelle</th>
+			<th>Latitudine</th>
+			<th>Longitudine</th>
+			<th>Gestore Hotel</th>
 			<th>Update</th>
 			<th>Delete</th>
 		</tr>
 		<%
-			for (UserDTO user : allUser) {
+			for (HotelDTO hotel : allHotel) {
 		%>
 		<tr>
-			<td><%=user.getUserId()%></td>
-			<td><%=user.getUsername()%></td>
-			<td><%=user.getPassword()%></td>
-			<td><%=convertUsertype(user.getUsertype())%></td>
-			<td class="center"><a href="/JspApp/TourOperatorServlet?richiesta=updateRedirect&id=<%=user.getUserId()%>"><i class="fas fa-edit" title="Update"></i></a></td>
-			<td class="center"><a href="/JspApp/TourOperatorServlet?richiesta=delete&id=<%=user.getUserId()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+			<td><%=hotel.getIdHotel()%></td>
+			<td><%=hotel.getNomeHotel()%></td>
+			<td><%=hotel.getCityHotel()%></td>
+			<td><%=hotel.getNumeroStelle()%></td>
+			<td><%=hotel.getLatitude()%></td>
+			<td><%=hotel.getLongitude()%></td>
+			<td><%=hotel.getGestoreHotel()%></td>
+			<td class="center"><a href="/JspApp/HotelServlet?richiesta=updateRedirect&id=<%=hotel.getIdHotel()%>"><i class="fas fa-edit" title="Update"></i></a></td>
+			<td class="center"><a href="/JspApp/HotelServlet?richiesta=delete&id=<%=hotel.getIdHotel()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>
 		<%
 			}
@@ -85,11 +91,11 @@ font-color:black;
 	</table>
 	<br>
 	<br>
-	<a href="/JspApp/TourOperatorServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Utente </i></a>
+	<a href="/JspApp/HotelServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Hotel </i></a>
 
 	<br>
 	<br>
-	<a href="/JspApp/TourOperatorServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/JspApp/HotelServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 
 </body>

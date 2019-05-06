@@ -19,6 +19,8 @@ public class PlacesServlet extends HttpServlet {
 	private final PlacesService placesService = new PlacesService();
 	private List<PlacesDTO> allPlacess = new ArrayList<>();
 
+
+
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

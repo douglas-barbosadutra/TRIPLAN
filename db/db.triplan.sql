@@ -44,12 +44,42 @@ CREATE TABLE `tab_user` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tab_user`
+-- Table `db.triplan`.`hotel`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `hotel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `hotel` (
+  `idhotel` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name_hotel` varchar(45) NOT NULL,
+  `city_hotel` varchar(45) NOT NULL,
+  `numero_stelle` int(2) NOT NULL,
+  `latitude` double null default null,
+  `longitude` double null default null,
+  `gestore_hotel` varchar(45) NOT NULL,
+  PRIMARY KEY (`Idhotel`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+-- Dumping data for table `hotel`
 --
+-- -----------------------------------------------------
+-- Table `db.triplan`.`tags`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tags` (
+  `idtag` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name_tag` varchar(45) NOT NULL,
+  `name_place_tag` varchar(45) NOT NULL,
+  PRIMARY KEY (`idtag`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 LOCK TABLES `tab_user` WRITE;
 /*!40000 ALTER TABLE `tab_user` DISABLE KEYS */;
-INSERT INTO `tab_user` VALUES (1,'admin','admin','touroperator'),(2,'alex','alex','user');
+INSERT INTO `tab_user` VALUES (1,'admin','admin','touroperator'),(2,'alex','alex','user'),(3,'super','super','superuser'),(4,'silviohotel','silvio','gestorehotel'),(5,'matteohotel','matteo','gestorehotel');
 /*!40000 ALTER TABLE `tab_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,6 +164,47 @@ INSERT INTO `db.triplan`.`city` (`idcity`, `name_city`, `stato`) VALUES (11,'par
 INSERT INTO `db.triplan`.`city` (`idcity`, `name_city`, `stato`) VALUES (12,'nizza', 'francia');
 
 COMMIT;
+
+
+TRUNCATE table tags; 
+
+START TRANSACTION;
+USE `db.triplan`;
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 1,'chiesa', 'sanpietro');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 2,'religione', 'sanpietro');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 3,'papa', 'sanpietro');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 4,'gladiatori', 'colosseo');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 5,'cultura', 'colosseo');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 6,'antico', 'colosseo');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 7,'cultura', 'pantheon');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 8,'antico', 'pantheon');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 9,'religione', 'pantheon');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 10,'fontana', 'fontana di trevi');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 11,'superstizione', 'fontana di trevi');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 12,'scultura', 'fontana di trevi');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 13,'piazza', 'piazza di spagna');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 14,'scala', 'piazza di spagna');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 15,'cultura', 'piazza di spagna');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 16,'piazza', 'piazza navona');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 17,'cibo', 'piazza navona');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 18,'bernini', 'piazza navona');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 19,'antico', 'circo massimo');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 20,'cultura', 'circo massimo');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 21,'gladiatori', 'circo massimo');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 22,'piazza', 'piazza venezia');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 23,'cibo', 'piazza venezia');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 24,'shopping', 'piazza venezia');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 25,'piazza', 'piazza del popolo');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 26,'chiesa', 'piazza del popolo');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 27,'cibo', 'piazza del popolo');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 28,'antico', 'terme di caracalla');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 29,'cultura', 'terme di caracalla');
+INSERT INTO `db.triplan`.`tags` (`idtag`,`name_tag`, `name_place_tag`) VALUES ( 30,'terme', 'terme di caracalla');
+
+COMMIT;
+
+
+
 
 -- -----------------------------------------------------
 -- Data for table `db.triplan`.`places`
@@ -265,3 +336,17 @@ INSERT INTO `db.triplan`.`places` (`idplaces`, `name_places`, `city_places`, `la
 INSERT INTO `db.triplan`.`places` (`idplaces`, `name_places`, `city_places`, `latitude`, `longitude`, `city_idcity`) VALUES (124, 'kennedy center', 'washington', 38.5345, 77.0321, 10);
 
 COMMIT;
+
+
+truncate table hotel;
+START TRANSACTION;
+USE `db.triplan`;
+INSERT INTO `db.triplan`.`hotel` (`idhotel`, `name_hotel`, `city_hotel`,`numero_stelle`, `latitude`, `longitude`, `gestore_hotel`) VALUES (1, 'Excelsior', 'roma', 4, 41.3455, 12.9876, 'SilvioHotel');
+INSERT INTO `db.triplan`.`hotel` (`idhotel`, `name_hotel`, `city_hotel`,`numero_stelle`, `latitude`, `longitude`, `gestore_hotel`) VALUES (2, 'La Madonnina', 'milano', 3, 45.5555, 9.9666, 'MatteoHotel');
+INSERT INTO `db.triplan`.`hotel` (`idhotel`, `name_hotel`, `city_hotel`,`numero_stelle`, `latitude`, `longitude`, `gestore_hotel`) VALUES (3, 'Barceloneta', 'barcellona', 3, 41.6545, 2.9276, 'SilvioHotel');
+INSERT INTO `db.triplan`.`hotel` (`idhotel`, `name_hotel`, `city_hotel`,`numero_stelle`, `latitude`, `longitude`, `gestore_hotel`) VALUES (4, 'Inner Hotel', 'berlino', 4, 51.7755, 13.5555, 'MatteoHotel');
+
+COMMIT;
+
+
+SELECT * FROM tags;

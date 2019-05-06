@@ -57,7 +57,7 @@ public class PlacesDAO {
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_INSERT);
 			preparedStatement.setString(1, places.getNomePlaces());
-			preparedStatement.setString(2, places.getCityPlaces());
+			preparedStatement.setString(2, places.getCPlaces());
 			preparedStatement.setDouble(3, places.getLatitude());
 			preparedStatement.setDouble(4, places.getLongitude());
 			preparedStatement.execute();
@@ -85,7 +85,7 @@ public class PlacesDAO {
 			city_places = resultSet.getString("city_places");
 			idplaces = resultSet.getInt("idplaces");
 			latitude = resultSet.getDouble("latitude");
-			longitude = resultSet.getDouble("londitude");
+			longitude = resultSet.getDouble("longitude");
 			Places places = new Places(idplaces, nomeplaces, city_places, latitude, longitude);
 			places.setIdPlaces(resultSet.getInt("idplaces"));
 			places.setLatitude(resultSet.getDouble("latitude"));
@@ -119,7 +119,7 @@ public class PlacesDAO {
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setInt(1, placesToUpdate.getIdPlaces());
 				preparedStatement.setString(2, placesToUpdate.getNomePlaces());
-				preparedStatement.setString(3, placesToUpdate.getCityPlaces());
+				preparedStatement.setString(3, placesToUpdate.getCPlaces());
 				preparedStatement.setDouble(4, placesToUpdate.getLatitude());
 				preparedStatement.setDouble(5, placesToUpdate.getLongitude());
 			    preparedStatement.setInt(6, placesToUpdate.getIdPlaces());
@@ -162,14 +162,18 @@ public List<Places> CityPlaces(Integer idcity) {
 		while (resultSet.next()) {
 			int idPlaces = resultSet.getInt("idplaces");
 			String name_places = resultSet.getString("name_places");
-			places = new Places(idPlaces, name_places, null, null, null);
+			String city_places = resultSet.getString("city_places");
+			Double latitude = resultSet.getDouble("latitude");
+			Double longitude = resultSet.getDouble("longitude");
+			places = new Places(idPlaces, name_places, city_places, latitude, longitude);
 			places.setIdPlaces(idPlaces);
-			cityplacesList.add(places);} 
-	}catch (SQLException e) {
-			e.printStackTrace();
+			cityplacesList.add(places);
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
 	}
-		
-		return cityplacesList;}
+	return cityplacesList;
+	}
 
 public List<Places> Places(Integer Idcity) {
 	List<Places> cityplacesList = new ArrayList<>();
@@ -181,7 +185,9 @@ public List<Places> Places(Integer Idcity) {
 		while (resultSet.next()) {
 			int idPlaces = resultSet.getInt("Idplaces");
 			String name_places = resultSet.getString("name_places");
-			places = new Places(idPlaces, name_places, null,  null , null);
+			double latitude= resultSet.getDouble("latitude");
+			double longitude=resultSet.getDouble("longitude");
+			places = new Places(idPlaces, name_places, null,  latitude , longitude);
 			places.setIdPlaces(idPlaces);
 			cityplacesList.add(places);} 
 	}catch (SQLException e) {

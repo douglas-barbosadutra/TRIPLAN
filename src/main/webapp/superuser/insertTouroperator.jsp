@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Inserisci nuovo utente</title>
+<title>Inserisci nuovo touroperator</title>
 <style>
 body {
 	background-image:
@@ -33,6 +33,7 @@ color: balck;
 
 }
 </style>
+
 </head>
 <body>
 	<div class="titolo">
@@ -43,13 +44,9 @@ color: balck;
 	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/TourOperatorServlet?richiesta=insert">
+	<form method="POST" action="/JspApp/SuperuserServlet?richiesta=insert">
 
-		User type: <select style="width: 275px;" name="user_type">
-			<option value="touroperator"> TourOperator </option>
-			<option value="user"> User </option>
-				<option value="gestorehotel"> Gestore Hotel </option>
-		</select>
+		<input type="hidden" name="user_type" value="touroperator" />
 		<br>
 		<br>
 		Username: <input type="text" size="40" maxlength="40" name="user_user" />
@@ -63,7 +60,7 @@ color: balck;
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/JspApp/TourOperatorServlet?richiesta=UserManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+		<a href="/JspApp/SuperuserServlet?richiesta=SuperUserManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</form>
 	</div>
 </body>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Inserisci nuovo utente</title>
+<title>Inserisci nuovo hotel</title>
 <style>
 body {
 	background-image:
@@ -37,25 +37,35 @@ color: balck;
 <body>
 	<div class="titolo">
 
-		<p>Nuovo Utente</p>
+		<p>Nuovo Hotel</p>
 
 	</div>
 	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/TourOperatorServlet?richiesta=insert">
+	<form method="POST" action="/JspApp/HotelServlet?richiesta=insert">
 
-		User type: <select style="width: 275px;" name="user_type">
-			<option value="touroperator"> TourOperator </option>
-			<option value="user"> User </option>
-				<option value="gestorehotel"> Gestore Hotel </option>
-		</select>
+		
 		<br>
 		<br>
-		Username: <input type="text" size="40" maxlength="40" name="user_user" />
+		Nome Hotel: <input type="text" size="40" maxlength="40" name="name_hotel" />
 		<br>
 		<br>
-		Password: <input type="text" size="40" maxlength="40" name="user_pass" />
+		Città Hotel: <input type="text" size="40" maxlength="40" name="city_hotel" />
+		<br>
+		<br>
+		Numero Stelle: <input type="number" size="40" maxlength="40" name="numero_stelle" />
+		<br>
+		<br>
+		Latitudine: <input type="number" name="latitude" step="0.001" min="0" max="9999"/>
+		<br>
+		<br>
+		Longitudine: <input type="number" name="longitude" step="0.001" min="0" max="9999"/>
+		<br>
+		<br>
+		Gestore Hotel: <input type="text" size="40" maxlength="40" name="gestore_hotel" />
+		<br>
+		<br>
 		<br>
 		<br>
 		<br>
@@ -63,7 +73,7 @@ color: balck;
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/JspApp/TourOperatorServlet?richiesta=UserManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+		<a href="/JspApp/HotelServlet?richiesta=HotelManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</form>
 	</div>
 </body>
