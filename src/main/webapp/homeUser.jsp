@@ -10,6 +10,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Home User</title>
+<<<<<<< HEAD
+<% 
+int idU =  (Integer) request.getAttribute("idU");
+%>
+</head>
+<body>
+
+
+	<p>Benvenuto!</p>
+	<p> Cosa vuoi fare? </p>
+
+
+	<a href=""=<%=idU%>"><span class="fs">
+			Viaggia </span></a>
+	<br>
+=======
 <style>
 body {
 	background-image:
@@ -46,6 +62,10 @@ text-aling:center;
 
 	<div class="body">
 	<a href="UserServlet?richiesta=City"><span class="fs"> Viaggia </span></a>
+<<<<<<< HEAD
+=======
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
+>>>>>>> 824db453a5990ab9392d5e94cf15068e80f7125d
 	<br>
 	<br>
 	<a href="LogoutServlet" ><span class="fs">

@@ -19,12 +19,19 @@
 		<servlet-class>it.contrader.servlets.PlacesServlet</servlet-class>
 	</servlet>	
 	<servlet>
+<<<<<<< HEAD
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>it.contrader.servlets.UserServlet</servlet-class>
+=======
 		<servlet-name>TourOperatorServlet</servlet-name>
 		<servlet-class>it.contrader.servlets.TourOperatorServlet</servlet-class>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 	</servlet>
 	<servlet>
 		<servlet-name>CityServlet</servlet-name>
 		<servlet-class>it.contrader.servlets.CityServlet</servlet-class>
+<<<<<<< HEAD
+=======
 	</servlet>
 	<servlet>
 		<servlet-name>SuperuserServlet</servlet-name>
@@ -33,6 +40,7 @@
 	<servlet>
 		<servlet-name>UserServlet</servlet-name>
 		<servlet-class>it.contrader.servlets.UserServlet</servlet-class>
+<<<<<<< HEAD
 	</servlet>
 <servlet>
 		<servlet-name>HotelServlet</servlet-name>
@@ -41,6 +49,9 @@
 <servlet>
 		<servlet-name>TagsServlet</servlet-name>
 		<servlet-class>it.contrader.servlets.TagsServlet</servlet-class>
+=======
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
+>>>>>>> 824db453a5990ab9392d5e94cf15068e80f7125d
 	</servlet>
 
 	<servlet-mapping>
@@ -62,7 +73,19 @@
 	<servlet-mapping>
 		<servlet-name>CityServlet</servlet-name>
 		<url-pattern>/CityServlet</url-pattern>
+<<<<<<< HEAD
+=======
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SuperuserServlet</servlet-name>
+		<url-pattern>/SuperuserServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/UserServlet</url-pattern>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
+	</servlet-mapping>
+<<<<<<< HEAD
 	<servlet-mapping>
 		<servlet-name>SuperuserServlet</servlet-name>
 		<url-pattern>/SuperuserServlet</url-pattern>
@@ -79,6 +102,8 @@
 		<servlet-name>TagsServlet</servlet-name>
 		<url-pattern>/TagsServlet</url-pattern>
 	</servlet-mapping>
+=======
+>>>>>>> 824db453a5990ab9392d5e94cf15068e80f7125d
 
 
 	

@@ -49,6 +49,10 @@ color: balck;
 		<br>
 		<form method="POST" action="/JspApp/PlacesServlet?richiesta=update">
 			<input type="hidden" name="idplaces" value="<%=updatePlaces.getIdPlaces()%>" />
+<<<<<<< HEAD
+			<br>
+			Nome Città: <input type="text" size="40" maxlength="40" name="name_places" value="<%=updatePlaces.getNomePlaces()%>" />
+=======
 			<br>
 			Nome Attrazione: <input type="text" size="40" maxlength="40" name="name_places" value="<%=updatePlaces.getNomePlaces()%>" />
 			<br>
@@ -60,6 +64,7 @@ color: balck;
 			<br>
 			<br>
 			Logitudine: <input type="number" name="longitude" step="0.001" min="0" max="9999" value="<%=updatePlaces.getLongitude()%>" />
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 			<br>
 			<br>
 			<br>

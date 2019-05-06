@@ -48,6 +48,12 @@ font-color:black;
 
 
 	<br />
+<<<<<<< HEAD
+	<table style="margin:20px auto;" >
+		<tr>
+			<th>ID</th>
+			<th>Nome Attrazione</th>
+=======
 	<table style="margin:20px auto;" cellspacing=5;>
 		<tr>
 			<th>ID</th>
@@ -55,6 +61,7 @@ font-color:black;
 			<th>Città Attrazione</th>
 			<th>Latitudine</th>
 			<th>Longitudine</th>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 		</tr>
 		<%
 			for (PlacesDTO places : allPlaces) {
@@ -62,9 +69,12 @@ font-color:black;
 		<tr>
 			<td><%=places.getIdPlaces()%></td>
 			<td><%=places.getNomePlaces()%></td>
+<<<<<<< HEAD
+=======
 			<td><%=places.getCityPlaces()%></td>
 			<td><%=places.getLatitude()%></td>
 			<td><%=places.getLongitude()%></td>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 			<td class="center"><a href="/JspApp/PlacesServlet?richiesta=updateRedirect&id=<%=places.getIdPlaces()%>"><i class="fas fa-edit" title="Update"></i></a></td>
 			<td class="center"><a href="/JspApp/PlacesServlet?richiesta=delete&id=<%=places.getIdPlaces()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>

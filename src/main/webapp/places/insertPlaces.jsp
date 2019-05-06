@@ -29,8 +29,13 @@ color: balck;
 .body{
 	text-align: center;
 
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 }
 </style>
 </head>
@@ -45,10 +50,13 @@ color: balck;
 	<br>
 	<form method="POST" action="/JspApp/PlacesServlet?richiesta=insert">
 		Nome Attrazione: <input type="text" size="40" maxlength="40" name="name_places" />
+<<<<<<< HEAD
+=======
 		<br>
 		<br>
 		Città Attrazione: <input type="text" size="40" maxlength="40" name="city_places" />
 		<br>
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 		<br>
 		Latitudine: <input type="number" name="latitude" step="0.001" min="0" max="9999"/>
 		<br>

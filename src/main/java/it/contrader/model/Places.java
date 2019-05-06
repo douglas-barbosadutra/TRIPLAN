@@ -13,8 +13,16 @@ public class Places {
 
 	public Places() {
 	}
+<<<<<<< HEAD
 	
+=======
+
+<<<<<<< HEAD
+	public Places(int idPlaces, String nomePlaces) {
+=======
+>>>>>>> 824db453a5990ab9392d5e94cf15068e80f7125d
 	public Places(int idPlaces, String nomePlaces, String cityPlaces, Double latitude, Double longitude) {
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
 		this.idPlaces = idPlaces;
 		this.nomePlaces = nomePlaces;
 		this.cityPlaces = cityPlaces;

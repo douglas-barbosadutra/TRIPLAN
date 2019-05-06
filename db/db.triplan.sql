@@ -79,7 +79,15 @@ CREATE TABLE `tags` (
 
 LOCK TABLES `tab_user` WRITE;
 /*!40000 ALTER TABLE `tab_user` DISABLE KEYS */;
+<<<<<<< HEAD
 INSERT INTO `tab_user` VALUES (1,'admin','admin','touroperator'),(2,'alex','alex','user'),(3,'super','super','superuser'),(4,'silviohotel','silvio','gestorehotel'),(5,'matteohotel','matteo','gestorehotel');
+=======
+<<<<<<< HEAD
+INSERT INTO `tab_user` VALUES (1,'admin','admin','touroperator'),(2,'alex','alex','user');
+=======
+INSERT INTO `tab_user` VALUES (1,'admin','admin','touroperator'),(2,'alex','alex','user'),(3,'super','super','superuser');
+>>>>>>> f75a4ea3df5167a161313cd1f27983d32a2009b5
+>>>>>>> 824db453a5990ab9392d5e94cf15068e80f7125d
 /*!40000 ALTER TABLE `tab_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
