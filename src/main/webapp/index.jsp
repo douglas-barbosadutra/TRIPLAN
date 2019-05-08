@@ -1,39 +1,37 @@
-<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
-
-
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>LOGIN PAGE</title>
-
-<!-- Bootstrap core CSS -->
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="/css/signin.css" rel="stylesheet">
-
+<title>Benvenuti in TRIPLAN</title>
+<style>
+body {
+	background-image:
+		url("http://1.bp.blogspot.com/-FLsi6FOuXJ8/UHHBwqDTLNI/AAAAAAAAEG0/KTBA9VtfDl0/s1600/viaggio-a-Paris.gif");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	text-align: center;
+	color: black;
+}
+</style>
 </head>
+<body>
+	<div align=center>
+		<h1>BENVENUTO IN TRIPLAN</h1>
 
-<body class="text-center">
-	<form class="form-signin" action="/User/login" method="post">
-		<h1 class="h3 mb-3 font-weight-normal">Metabot LOGIN PAGE</h1>
+		<br> <br>
+		<form action="/User/login" method="post">
+			<h2>
+				Username: <input type="text" id="user" name="username"
+					placeholder="inserisci username">
+			</h2>
+			<h2>
+				Password: <input type="password" id="pass" name="password"
+					placeholder="inserisci password">
+			</h2>
+			<br>
+			<button type="submit" value="Login" name="pulsante">Login</button>
+			<!--  <br> <a href="insertUser.jsp"> Registrati </a>  -->
 
-		<label for="inputUser" class="sr-only">Username</label> <input
-			type="text" name="username" id="inputUser" class="form-control"
-			placeholder="Username" required autofocus> <label
-			for="inputPassword" class="sr-only">Password</label> <input
-			type="password" name="password" id="inputPassword"
-			class="form-control" placeholder="Password" required> <input
-			type="text" name="richiesta" value="login" hidden>
-
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-			in</button>
-	</form>
+		</form>
+	</div>
 </body>
 </html>

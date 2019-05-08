@@ -72,9 +72,9 @@ public class UserController {
 	public String insertUser(HttpServletRequest request) {
 		String username = request.getParameter("username").toString();
 		String password = request.getParameter("password").toString();
-		String ruolo = request.getParameter("ruolo").toString();
+		String userType = request.getParameter("user_type").toString();
 
-		UserDTO userObj = new UserDTO(0, username, password, ruolo,"");
+		UserDTO userObj = new UserDTO(0, username, password, userType);
 		
 		userService.insertUser(userObj);
 
@@ -89,13 +89,17 @@ public class UserController {
 		final String username = request.getParameter("username");
 		final String password = request.getParameter("password");
 		final UserDTO userDTO = userService.getByUsernameAndPassword(username, password);
-		final String ruolo = userDTO.getRuolo();
-		if (!StringUtils.isEmpty(ruolo)) {
+		final String userType = userDTO.getUserType();
+		if (!StringUtils.isEmpty(userType)) {
 			session.setAttribute("utenteCollegato", userDTO);
-			if (ruolo.equals("ADMIN")) {
-				return "home";
-			} else if (ruolo.equals("CHATMASTER")) {
-				return "home";
+			if (userType.equals("superuser")) {
+				return "homeSU";
+			} else if (userType.equals("touroperator")) {
+				return "homeTO";
+			} else if (userType.equals("gestorehotel")) {
+				return "homeGH";
+			} else if (userType.equals("user")) {
+				return "homeUser";
 			}
 		}
 		return "index";
