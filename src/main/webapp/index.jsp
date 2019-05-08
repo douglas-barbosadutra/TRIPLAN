@@ -18,7 +18,7 @@ body {
 		<h1>BENVENUTO IN TRIPLAN</h1>
 
 		<br> <br>
-		<form action="/User/login" method="post">
+		<form action="/Login/login" method="post">
 			<h2>
 				Username: <input type="text" id="user" name="username"
 					placeholder="inserisci username">

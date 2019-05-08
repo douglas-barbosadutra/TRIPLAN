@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import it.contrader.converter.ConverterUser;
 import it.contrader.dao.UserRepository;
 import it.contrader.dto.UserDTO;
@@ -26,10 +27,10 @@ public class UserService {
 	}
 
 	public UserDTO getUserDTOById(Integer id) {
-		return ConverterUser.toDTO(userRepository.findById(id).get());
+		return ConverterUser.toDTO(userRepository.findById(id).get()); 
 	}
 
-	public UserDTO getByUsernameAndPassword(String username, String password) {
+	public UserDTO getUserByUserUserAndUserPass(String username, String password) {
 
 		final User user = userRepository.findUserByUsernameAndPassword(username, password);
 
@@ -48,7 +49,7 @@ public class UserService {
 		userRepository.deleteById(id);
 	}
 	
-	public List<UserDTO> findUserDTOByUsername(String username) {
+	public List<UserDTO> findUserDTOByUserUser(String username) {
 		
 		final List<User> list = userRepository.findAllByUsername(username);
 		final List<UserDTO> userDTOs = new ArrayList<>();
