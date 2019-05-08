@@ -1,4 +1,5 @@
 <%@ page import="it.contrader.dto.*"%>
+<%@ page import="it.contrader.service.*"%>
 <%@ page import="java.util.*"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
@@ -44,10 +45,10 @@ text-aling:center;
 	</div>
 
 	<div class="body">
-	<a href="/Touoperator/userManagement" class="fas fa-user"> Gestione Utenti </a>
+	<a href="/Touroperator/userManagement"><span class="fs"> Gestione Utenti </span></a>
 	<br>
 	<br>
-	<a href="CityServlet?richiesta=CityManager"><span class="fs"> Gestione Città </span></a>
+	<a href=""><span class="fs"> Gestione Città </span></a>
 	<br>
 	<br>
 	<a href="PlacesServlet?richiesta=PlacesManager"><span class="fs"> Gestione Attrazioni </span></a>

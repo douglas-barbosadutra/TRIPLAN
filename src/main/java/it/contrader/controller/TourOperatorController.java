@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,7 +14,7 @@ import it.contrader.services.UserService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/touroperator")
+@RequestMapping("/Touroperator")
 public class TourOperatorController {
 
 	private final UserService userService;
@@ -31,6 +30,7 @@ public class TourOperatorController {
 		List<UserDTO> allUser = this.userService.getListaUserDTO();
 		request.setAttribute("allUserDTO", allUser);
 	}
+	
 	@RequestMapping(value = "/userManagement", method = RequestMethod.GET)
 	public String userManagement(HttpServletRequest request) {
 		visualUser(request);
@@ -84,22 +84,17 @@ public class TourOperatorController {
 	public String cercaUser(HttpServletRequest request) {
 
 		final String content = request.getParameter("search");
-
 		List<UserDTO> allUser = this.userService.findUserDTOByUserUser(content);
 		request.setAttribute("allUserDTO", allUser);
-
 		return "touroperator/manageUser";
 
 	}
 
-	// TODO da modificare nella view ruolo con usertype
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(HttpServletRequest request) {
 		String username = request.getParameter("username").toString();
 		String password = request.getParameter("password").toString();
 		String userType = request.getParameter("user_type").toString();
-
-		// UserDTO userObj = new UserDTO(0, username, password, ruolo,"");
 		UserDTO userObj = new UserDTO();
 		userObj.setUsername(username);
 		userObj.setPassword(password);
@@ -109,6 +104,13 @@ public class TourOperatorController {
 		visualUser(request);
 		return "touroperator/manageUser";
 	}
+	
+	@RequestMapping(value = "/indietro", method = RequestMethod.GET)
+	public String indietro(HttpServletRequest request) {
+		visualUser(request);
+		return "homeTO";
+	}
+
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logOut(HttpServletRequest request) {

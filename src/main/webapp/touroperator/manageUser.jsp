@@ -82,8 +82,8 @@ font-color:black;
 			<td><%=user.getUsername()%></td>
 			<td><%=user.getPassword()%></td>
 			<td><%=convertUserType(user.getUserType())%></td>
-			<td class="center"><a href="/JspApp/TourOperatorServlet?richiesta=updateRedirect&id=<%=user.getIdUser()%>"><i class="fas fa-edit" title="Update"></i></a></td>
-			<td class="center"><a href="/JspApp/TourOperatorServlet?richiesta=delete&id=<%=user.getIdUser()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+			<td class="center"><a href="/Touroperator/updateRedirect?id=<%=user.getIdUser()%>"><i class="fas fa-edit" title="Update"></i></a></td>
+			<td class="center"><a href="/Touroperator/delete?id=<%=user.getIdUser()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>
 		<%
 			}
@@ -91,11 +91,11 @@ font-color:black;
 	</table>
 	<br>
 	<br>
-	<a href="/JspApp/TourOperatorServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Utente </i></a>
+	<a href="/Touroperator/insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Utente </i></a>
 
 	<br>
 	<br>
-	<a href="/JspApp/TourOperatorServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/Touroperator/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 
 </body>

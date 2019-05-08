@@ -43,7 +43,7 @@ color: balck;
 	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/TourOperatorServlet?richiesta=insert">
+	<form method="POST" action="/Touroperator/insert">
 
 		User type: <select style="width: 275px;" name="user_type">
 			<option value="touroperator"> TourOperator </option>
@@ -52,18 +52,18 @@ color: balck;
 		</select>
 		<br>
 		<br>
-		Username: <input type="text" size="40" maxlength="40" name="user_user" />
+		Username: <input type="text" size="40" maxlength="40" name="username" />
 		<br>
 		<br>
-		Password: <input type="text" size="40" maxlength="40" name="user_pass" />
+		Password: <input type="text" size="40" maxlength="40" name="password" />
 		<br>
 		<br>
 		<br>
 		<br>
-		<input type="SUBMIT" value="Add">
+		<input type="SUBMIT" value="Aggiungi">
 		<br>
 		<br>
-		<a href="/JspApp/TourOperatorServlet?richiesta=UserManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+		<a href="/Touroperator/userManagement"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</form>
 	</div>
 </body>
