@@ -52,10 +52,10 @@ color: balck;
 		</select>
 		<br>
 		<br>
-		Username: <input type="text" size="40" maxlength="40" name="username" />
+		Username: <input type="text" size="40" maxlength="40" name="user_user" />
 		<br>
 		<br>
-		Password: <input type="text" size="40" maxlength="40" name="password" />
+		Password: <input type="text" size="40" maxlength="40" name="user_pass" />
 		<br>
 		<br>
 		<br>

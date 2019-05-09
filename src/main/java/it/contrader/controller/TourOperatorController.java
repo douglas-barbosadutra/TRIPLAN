@@ -92,8 +92,8 @@ public class TourOperatorController {
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(HttpServletRequest request) {
-		String username = request.getParameter("username").toString();
-		String password = request.getParameter("password").toString();
+		String username = request.getParameter("user_user").toString();
+		String password = request.getParameter("user_pass").toString();
 		String userType = request.getParameter("user_type").toString();
 		UserDTO userObj = new UserDTO();
 		userObj.setUsername(username);
@@ -106,7 +106,7 @@ public class TourOperatorController {
 	}
 	
 	@RequestMapping(value = "/indietro", method = RequestMethod.GET)
-	public String indietro(HttpServletRequest request) {
+	public String indistro(HttpServletRequest request) {
 		visualUser(request);
 		return "homeTO";
 	}
