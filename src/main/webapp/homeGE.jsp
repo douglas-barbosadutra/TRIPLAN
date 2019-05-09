@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home User</title>
+<title>Home Gestore Eventi</title>
 <style>
 body {
 	background-image:
@@ -45,7 +45,9 @@ text-aling:center;
 	</div>
 
 	<div class="body">
-	<a href="UserServlet?richiesta=City"><span class="fs"> Viaggia </span></a>
+	<a href="EventiServlet?richiesta=EventiManagement"><span class="fs"> Gestione Eventi </span></a>
+	<br>
+	<br>
 	<br>
 	<br>
 	<a href="LogoutServlet" ><span class="fs">
