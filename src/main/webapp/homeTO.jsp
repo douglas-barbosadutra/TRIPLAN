@@ -54,7 +54,7 @@ text-aling:center;
 	<a href="/Places/placesManagement"><span class="fs"> Gestione Attrazioni </span></a>
 	<br>
 	<br>
-	<a href="TagsServlet?richiesta=TagsManager"><span class="fs"> Gestione Tag </span></a>
+	<a href="/Tags/tagsManagement"><span class="fs"> Gestione Tag </span></a>
 	<br>
 	<br>
 	
