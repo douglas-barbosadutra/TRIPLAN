@@ -1,10 +1,7 @@
 <%@ include file="../header.jsp"%>
-<%@ page import="java.util.*"%>
-<%@ page import="it.contrader.dto.CityDTO"%>
-
 <html>
 <head>
-<title>Modifica Città</title>
+<title>Modifica Utente</title>
 <style>
 body {
 	background-image:
@@ -23,7 +20,7 @@ body {
 
 
 .titolo {
-color: black;
+color: balck;
 	text-align: center;
 	font-size: 1.9em;
 	font-family: arial;
@@ -37,28 +34,29 @@ color: black;
 </style>
 
 <%
-	CityDTO updateCity = (CityDTO) request.getAttribute("cityUpdate");
+	UserDTO updateUser = (UserDTO) request.getAttribute("userUpdate");
 %>
 </head>
-
 <body>
 
 		<div class="titolo">
 
-			<p>Modifica Città</p>
+			<p>Modifica Utente</p>
 
 		</div>
 			<div class="body">
 		<br>
 		<br>
-		<form method="POST" action="/City/update">
+		<form method="POST" action="/Superuser/update">
+
+			<input type="hidden" name="id_user" value="<%=updateUser.getIdUser()%>" />
+			<input type="hidden" name="user_type" value="touroperator" />
+			
 			<br>
-			<input type="hidden" name="idcity" value="<%=updateCity.getIdCity()%>" />
-			<br>
-			Nome Città: <input type="text" size="40" maxlength="40" name="name_city" value="<%=updateCity.getNamecity()%>" />
+			Username: <input type="text" size="40" maxlength="40" name="username" value="<%=updateUser.getUsername()%>" />
 			<br>
 			<br>
-			Stato: <input type="text" size="40" maxlength="40" name="state" value="<%=updateCity.getState()%>" />
+			Password: <input type="text" size="40" maxlength="40" name="password" value="<%=updateUser.getPassword()%>" />
 			<br>
 			<br>
 			<br>
@@ -68,7 +66,7 @@ color: black;
 
 			<br>
 			<br>
-			<a href="/City/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+			<a href="/Superuser/toManagement"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 		</form>
 		

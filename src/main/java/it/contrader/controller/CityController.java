@@ -62,7 +62,7 @@ public class CityController {
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String update(HttpServletRequest request) {
-		Integer idUpdate = Integer.parseInt(request.getParameter("id_city"));
+		Integer idUpdate = Integer.parseInt(request.getParameter("idcity"));
 		String namecityUpdate = request.getParameter("name_city");
 		String statoUpdate = request.getParameter("state");
 
