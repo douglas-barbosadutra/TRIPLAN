@@ -45,12 +45,12 @@ text-aling:center;
 	</div>
 
 	<div class="body">
-	<a href="EventiServlet?richiesta=EventiManagement"><span class="fs"> Gestione Eventi </span></a>
+	<a href="/GestoreEventi/eventiManagement"><span class="fs"> Gestione Eventi </span></a>
 	<br>
 	<br>
 	<br>
 	<br>
-	<a href="LogoutServlet" ><span class="fs">
+	<a href="logout" ><span class="fs">
 			Logout </span></a>
 	</div>
 </body>

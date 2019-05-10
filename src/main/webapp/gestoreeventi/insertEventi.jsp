@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Inserisci nuovo evento</title>
+<title>Inserisci Nuovo Evento</title>
 <style>
 body {
 	background-image:
@@ -25,47 +25,41 @@ color: black;
 	text-align: center;
 	font-size: 1.9em;
 	font-family: arial;
-}
+	}
 .body{
 	text-align: center;
 
-
-
-}
+	}
 </style>
 </head>
 <body>
 	<div class="titolo">
 
-		<p>Nuovo Evento</p>
+		<p>Inserisci Nuovo Evento</p>
 
 	</div>
 	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/EventiServlet?richiesta=insert">
+	<form method="POST" action="/GestoreEventi/insert">
 
-		
+	
+		<br>
+		Nome Evento: <input type="text" size="40" maxlength="40" name="nameevento"/>
 		<br>
 		<br>
-		Nome Evento: <input type="text" size="40" maxlength="40" name="name_evento" />
+		Città Evento: <input type="text" size="40" maxlength="40" name="cityevento"/>
 		<br>
 		<br>
-		Città Evento: <input type="text" size="40" maxlength="40" name="city_evento" />
-		<br>
-		<br>
-		Gestore Evento: <input type="text" size="40" maxlength="40" name="gestore_evento" />
-		<br>
-		<br>
-		<br>
+		Gestore Evento: <input type="text" size="40" maxlength="40" name="gestoreevento"/>
 		<br>
 		<br>
 		<br>
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/JspApp/EventiServlet?richiesta=EventiManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
-	</form>
+		<a href="/GestoreEventi/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</div>
+	</form>
 </body>
 </html>

@@ -53,6 +53,8 @@ public class LoginController {
 				return "homeGH";
 			} else if (userType.equals("user")) {
 				return "homeUser";
+			}else if (userType.equals("gestoreevento")) {
+				return "homeGE";
 			}
 		}
 		return "index";

@@ -45,7 +45,7 @@ text-aling:center;
 	</div>
 
 	<div class="body">
-	<a href="SuperuserServlet?richiesta=SuperUserManager"><span class="fs"> Gestione TourOperator </span></a>
+	<a href="SuperuserServlet?richiesta=SuperUserManager"><span class="fs"> Gestione TourOperator e Gestori Eventi</span></a>
 	<br>
 	<br>
 	<br>

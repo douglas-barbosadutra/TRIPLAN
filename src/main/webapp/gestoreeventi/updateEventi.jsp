@@ -1,5 +1,7 @@
 <%@ include file="../header.jsp"%>
-<%@ page import="it.contrader.dto.HotelDTO"%>
+<%@ page import="java.util.*"%>
+<%@ page import="it.contrader.dto.EventiDTO"%>
+
 <html>
 <head>
 <title>Modifica Evento</title>
@@ -21,7 +23,7 @@ body {
 
 
 .titolo {
-color: balck;
+color: black;
 	text-align: center;
 	font-size: 1.9em;
 	font-family: arial;
@@ -35,7 +37,7 @@ color: balck;
 </style>
 
 <%
-	EventiDTO updateEvento = (EventiDTO) request.getAttribute("eventoUpdate");
+	EventiDTO updateEventi = (EventiDTO) request.getAttribute("eventiUpdate");
 %>
 </head>
 
@@ -49,27 +51,29 @@ color: balck;
 			<div class="body">
 		<br>
 		<br>
-		<form method="POST" action="/JspApp/EventiServlet?richiesta=update">
+		<form method="POST" action="/GestoreEventi/update">
 			<br>
-			<input type="hidden" name="idhotel" value="<%=updateEvento.getIdEvento()%>" />
+			<input type="hidden" name="idevento" value="<%=updateEventi.getIdevento()%>" />
 			<br>
-			Nome Evento: <input type="text" size="40" maxlength="40" name="name_evento" value="<%=updateEvento.getName_evento()%>" />
+			Nome Evento: <input type="text" size="40" maxlength="40" name="nameevento" value="<%=updateEventi.getNameevento()%>" />
 			<br>
 			<br>
-			Città Evento: <input type="text" size="40" maxlength="40" name="city_evento" value="<%=updateEvento.getCity_evento()%>" />
+			Città Evento: <input type="text" size="40" maxlength="40" name="cityevento" value="<%=updateEventi.getCityevento()%>" />
 			<br>
-		    <br>
-			Gestore Evento: <input type="text" size="40" maxlength="40" name="gestore_evento" value="<%=updateEvento.getGestore_evento()%>" />
-			
+			<br>
+			Gestore Evento: <input type="text" size="40" maxlength="40" name="gestoreevento" value="<%=updateEventi.getGestoreevento()%>" />
+			<br>
+			<br>
+			<br>
+			<br>
 			<input type="SUBMIT" value="Update">
 		
 
 			<br>
 			<br>
-			<a href="/JspApp/EventiServlet?richiesta=EventiManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+			<a href="/GestoreEventi/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
-		</
-		form>
+		</form>
 		
 	</div>
 </body>
