@@ -45,12 +45,13 @@ text-aling:center;
 	</div>
 
 	<div class="body">
-	<a href="SuperuserServlet?richiesta=SuperUserManager"><span class="fs"> Gestione TourOperator e Gestori Eventi</span></a>
+	<a href="/Superuser/toManagement"><span class="fs"> Gestione TourOperator e Gestori Eventi</span></a>
 	<br>
 	<br>
+	
 	<br>
 	<br>
-	<a href="LogoutServlet" ><span class="fs">
+	<a href="/Superuser/logout" ><span class="fs">
 			Logout </span></a>
 	</div>
 </body>

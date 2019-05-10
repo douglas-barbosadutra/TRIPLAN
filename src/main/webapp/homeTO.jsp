@@ -58,7 +58,7 @@ text-aling:center;
 	<br>
 	<br>
 	
-	<a href="LogoutServlet" ><span class="fs">
+	<a href="/Touroperator/logout" ><span class="fs">
 			Logout </span></a>
 	</div>
 </body>

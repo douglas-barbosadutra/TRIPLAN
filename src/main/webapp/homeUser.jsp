@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home User</title>
+<title>Home TuorOperator</title>
 <style>
 body {
 	background-image:
@@ -45,10 +45,10 @@ text-aling:center;
 	</div>
 
 	<div class="body">
-	<a href="UserServlet?richiesta=City"><span class="fs"> Viaggia </span></a>
+	<a href="/City/selectCity"><span class="fs"> Viaggia </span></a>
 	<br>
 	<br>
-	<a href="LogoutServlet" ><span class="fs">
+	<a href="/City/logout" ><span class="fs">
 			Logout </span></a>
 	</div>
 </body>

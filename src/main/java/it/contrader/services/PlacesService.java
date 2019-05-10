@@ -49,7 +49,40 @@ public class PlacesService {
 		final List<PlacesDTO> placesDTOs = new ArrayList<>();
 		list.forEach(i -> placesDTOs.add(ConverterPlaces.toDTO(i)));
 		return placesDTOs;
-		
 	
+	}
+	public List<PlacesDTO> getItinerary(List<PlacesDTO> places) {
+		List<PlacesDTO> itinerary = new ArrayList<>();
+		double bestDistance;
+		int posX = 0;
+		itinerary.add(places.get(0));
+		if (places.size() > 1) {
+			while (places.size() > 1) {
+				posX = 0;
+				bestDistance = 999999999999.00;
+				for (int i = 1; i < places.size(); i++) {
+					if (places.get(0).distanceTo(places.get(i)) < bestDistance) {
+						
+						System.out.println("PLACE 1" + places.get(0).getNameplaces());
+						System.out.println("PLACE 2" + places.get(i).getNameplaces());
+						System.out.println("DISTANCE: " + places.get(0).distanceTo(places.get(i)));
+						
+						bestDistance = places.get(0).distanceTo(places.get(i));
+						posX = i;
+					}else {
+						
+					}
+				}
+				System.out.println("PLACE TROVATO" + places.get(posX).getNameplaces());
+				System.out.println("PLACE MODIFICATO " + places.get(0).getNameplaces());
+				itinerary.add(places.get(posX));
+				PlacesDTO trovato = places.get(posX);
+				places.remove(trovato);
+				places.set(0, trovato);
+				
+			}
+		}
+		
+		return itinerary;
 	}
 }

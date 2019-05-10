@@ -97,6 +97,12 @@ public class CityController {
 		return "city/manageCity";
 	}
 	
+	@RequestMapping(value ="/selectCity", method = RequestMethod.GET)
+	public String selectCity(HttpServletRequest request) {
+		visualCity(request);
+		return "itinerary/SelectCity";
+	}	
+	
 	@RequestMapping(value = "/indietro", method = RequestMethod.GET)
 	public String indistro(HttpServletRequest request) {;
 		return "homeTO";
