@@ -64,11 +64,11 @@ public class PlacesController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String update(HttpServletRequest request) {
 		Integer idUpdate = Integer.parseInt(request.getParameter("idplaces"));
-		String nameplacesUpdate = request.getParameter("nameplaces");
-		String cityplacesUpdate = request.getParameter("cityplaces");
+		String nameplacesUpdate = request.getParameter("name_places");
+		String cityplacesUpdate = request.getParameter("city_places");
 		Double latitudeUpdate = Double.parseDouble(request.getParameter("latitude"));
 		Double longitudeUpdate = Double.parseDouble(request.getParameter("longitude"));
-		Integer cityidcityUpdate = Integer.parseInt(request.getParameter("cityidcity"));
+		Integer cityidcityUpdate = Integer.parseInt(request.getParameter("city_idcity"));
 		
 		PlacesDTO places = new PlacesDTO();
 		places.setNameplaces(nameplacesUpdate);
@@ -86,11 +86,11 @@ public class PlacesController {
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(HttpServletRequest request) {
-		String nameplaces = request.getParameter("nameplaces").toString();
-		String cityplaces = request.getParameter("cityplaces").toString();
+		String nameplaces = request.getParameter("name_places").toString();
+		String cityplaces = request.getParameter("city_places").toString();
 		Double latitude = Double.parseDouble(request.getParameter("latitude"));
 		Double longitude = Double.parseDouble(request.getParameter("longitude"));
-		Integer cityidcity = Integer.parseInt(request.getParameter("cityidcity"));
+		Integer cityidcity = Integer.parseInt(request.getParameter("city_idcity"));
 		PlacesDTO placesObj = new PlacesDTO();
 		placesObj.setNameplaces(nameplaces);
 		placesObj.setCityplaces(cityplaces);

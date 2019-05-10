@@ -56,19 +56,19 @@ color: black;
 			<input type="hidden" name="idplaces" value="<%=updatePlaces.getIdPlaces()%>" />
 			<br>
 			<br>
-		Nome Attrazione: <input type="text" size="40" maxlength="40" name="name_places"/>
+		Nome Attrazione: <input type="text" size="40" maxlength="40" name="name_places" value="<%=updatePlaces.getNameplaces()%>"/>
 		<br>
 		<br>
-		Città: <input type="text" size="40" maxlength="40" name="city_places"/>
+		Città: <input type="text" size="40" maxlength="40" name="city_places"value="<%=updatePlaces.getCityplaces()%>"/>
 		<br>
 		<br>
-		Latitudine: <input type="number" name="latitude" step="0.001" min="0" max="9999"/>
+		Latitudine: <input type="number" name="latitude" step="0.001" min="0" max="9999"value="<%=updatePlaces.getLatitude()%>"/>
 		<br>
 		<br>
-		Longitudine <input type="number" name="longitude" step="0.001" min="0" max="9999"/>
+		Longitudine <input type="number" name="longitude" step="0.001" min="0" max="9999"value="<%=updatePlaces.getLongitude()%>"/>
 		<br>
 		<br>
-		ID Città <input type="number" name="city_idcity"/>
+		ID Città <input type="number" name="city_idcity" value="<%=updatePlaces.getCityidcity()%>"/>
 		<br>
 		<br>
 		<br>
@@ -77,7 +77,7 @@ color: black;
 
 			<br>
 			<br>
-			<a href="/Places/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+			<a href="/Places/placesManagement"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 		</form>
 		

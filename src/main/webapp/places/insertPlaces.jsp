@@ -64,7 +64,7 @@ color: black;
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/Places/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+		<a href="/Places/placesManagement"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</div>
 	</form>
 </body>
