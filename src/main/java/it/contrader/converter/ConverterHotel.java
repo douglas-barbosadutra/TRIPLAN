@@ -14,16 +14,27 @@ public class ConverterHotel {
 			hotelDTO = new HotelDTO();
 			hotelDTO.setIdhotel(hotel.getIdhotel());
 			hotelDTO.setNomehotel(hotel.getNomehotel());
-		}
+		    hotelDTO.setCityhotel(hotel.getCityhotel());
+			hotelDTO.setLatitude(hotel.getLatitude());
+		    hotelDTO.setLongitude(hotel.getLongitude());
+		    hotelDTO.setGestorehotel(hotel.getGestorehotel());
+		    hotelDTO.setNumerostelle(hotel.getNumerostelle());
+		
+		    
+	}
 		return hotelDTO;
 	}
-
 	public static Hotel toEntity(HotelDTO hotelDTO) {
 	    Hotel hotel = null;
 		if (hotelDTO != null) {
 			hotel = new Hotel();
 			hotel.setIdhotel(hotelDTO.getIdhotel());
 			hotel.setNomehotel(hotelDTO.getNomehotel());
+			hotel.setCityhotel(hotelDTO.getCityhotel());
+			hotel.setLatitude(hotelDTO.getLatitude());
+			hotel.setLongitude(hotelDTO.getLongitude());
+			hotel.setGestorehotel(hotelDTO.getGestorehotel());
+			hotel.setNumerostelle(hotelDTO.getNumerostelle());
 		}
 		return hotel;
 	}

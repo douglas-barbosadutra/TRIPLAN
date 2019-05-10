@@ -1,17 +1,8 @@
-<%@ include file="../header.jsp"%>
 <%@ page import="java.util.*"%>
 <%@ page import="it.contrader.dto.HotelDTO"%>
-<%!
-private String convertUsertype(String userType) {
-		if (userType.equals("superuser"))
-			return "SuperUser";
-		if (userType.equals("touroperator"))
-			return "TourOperator";
-		if (userType.equals("gestorehotel"))
-			return "GestoreHotel";
-		else
-			return "User";
-	}%>
+<%
+List<HotelDTO> allHotel = (List<HotelDTO>) request.getAttribute("allhotelDTO");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -46,7 +37,7 @@ font-color:black;
 </style>
 </head>
 <%
-	List<HotelDTO> allHotel = (List<HotelDTO>) request.getAttribute("allHotel");
+	
 %>
 </head>
 <body>
@@ -58,8 +49,7 @@ font-color:black;
 	</div>
 	<br>
 
-
-
+	
 	<br />
 	<table style="margin:20px auto;" >
 		<tr>
@@ -70,8 +60,7 @@ font-color:black;
 			<th>Latitudine</th>
 			<th>Longitudine</th>
 			<th>Gestore Hotel</th>
-			<th>Update</th>
-			<th>Delete</th>
+			
 		</tr>
 		<%
 			for (HotelDTO hotel : allHotel) {
@@ -84,8 +73,8 @@ font-color:black;
 			<td><%=hotel.getLatitude()%></td>
 			<td><%=hotel.getLongitude()%></td>
 			<td><%=hotel.getGestorehotel()%></td>
-			<td class="center"><a href="/JspApp/HotelServlet?richiesta=updateRedirect&id=<%=hotel.getIdhotel()%>"><i class="fas fa-edit" title="Update"></i></a></td>
-			<td class="center"><a href="/JspApp/HotelServlet?richiesta=delete&id=<%=hotel.getIdhotel()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+			<td class="center"><a href="/GestoreHotel/updateRedirect?id=<%=hotel.getIdhotel()%>"><i class="fas fa-edit" title="Update"></i></a></td>
+			<td class="center"><a href="/GestoreHotel/delete?id=<%=hotel.getIdhotel()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>
 		<%
 			}
@@ -93,11 +82,11 @@ font-color:black;
 	</table>
 	<br>
 	<br>
-	<a href="/JspApp/HotelServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Hotel </i></a>
+	<a href="/GestoreHotel/insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuovo Hotel </i></a>
 
 	<br>
 	<br>
-	<a href="/JspApp/HotelServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/GestoreHotel/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 
 </body>

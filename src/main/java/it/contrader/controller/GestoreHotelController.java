@@ -14,7 +14,7 @@ import it.contrader.services.HotelService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/Hotel")
+@RequestMapping("/GestoreHotel")
 public class GestoreHotelController {
 
 	private final HotelService hotelService;
@@ -34,7 +34,7 @@ public class GestoreHotelController {
 	@RequestMapping(value = "/hotelManagement", method = RequestMethod.GET)
 	public String hotelManagement(HttpServletRequest request) {
 		visualHotel(request);
-		return "hotel/manageHotel";
+		return "gestorehotel/manageHotel";
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
@@ -43,12 +43,12 @@ public class GestoreHotelController {
 		request.setAttribute("id", id);
 		this.hotelService.deleteHotelById(id);
 		visualHotel(request);
-		return "hotel/manageHotel";
+		return "gestorehotel/manageHotel";
 	}
 
 	@RequestMapping(value = "/insertRedirect", method = RequestMethod.GET)
 	public String insertRedirect(HttpServletRequest request) {
-		return "city/insertCity";
+		return "gestorehotel/insertHotel";
 	}
 
 	@RequestMapping(value = "/updateRedirect", method = RequestMethod.GET)
@@ -57,7 +57,7 @@ public class GestoreHotelController {
 		HotelDTO hotelUpdate = new HotelDTO();
 		hotelUpdate = this.hotelService.getHotelDTOById(id);
 		request.setAttribute("hotelUpdate", hotelUpdate);
-		return "hotel/updateHotel";
+		return "gestorehotel/updateHotel";
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
@@ -79,7 +79,7 @@ public class GestoreHotelController {
 		hotel.setNumerostelle(numerostelleUpdate);
 		hotelService.updateHotel(hotel);
 		visualHotel(request);
-		return "hotel/manageHotel";
+		return "gestorehotel/manageHotel";
 	}
 	
 
@@ -100,7 +100,7 @@ public class GestoreHotelController {
 		hotelObj.setGestorehotel(gestorehotel);
 		hotelService.insertHotel(hotelObj);
 		visualHotel(request);
-		return "hotel/manageHotel";
+		return "gestorehotel/manageHotel";
 	}
 	
 	@RequestMapping(value = "/indietro", method = RequestMethod.GET)

@@ -45,21 +45,22 @@ color: balck;
 
 			<p>Modifica Hotel</p>
 
+		
 		</div>
 			<div class="body">
 		<br>
 		<br>
-		<form method="POST" action="/JspApp/HotelServlet?richiesta=update">
+		<form method="POST" action="/GestoreHotel/update">
 			<br>
 			<input type="hidden" name="idhotel" value="<%=updateHotel.getIdhotel()%>" />
 			<br>
-			Nome Hotel: <input type="text" size="40" maxlength="40" name="name_hotel" value="<%=updateHotel.getNomehotel()%>" />
+			Nome Hotel: <input type="text" size="40" maxlength="40" name="nomehotel" value="<%=updateHotel.getNomehotel()%>" />
 			<br>
 			<br>
-			Città Hotel: <input type="text" size="40" maxlength="40" name="city_hotel" value="<%=updateHotel.getCityhotel()%>" />
+			Città Hotel: <input type="text" size="40" maxlength="40" name="cityhotel" value="<%=updateHotel.getCityhotel()%>" />
 			<br>
 			<br>
-			Numero Stelle: <input type="number" size="40" maxlength="40" name="numero_stelle"value="<%=updateHotel.getNumerostelle()%>"  />
+			Numero Stelle: <input type="number" size="40" maxlength="40" name="numerostelle"value="<%=updateHotel.getNumerostelle()%>"  />
 			<br>
 			<br>
 			Latitudine: <input type="number" name="latitude" step="0.001" min="0" max="9999"value="<%=updateHotel.getLatitude()%>" />
@@ -68,14 +69,14 @@ color: balck;
 			Longitudine: <input type="number" name="longitude" step="0.001" min="0" max="9999"value="<%=updateHotel.getLongitude()%>" />
 			<br>
 			<br>
-			Gestore Hotel: <input type="text" size="40" maxlength="40" name="gestore_hotel" value="<%=updateHotel.getGestorehotel()%>" />
+			Gestore Hotel: <input type="text" size="40" maxlength="40" name="gestorehotel" value="<%=updateHotel.getGestorehotel()%>" />
 			
 			<input type="SUBMIT" value="Update">
 		
 
 			<br>
 			<br>
-			<a href="/JspApp/HotelServlet?richiesta=HotelManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+			<a href="/GestoreHotel/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 		</
 		form>

@@ -45,12 +45,12 @@ text-aling:center;
 	</div>
 
 	<div class="body">
-	<a href="HotelServlet?richiesta=HotelManager"><span class="fs"> Gestione Hotel </span></a>
+	<a href="/GestoreHotel/hotelManagement"><span class="fs"> Gestione Hotel </span></a>
 	<br>
 	<br>
 	<br>
 	<br>
-	<a href="LogoutServlet" ><span class="fs">
+	<a href="/GestoreHotel/logout" ><span class="fs">
 			Logout </span></a>
 	</div>
 </body>

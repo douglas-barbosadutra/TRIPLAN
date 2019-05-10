@@ -43,18 +43,18 @@ color: balck;
 	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/HotelServlet?richiesta=insert">
+	<form method="POST" action="/GestoreHotel/insert">
 
 		
 		<br>
 		<br>
-		Nome Hotel: <input type="text" size="40" maxlength="40" name="name_hotel" />
+		Nome Hotel: <input type="text" size="40" maxlength="40" name="nomehotel" />
 		<br>
 		<br>
-		Città Hotel: <input type="text" size="40" maxlength="40" name="city_hotel" />
+		Città Hotel: <input type="text" size="40" maxlength="40" name="cityhotel" />
 		<br>
 		<br>
-		Numero Stelle: <input type="number" size="40" maxlength="40" name="numero_stelle" />
+		Numero Stelle: <input type="number" size="40" maxlength="40" name="numerostelle" />
 		<br>
 		<br>
 		Latitudine: <input type="number" name="latitude" step="0.001" min="0" max="9999"/>
@@ -63,7 +63,7 @@ color: balck;
 		Longitudine: <input type="number" name="longitude" step="0.001" min="0" max="9999"/>
 		<br>
 		<br>
-		Gestore Hotel: <input type="text" size="40" maxlength="40" name="gestore_hotel" />
+		Gestore Hotel: <input type="text" size="40" maxlength="40" name="gestorehotel" />
 		<br>
 		<br>
 		<br>
@@ -73,7 +73,7 @@ color: balck;
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/JspApp/HotelServlet?richiesta=HotelManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+		<a href="/GestoreHotel/manageHotel"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</form>
 	</div>
 </body>
