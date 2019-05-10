@@ -24,6 +24,7 @@ public class ConverterCity {
 			city = new City();
 			city.setIdCity(cityDTO.getIdCity());
 			city.setNamecity(cityDTO.getNamecity());
+		    city.setState(cityDTO.getState());
 		}
 		return city;
 	}
