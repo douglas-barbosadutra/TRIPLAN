@@ -54,9 +54,9 @@ color: balck;
 				String adminSelected = "";
 				String boSelected = "";
 				String ghSelected = "";
-				if (updateUser.getUsertype().equals("admin")) {
+				if (updateUser.getUserType().equals("admin")) {
 					adminSelected = selected;}
-				if (updateUser.getUsertype().equals("gestorehotel")) {
+				if (updateUser.getUserType().equals("gestorehotel")) {
 						ghSelected = selected;
 				} else
 					boSelected = selected;
@@ -70,7 +70,7 @@ color: balck;
 
 			</select>
 			<br>
-			<input type="hidden" name="user_id" value="<%=updateUser.getUserId()%>" />
+			<input type="hidden" name="user_id" value="<%=updateUser.getIdUser()%>" />
 			<br>
 			Username: <input type="text" size="40" maxlength="40" name="user_user" value="<%=updateUser.getUsername()%>" />
 			<br>

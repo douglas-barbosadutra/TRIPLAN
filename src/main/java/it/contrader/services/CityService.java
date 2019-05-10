@@ -1,15 +1,15 @@
 package it.contrader.services;
 
-
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import it.contrader.converter.ConverterCity;
 import it.contrader.dao.CityRepository;
 import it.contrader.dto.CityDTO;
-
 import it.contrader.model.City;
 
 @Service
@@ -21,29 +21,35 @@ public class CityService {
 	public CityService(CityRepository cityRepository) {
 		this.cityRepository = cityRepository;
 	}
-	
-	public List<CityDTO> getAllCityByIdCity(Integer idcity) {
-		return cityRepository.findAllCityByIdCity(idcity);
-	}
-	
-	public CityDTO getCityDTOById(Integer idcity) {
-		return ConverterCity.toDTO(cityRepository.findById(idcity).get());
-	}
-	
-	public void insertCity(CityDTO cityDTO) {
-		 cityRepository.save(ConverterCity.toEntity(cityDTO));
+
+	public List<CityDTO> getListaCityDTO() {
+		return ConverterCity.toListDTO((List<City>) cityRepository.findAll());
 	}
 
-	public void updateCity(CityDTO cityDTO ) {
-		      cityRepository.save(ConverterCity.toEntity(cityDTO));
+	public CityDTO getCityDTOById(Integer id) {
+		return ConverterCity.toDTO(cityRepository.findById(id).get()); 
 	}
-	
-	public void deleteCity(Integer idcity) {
-		   cityRepository.deleteById(idcity);
-	}
-	
-	
 
+
+	public boolean insertCity(CityDTO cityDTO) {
+		return cityRepository.save(ConverterCity.toEntity(cityDTO)) != null;
+	}
+
+	public boolean updateCity(CityDTO cityDTO) {
+		return cityRepository.save(ConverterCity.toEntity(cityDTO)) != null;
+	}
 	
+	public void deleteCityById(Integer id) {
+		cityRepository.deleteById(id);
+	}
 	
+	public List<CityDTO> findCityDTOByNameCity(String namecity) {
+		
+		final List<City> list = cityRepository.findAllByNamecity(namecity);
+		final List<CityDTO> cityDTOs = new ArrayList<>();
+		list.forEach(i -> cityDTOs.add(ConverterCity.toDTO(i)));
+		return cityDTOs;
+		
+	
+	}
 }

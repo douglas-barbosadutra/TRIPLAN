@@ -41,11 +41,14 @@ color: black;
 	<div class="body">
 	<br>
 	<br>
-	<form method="POST" action="/JspApp/CityServlet?richiesta=insert">
+	<form method="POST" action="/City/insert">
 
 	
 		<br>
 		Nome Città: <input type="text" size="40" maxlength="40" name="name_city"/>
+		<br>
+		<br>
+		Stato: <input type="text" size="40" maxlength="40" name="state"/>
 		<br>
 		<br>
 		<br>
@@ -54,7 +57,7 @@ color: black;
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>
-		<a href="/JspApp/CityServlet?richiesta=CityManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+		<a href="/City/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</div>
 	</form>
 </body>

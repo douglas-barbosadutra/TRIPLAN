@@ -1,23 +1,20 @@
 package it.contrader.dto;
-import java.util.List;
 
-import it.contrader.model.City;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data public class CityDTO {
+public class CityDTO {
 
-	private int idcity;
+	private Integer idCity;
+
+	private String namecity;
 	
-	private String name_city;
+	private String state;
 	
-    private String stato;
+	
 }
-           
-
-
-

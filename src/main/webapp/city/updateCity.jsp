@@ -53,9 +53,12 @@ color: black;
 		<br>
 		<form method="POST" action="/JspApp/CityServlet?richiesta=update">
 			<br>
-			<input type="hidden" name="idcity" value="<%=updateCity.getIdcity()%>" />
+			<input type="hidden" name="idcity" value="<%=updateCity.getIdCity()%>" />
 			<br>
-			Nome Città: <input type="text" size="40" maxlength="40" name="name_city" value="<%=updateCity.getName_city()%>" />
+			Nome Città: <input type="text" size="40" maxlength="40" name="name_city" value="<%=updateCity.getNamecity()%>" />
+			<br>
+			<br>
+			Stato: <input type="text" size="40" maxlength="40" name="name_city" value="<%=updateCity.getState()%>" />
 			<br>
 			<br>
 			<br>
@@ -65,7 +68,7 @@ color: black;
 
 			<br>
 			<br>
-			<a href="/JspApp/CityServlet?richiesta=CityManager"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+			<a href="/City/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 		</form>
 		

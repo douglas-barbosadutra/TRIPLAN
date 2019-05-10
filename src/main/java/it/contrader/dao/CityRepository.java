@@ -1,15 +1,20 @@
 package it.contrader.dao;
 
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import it.contrader.model.City;
+import it.contrader.model.User;
 
 import java.util.List;
-import org.springframework.data.jpa.repository.JpaRepository;
-import it.contrader.dto.CityDTO;
-import it.contrader.model.City;
 
 
-public interface CityRepository extends JpaRepository<City, Integer> {
-	public List<CityDTO> findAllCityByIdCity(int idcity);
-    
+public interface CityRepository extends CrudRepository<City, Integer> {
+
+	public List<City> findAllByNamecity(String namecity);
 	
-	
+
 }
+
+
+

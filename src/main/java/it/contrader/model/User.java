@@ -47,8 +47,5 @@ import lombok.NoArgsConstructor;
 	@NotNull
 	private String user_type;
 	
-	@OneToMany(mappedBy = "user")
-	@OnDelete(action = OnDeleteAction.CASCADE)
-	private List<Eventi> eventi;
 
 }

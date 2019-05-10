@@ -4,34 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.dto.CityDTO;
-
 import it.contrader.model.City;
-
-
 
 public class ConverterCity {
 
 	public static CityDTO toDTO(City city) {
-		   CityDTO cityDTO = null;
+		CityDTO cityDTO = null;
 		if (city != null) {
 			cityDTO = new CityDTO();
-		    cityDTO.setIdcity(city.getIdcity());  
-		    cityDTO.setName_city(city.getName_city());
+			cityDTO.setIdCity(city.getIdCity());
+			cityDTO.setNamecity(city.getNamecity());
 		}
-	return cityDTO;
-}
-	
+		return cityDTO;
+	}
+
 	public static City toEntity(CityDTO cityDTO) {
 		City city = null;
 		if (cityDTO != null) {
 			city = new City();
-			city.setIdcity(cityDTO.getIdcity());
-			city.setName_city(cityDTO.getName_city());
-		}	
+			city.setIdCity(cityDTO.getIdCity());
+			city.setNamecity(cityDTO.getNamecity());
+		}
 		return city;
 	}
-	
-	
+
 	public static List<CityDTO> toListDTO(List<City> list) {
 		List<CityDTO> listCityDTO = new ArrayList<>();
 		if (!list.isEmpty()) {

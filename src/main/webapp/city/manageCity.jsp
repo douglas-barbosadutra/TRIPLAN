@@ -1,10 +1,20 @@
-<%@ include file="../header.jsp"%>
 <%@ page import="java.util.*"%>
 <%@ page import="it.contrader.dto.CityDTO"%>
+
+<%
+	List<CityDTO> allCity = (List<CityDTO>) request.getAttribute("allCityDTO");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Gestione Città</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="au theme template">
+<meta name="author" content="Hau Nguyen">
+<meta name="keywords" content="au theme template">
+<title>Gestione Utenti</title>
 <style>
 body {
 	background-image:
@@ -33,9 +43,6 @@ font-color:black;
 }
 </style>
 </head>
-<%
-   List<CityDTO> allCity = (List<CityDTO>) request.getAttribute("allCityDTO");	
-%>
 </head>
 <body>
 
@@ -44,20 +51,26 @@ font-color:black;
 		<p>Gestione Città</p>
 
 	</div>
+	<br>
 
-	<table style="margin:20px auto"; cellspacing=8;>
+
+
+	<br />
+	<table style="margin:20px auto;" >
 		<tr>
 			<th>ID</th>
 			<th>Nome Città</th>
+			<th>Stato</th>
 		</tr>
 		<%
-			for (CityDTO city : allCity) {
+		for (CityDTO city : allCity) {
 		%>
 		<tr>
-			<td><%=city.getIdcity()%></td>
-			<td><%=city.getName_city()%></td>
-			<td class="center"><a href="/JspApp/CityServlet?richiesta=updateRedirect&id=<%=city.getIdcity()%>"><i class="fas fa-edit" title="Update"></i></a></td>
-			<td class="center"><a href="/JspApp/CityServlet?richiesta=delete&id=<%=city.getIdcity()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
+			<td><%=city.getIdCity()%></td>
+			<td><%=city.getNamecity()%></td>
+			<td><%=city.getState()%></td>
+			<td class="center"><a href="/City/updateRedirect?id=<%=city.getIdCity()%>"><i class="fas fa-edit" title="Update"></i></a></td>
+			<td class="center"><a href="/City/delete?id=<%=city.getIdCity()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>
 		<%
 			}
@@ -65,11 +78,11 @@ font-color:black;
 	</table>
 	<br>
 	<br>
-	<a href="/JspApp/CityServlet?richiesta=insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuova Città </i></a>
+	<a href="/City/insertRedirect"><i class="fas fa-plus-circle fa-lg"> Nuova Città </i></a>
 
 	<br>
 	<br>
-	<a href="/JspApp/CityServlet?richiesta=indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/City/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 
 
 </body>

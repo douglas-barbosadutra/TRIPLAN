@@ -48,7 +48,7 @@ text-aling:center;
 	<a href="/Touroperator/userManagement"><span class="fs"> Gestione Utenti </span></a>
 	<br>
 	<br>
-	<a href=""><span class="fs"> Gestione Città </span></a>
+	<a href="/City/cityManagement"><span class="fs"> Gestione Città </span></a>
 	<br>
 	<br>
 	<a href="PlacesServlet?richiesta=PlacesManager"><span class="fs"> Gestione Attrazioni </span></a>
