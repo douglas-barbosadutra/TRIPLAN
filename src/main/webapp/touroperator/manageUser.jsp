@@ -4,16 +4,7 @@
 <%
 	List<UserDTO> allUser = (List<UserDTO>) request.getAttribute("allUserDTO");
 %>
-<%!private String convertUserType(String userType) {
-		if (userType.equals("superuser"))
-			return "SuperUser";
-		if (userType.equals("touroperator"))
-			return "TourOperator";
-		if (userType.equals("gestorehotel"))
-			return "GestoreHotel";
-		else
-			return "User";
-	}%>
+
 <!DOCTYPE html>
 <html>
 <head>

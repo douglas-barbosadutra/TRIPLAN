@@ -1,13 +1,18 @@
 package it.contrader.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -49,7 +54,19 @@ import lombok.NoArgsConstructor;
 	@NotNull
 	private Integer cityidcity;
 	
+<<<<<<< Updated upstream
 	@Column(name = "type")
 	@NotNull
 	private String type;
+=======
+	@ManyToOne
+	@JoinColumn(name="idCity")
+	private City city;
+	
+	@ManyToMany(mappedBy="places")
+	private List<Tags> tags;
+	
+	@OneToMany(mappedBy="places")
+	private List<Eventi> eventi;
+>>>>>>> Stashed changes
 }
