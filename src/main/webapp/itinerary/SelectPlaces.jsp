@@ -1,7 +1,7 @@
 <%@ page import="it.contrader.dto.PlacesDTO"%>
 <%@ include file="../header.jsp"%>
 <%
-List<PlacesDTO> allPlaces = (List<PlacesDTO>) request.getAttribute("allPlacesDTO");
+List<PlacesDTO> selectCity = (List<PlacesDTO>) request.getAttribute("selectCityDTO");
    %>
 <!DOCTYPE html>
 <html>
@@ -53,7 +53,7 @@ font-color:black;
 	<br />
 	<form method="POST" action="itenerary/Itinerary/">
 		<%
-			for (PlacesDTO places : allPlaces) {
+			for (PlacesDTO places : selectCity) {
 		%>
 		
 		<input type="checkbox" name="idcityplaces" value="<%=places.getIdPlaces()%>" />

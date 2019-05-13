@@ -6,9 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import it.contrader.converter.ConverterCity;
 import it.contrader.converter.ConverterPlaces;
 import it.contrader.dao.PlacesRepository;
+import it.contrader.dto.CityDTO;
 import it.contrader.dto.PlacesDTO;
 import it.contrader.model.Places;
 
@@ -43,14 +44,13 @@ public class PlacesService {
 		placesRepository.deleteById(id);
 	}
 	
-	public List<PlacesDTO> findPlacesDTOByNamePlaces(String nameplaces) {
-		
-		final List<Places> list = placesRepository.findAllByNameplaces(nameplaces);
-		final List<PlacesDTO> placesDTOs = new ArrayList<>();
-		list.forEach(i -> placesDTOs.add(ConverterPlaces.toDTO(i)));
-		return placesDTOs;
-	
+	public List<PlacesDTO> findOrderDTOByCity(CityDTO cityDTO) {
+		final List<Places> listPlaces = placesRepository.findAllByCity(ConverterCity.toEntity(cityDTO));
+		final List<PlacesDTO> listPlacesDTO = new ArrayList<>();
+		listPlaces.forEach(i -> listPlacesDTO.add(ConverterPlaces.toDTO(i)));
+		return listPlacesDTO;
 	}
+	
 	public List<PlacesDTO> getItinerary(List<PlacesDTO> places) {
 		List<PlacesDTO> itinerary = new ArrayList<>();
 		double bestDistance;

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.contrader.dto.CityDTO;
 import it.contrader.dto.PlacesDTO;
 import it.contrader.services.PlacesService;
 
@@ -31,6 +32,13 @@ public class PlacesController {
 		List<PlacesDTO> allPlaces = this.placesService.getListaPlacesDTO();
 		request.setAttribute("allPlacesDTO", allPlaces);
 	}
+	
+	private void selectPlaces(HttpServletRequest request) {
+		CityDTO cityDTO = (CityDTO) session.getAttribute("città");
+		List<PlacesDTO> selectCity = this.placesService.findOrderDTOByCity(cityDTO);
+		request.setAttribute("selectCityDTO", selectCity);
+	}
+	
 	
 	@RequestMapping(value = "/placesManagement", method = RequestMethod.GET)
 	public String placesManagement(HttpServletRequest request) {
@@ -108,10 +116,10 @@ public class PlacesController {
 	
 	@RequestMapping(value= "/SelectPlaces",method = RequestMethod.POST)
 	public String Selectplaces(HttpServletRequest request) {
-	 visualPlaces(request);
-	 return "itinerary/SelectPlaces";
-	
-	}
+			selectPlaces(request);
+			return "itinerary/SelectPlaces";
+		}	
+
 	
 	
 	@RequestMapping(value = "/indietro", method = RequestMethod.GET)
