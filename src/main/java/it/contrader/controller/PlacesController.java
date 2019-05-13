@@ -12,6 +12,7 @@ import it.contrader.dto.CityDTO;
 import it.contrader.dto.PlacesDTO;
 import it.contrader.services.PlacesService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -34,9 +35,7 @@ public class PlacesController {
 	}
 	
 	private void selectPlaces(HttpServletRequest request) {
-		CityDTO cityDTO = (CityDTO) session.getAttribute("città");
-		List<PlacesDTO> selectCity = this.placesService.findOrderDTOByCity(cityDTO);
-		request.setAttribute("selectCityDTO", selectCity);
+		
 	}
 	
 	
@@ -76,7 +75,7 @@ public class PlacesController {
 		String cityplacesUpdate = request.getParameter("city_places");
 		Double latitudeUpdate = Double.parseDouble(request.getParameter("latitude"));
 		Double longitudeUpdate = Double.parseDouble(request.getParameter("longitude"));
-		Integer cityidcityUpdate = Integer.parseInt(request.getParameter("city_idcity"));
+		Integer idcityUpdate = Integer.parseInt(request.getParameter("id_city"));
 		String typeUpdate = request.getParameter("type");
 		
 		PlacesDTO places = new PlacesDTO();
@@ -84,7 +83,6 @@ public class PlacesController {
 		places.setCityplaces(cityplacesUpdate);
 		places.setLatitude(latitudeUpdate);
 		places.setLongitude(longitudeUpdate);
-		places.setCityidcity(cityidcityUpdate);
 		places.setIdPlaces(idUpdate);
 		places.setType(typeUpdate);
 		placesService.updatePlaces(places);
@@ -100,14 +98,12 @@ public class PlacesController {
 		String cityplaces = request.getParameter("city_places").toString();
 		Double latitude = Double.parseDouble(request.getParameter("latitude"));
 		Double longitude = Double.parseDouble(request.getParameter("longitude"));
-		Integer cityidcity = Integer.parseInt(request.getParameter("city_idcity"));
 		String type = request.getParameter("type").toString();
 		PlacesDTO placesObj = new PlacesDTO();
 		placesObj.setNameplaces(nameplaces);
 		placesObj.setCityplaces(cityplaces);
 		placesObj.setLatitude(latitude);
 		placesObj.setLongitude(longitude);
-		placesObj.setCityidcity(cityidcity);
 		placesObj.setType(type);
 		placesService.insertPlaces(placesObj);
 		visualPlaces(request);
@@ -116,17 +112,32 @@ public class PlacesController {
 	
 	@RequestMapping(value= "/SelectPlaces",method = RequestMethod.POST)
 	public String Selectplaces(HttpServletRequest request) {
-			selectPlaces(request);
+		    int idCity =Integer.parseInt(request.getParameter("idCity"));
+		    List<PlacesDTO> selectCity = this.placesService.findAllByIdCity(idCity);
+		    request.setAttribute("selectCityDTO", selectCity);
 			return "itinerary/SelectPlaces";
 		}	
 
-	
-	
+	@RequestMapping(value= "/Itinerary",method = RequestMethod.POST)
+	public String Itinerary(HttpServletRequest request) {
+		   List<PlacesDTO> Itinerary = new ArrayList<>();
+		   String listIdPlaces[] = request.getParameterValues("idcityplaces");
+		   for (String id : listIdPlaces) {
+			   Itinerary.add(this.placesService.getPlacesDTOById(Integer.parseInt(id)));
+		   }
+		   Itinerary = this.placesService.getItinerary(Itinerary);
+	       request.setAttribute("listaPlacesScelto", Itinerary);
+			return "itinerary/Itinerary";
+		}	
 	@RequestMapping(value = "/indietro", method = RequestMethod.GET)
 	public String indistro(HttpServletRequest request) {;
 		return "homeTO";
 	}
-
+	
+	@RequestMapping(value = "/homeU", method = RequestMethod.GET)
+	public String homeU(HttpServletRequest request) {;
+		return "homeUser";
+	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logOut(HttpServletRequest request) {

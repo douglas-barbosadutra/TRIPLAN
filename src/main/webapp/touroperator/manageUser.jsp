@@ -72,7 +72,7 @@ font-color:black;
 			<td><%=user.getIdUser()%></td>
 			<td><%=user.getUsername()%></td>
 			<td><%=user.getPassword()%></td>
-			<td><%=convertUserType(user.getUserType())%></td>
+			<td><%=user.getUserType()%></td>
 			<td class="center"><a href="/Touroperator/updateRedirect?id=<%=user.getIdUser()%>"><i class="fas fa-edit" title="Update"></i></a></td>
 			<td class="center"><a href="/Touroperator/delete?id=<%=user.getIdUser()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>

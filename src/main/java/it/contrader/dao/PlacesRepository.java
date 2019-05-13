@@ -12,7 +12,6 @@ import java.util.List;
 public interface PlacesRepository extends CrudRepository<Places, Integer> {
 
 	public List<Places> findAllByCity(City city);
-	
 
 }
 

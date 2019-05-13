@@ -53,19 +53,6 @@ public class Hotel implements Serializable {
 	private String gestorehotel;
 
 	
-	@ManyToMany
-	@JoinColumn(name="idUser")
-	private User user;
-	
-	@ManyToOne
-	@JoinColumn(name="idCity")
-	private City city;
-	
-	
-
-	
-
-	
 	}
 	
 	

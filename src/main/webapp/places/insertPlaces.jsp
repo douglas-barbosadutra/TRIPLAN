@@ -57,9 +57,6 @@ color: black;
 		Longitudine <input type="number" name="longitude" step="0.001" min="0" max="9999"/>
 		<br>
 		<br>
-		ID Città <input type="number" name="city_idcity"/>
-		<br>
-		<br>
 		Type: <input type="text" size="40" maxlength="40" name="type"/>
 		<br>
 		<br>

@@ -51,7 +51,7 @@ font-color:black;
 
 
 	<br />
-	<form method="POST" action="itenerary/Itinerary/">
+	<form method="POST" action="/Places/Itinerary">
 		<%
 			for (PlacesDTO places : selectCity) {
 		%>

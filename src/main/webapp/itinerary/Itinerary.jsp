@@ -1,6 +1,8 @@
+<%@ page import="it.contrader.dto.PlacesDTO"%>
 <%@ include file="../header.jsp"%>
-
-
+<%
+	List<PlacesDTO> Itinerary = (List<PlacesDTO>)(request.getAttribute("listaPlacesScelto"));
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +28,7 @@ font-color:black;
 
 
 .titolo {
-	color: black;
+	color: balck;
 	text-align: center;
 	font-size: 1.9em;
 	font-family: arial;
@@ -34,7 +36,7 @@ font-color:black;
 </style>
 </head>
 <%
-	List<PlacesDTO> Itinerary = (List<PlacesDTO>)(request.getAttribute("listaPlacesScelto"));
+	
 %>
 </head>
 <body>
@@ -49,27 +51,21 @@ font-color:black;
 
 
 	<br />
-		<form name = "myform" method="POST" action="/JspApp/UserServlet?richiesta=Itinerary">
+	<table style="margin:20px auto;" >
 		<%
 			for (PlacesDTO places:Itinerary) {
 		%>
-		<input type="hidden" name="idcityplaces" value="<%=places.getIdPlaces()%>" />
-		<input type="hidden" name="name_places" value="<%=places.getNomePlaces()%>" />
-		
-				<td><%=places.getIdPlaces()%></td>
-				<td><%=places.getNomePlaces()%></td>
-			    
-			<br>
+		<tr>
+			<td><%=places.getIdPlaces()%></td>
+			<td><%=places.getNameplaces()%></td>
+		</tr>
 		<%
 			}
-		%>
-		<br>
-		<br>
-		<input type="submit" value="OK">	
-
+		%>	
+	</table>
 	<br>
 	<br>
-	<a href="/JspApp/UserServlet?richiesta=indietroP"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/Places/homeU"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</form>
 
 </body>

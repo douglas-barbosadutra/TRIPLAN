@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.lang.Nullable;
 
 import lombok.AllArgsConstructor;
@@ -50,11 +52,6 @@ import lombok.NoArgsConstructor;
 	@NotNull
 	private Double longitude;
 	
-	@Column(name = "cityidcity")
-	@NotNull
-	private Integer cityidcity;
-	
-
 	@Column(name = "type")
 	@NotNull
 	private String type;
@@ -62,11 +59,5 @@ import lombok.NoArgsConstructor;
 	@ManyToOne
 	@JoinColumn(name="idCity")
 	private City city;
-	
-	@ManyToMany(mappedBy="places")
-	private List<Tags> tags;
-	
-	@OneToMany(mappedBy="places")
-	private List<Eventi> eventi;
 
 }

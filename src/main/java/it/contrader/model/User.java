@@ -8,8 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,10 +44,4 @@ import lombok.NoArgsConstructor;
 	@NotNull
 	private String user_type;
 	
-	@ManyToMany(mappedBy="user")
-	private List<City> city;
-	
-	@ManyToMany(mappedBy="user")
-	private List<Hotel> hotel;
-
 }

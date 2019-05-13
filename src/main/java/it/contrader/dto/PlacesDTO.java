@@ -21,9 +21,7 @@ public class PlacesDTO {
 	private Double latitude;
 	
 	private Double longitude;
-	
-	private Integer cityidcity;
-	
+		
 	private String type;
 	
 

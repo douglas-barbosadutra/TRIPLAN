@@ -53,12 +53,6 @@ font-color:black;
 		<%
 			for (EventiDTO eventi : allEventi) {
 		%>
-		
-		<input type="hidden" name="idevento" value="<%=eventi.getIdevento()%>" />
-		<input type="hidden" name="nameevento" value="<%=eventi.getNameevento()%>" />
-		<input type="hidden" name="cityevento" value="<%=eventi.getCityevento()%>" />
-		<input type="hidden" name="gestoreevento" value="<%=eventi.getGestoreevento()%>" />
-	    <input type="hidden" name="meseevento" value="<%=eventi.getMeseevento()%>" />	
 				<td><%=eventi.getIdevento()%></td>
 				<td><%=eventi.getNameevento()%></td>
 			    <td><%=eventi.getCityevento()%></td>

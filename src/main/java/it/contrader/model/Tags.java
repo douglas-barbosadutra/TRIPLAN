@@ -39,9 +39,5 @@ import lombok.NoArgsConstructor;
 	@Column(name = "nameplacetag")
 	@NotNull
 	private String nameplacetag;
-	
-	@ManyToMany
-	@JoinColumn(name="idPlaces")
-	private Places places;
 
 }

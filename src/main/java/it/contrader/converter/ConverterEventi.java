@@ -16,6 +16,8 @@ public class ConverterEventi {
 			eventiDTO.setNameevento(eventi.getNameevento());
 			eventiDTO.setCityevento(eventi.getCityevento());
 			eventiDTO.setGestoreevento(eventi.getGestoreevento());
+			eventiDTO.setMeseevento(eventi.getMeseevento());
+
 		}
 		return eventiDTO;
 	}
@@ -28,6 +30,7 @@ public class ConverterEventi {
 			eventi.setNameevento(eventiDTO.getNameevento());
 			eventi.setCityevento(eventiDTO.getCityevento());;
 			eventi.setGestoreevento(eventiDTO.getGestoreevento());
+			eventi.setMeseevento(eventiDTO.getMeseevento());
 		}
 		return eventi;
 	}
