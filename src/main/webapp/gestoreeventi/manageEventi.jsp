@@ -62,6 +62,7 @@ font-color:black;
 			<th>Nome Evento</th>
 			<th>Città Evento</th>
 			<th>Gestore Evento</th>
+		    <th>Mese Evento</th>
 		</tr>
 		<%
 		for (EventiDTO eventi : allEventi) {
@@ -71,6 +72,7 @@ font-color:black;
 			<td><%=eventi.getNameevento()%></td>
 			<td><%=eventi.getCityevento()%></td>
 			<td><%=eventi.getGestoreevento()%></td>
+			<td><%=eventi.getMeseevento()%></td>
 			<td class="center"><a href="/GestoreEventi/updateRedirect?id=<%=eventi.getIdevento()%>"><i class="fas fa-edit" title="Update"></i></a></td>
 			<td class="center"><a href="/GestoreEventi/delete?id=<%=eventi.getIdevento()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>

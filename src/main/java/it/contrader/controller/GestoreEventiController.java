@@ -68,13 +68,13 @@ public class GestoreEventiController {
 		String nameeventoUpdate = request.getParameter("nameevento");
 		String cityeventoUpdate = request.getParameter("cityevento");
 		String gestoreeventoUpdate = request.getParameter("gestoreevento");
-		
+		String meseevento= request.getParameter("meseevento").toString();
 		EventiDTO eventi = new EventiDTO();
 		eventi.setNameevento(nameeventoUpdate);
 		eventi.setCityevento(cityeventoUpdate);
 		eventi.setGestoreevento(gestoreeventoUpdate);
 		eventi.setIdevento(idUpdate);
-
+        eventi.setMeseevento(meseevento);
 		eventiService.updateEventi(eventi);
 		visualEventi(request);
 		return "gestoreeventi/manageEventi";
@@ -87,10 +87,12 @@ public class GestoreEventiController {
 		String nameevento = request.getParameter("nameevento").toString();
 		String cityevento = request.getParameter("cityevento").toString();
 		String gestoreevento = request.getParameter("gestoreevento").toString();
+		String meseevento= request.getParameter("meseevento").toString();
 		EventiDTO eventiObj = new EventiDTO();
 		eventiObj.setNameevento(nameevento);
 		eventiObj.setCityevento(cityevento);
 		eventiObj.setGestoreevento(gestoreevento);
+		eventiObj.setMeseevento(meseevento);
 		eventiService.insertEventi(eventiObj);
 
 		visualEventi(request);

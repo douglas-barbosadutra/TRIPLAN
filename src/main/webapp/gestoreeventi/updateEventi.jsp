@@ -64,6 +64,7 @@ color: black;
 			Gestore Evento: <input type="text" size="40" maxlength="40" name="gestoreevento" value="<%=updateEventi.getGestoreevento()%>" />
 			<br>
 			<br>
+			Mese Evento:<input type="text" size="40" maxlength="40" name="meseeevento" value="<%=updateEventi.getMeseevento()%>" />
 			<br>
 			<br>
 			<input type="SUBMIT" value="Update">

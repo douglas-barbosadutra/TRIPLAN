@@ -18,5 +18,6 @@ public class EventiDTO {
 
 	private String gestoreevento;
 	
+	private String meseevento;
 	
 }

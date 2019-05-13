@@ -55,6 +55,7 @@ color: black;
 		<br>
 		<br>
 		<br>
+		Mese Evento:<input type="text" size="40" maxlength="40" name="meseevento"/>
 		<input type="SUBMIT" value="Add">
 		<br>
 		<br>

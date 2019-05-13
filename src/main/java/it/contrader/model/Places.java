@@ -54,11 +54,11 @@ import lombok.NoArgsConstructor;
 	@NotNull
 	private Integer cityidcity;
 	
-<<<<<<< Updated upstream
+
 	@Column(name = "type")
 	@NotNull
 	private String type;
-=======
+
 	@ManyToOne
 	@JoinColumn(name="idCity")
 	private City city;
@@ -68,5 +68,5 @@ import lombok.NoArgsConstructor;
 	
 	@OneToMany(mappedBy="places")
 	private List<Eventi> eventi;
->>>>>>> Stashed changes
+
 }

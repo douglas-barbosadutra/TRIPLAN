@@ -48,8 +48,14 @@ import lombok.NoArgsConstructor;
 	@NotNull
 	private String gestoreevento;
     
+
 	@OneToMany
 	@JoinColumn(name="idPlaces")
 	private Places places;
+
+	@Column(name = "meseevento")
+	@NotNull
+	private String meseevento;
+
 
 }
