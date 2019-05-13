@@ -1,12 +1,12 @@
-<%@ page import="it.contrader.dto.PlacesDTO"%>
+<%@ page import="it.contrader.dto.EventiDTO"%>
 <%@ include file="../header.jsp"%>
 <%
-List<PlacesDTO> allPlaces = (List<PlacesDTO>) request.getAttribute("allPlacesDTO");
+List<EventiDTO> allEventi = (List<EventiDTO>) request.getAttribute("allEventiDTO");
    %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Selezione Attrazione</title>
+<title>Eventi principali</title>
 <style>
 body {
 	background-image:
@@ -43,7 +43,7 @@ font-color:black;
 
 	<div class="titolo">
 
-		<p>Seleziona le attrazioni</p>
+		<p>Eventi principali</p>
 
 	</div>
 	<br>
@@ -51,17 +51,18 @@ font-color:black;
 
 
 	<br />
-	<form method="POST" action="itenerary/Itinerary/">
+	<form method="POST" action="/City/selectCity">
 		<%
-			for (PlacesDTO places : allPlaces) {
+			for (EventiDTO eventi : allEventi) {
 		%>
 		
-		<input type="checkbox" name="idcityplaces" value="<%=places.getIdPlaces()%>" />
-		<input type="hidden" name="name_places" value="<%=places.getNameplaces()%>" />
-		<input type="hidden" name="latitude" value="<%=places.getLatitude()%>" />
-		<input type="hidden" name="longitude" value="<%=places.getLongitude()%>" />
-				<td><%=places.getIdPlaces()%></td>
-				<td><%=places.getNameplaces()%></td>
+		<input type="hidden" name="idevento" value="<%=eventi.getIdevento()%>" />
+		<input type="hidden" name="nameevento" value="<%=eventi.getNameevento()%>" />
+		<input type="hidden" name="cityevento" value="<%=eventi.getCityevento()%>" />
+		<input type="hidden" name="gestoreevento" value="<%=eventi.getGestoreevento()%>" />
+				<td><%=eventi.getIdevento()%></td>
+				<td><%=eventi.getNameevento()%></td>
+			  
 			<br>
 		<%
 			}
@@ -72,7 +73,7 @@ font-color:black;
 
 	<br>
 	<br>
-	<a href="/Places/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/GestoreEventi/viaggia"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</form>
 
 </body>

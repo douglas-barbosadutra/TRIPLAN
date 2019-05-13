@@ -45,7 +45,7 @@ text-aling:center;
 	</div>
 
 	<div class="body">
-	<a href="/City/selectCity"><span class="fs"> Viaggia </span></a>
+	<a href="/GestoreEventi/eventi"><span class="fs"> Viaggia </span></a>
 	<br>
 	<br>
 	<a href="/City/logout" ><span class="fs">

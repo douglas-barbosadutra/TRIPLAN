@@ -97,7 +97,7 @@ public class CityController {
 		return "city/manageCity";
 	}
 	
-	@RequestMapping(value ="/selectCity", method = RequestMethod.GET)
+	@RequestMapping(value ="/selectCity", method = RequestMethod.POST)
 	public String selectCity(HttpServletRequest request) {
 		visualCity(request);
 		return "itinerary/SelectCity";

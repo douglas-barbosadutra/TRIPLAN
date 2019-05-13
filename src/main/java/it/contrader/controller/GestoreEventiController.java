@@ -97,6 +97,17 @@ public class GestoreEventiController {
 		return "gestoreeventi/manageEventi";
 	}
 	
+	@RequestMapping(value ="/eventi", method = RequestMethod.GET)
+	public String eventi(HttpServletRequest request) {
+		visualEventi(request);
+		return "itinerary/Eventiconsigliati";
+	}
+	
+	@RequestMapping(value ="/viaggia", method = RequestMethod.GET)
+	public String indietro(HttpServletRequest request) {
+		visualEventi(request);
+		return "homeUser";
+	}
 	@RequestMapping(value = "/indietro", method = RequestMethod.GET)
 	public String indistro(HttpServletRequest request) {
 		visualEventi(request);

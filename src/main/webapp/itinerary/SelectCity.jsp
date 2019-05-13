@@ -1,14 +1,12 @@
-<%@ page import="java.util.*"%>
 <%@ page import="it.contrader.dto.CityDTO"%>
-
+<%@ include file="../header.jsp"%>
 <%
-	List<CityDTO> allCity = (List<CityDTO>) request.getAttribute("allCityDTO");
-%>
-
+   List<CityDTO> allCity = (List<CityDTO>) request.getAttribute("allCityDTO");
+   %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Selezione Città</title>
+<title>Seleziona Citta</title>
 <style>
 body {
 	background-image:
@@ -37,12 +35,15 @@ font-color:black;
 }
 </style>
 </head>
+<%
+	
+%>
 </head>
 <body>
 
 	<div class="titolo">
 
-		<p>Seleziona la città</p>
+		<p>Seleziona citta</p>
 
 	</div>
 	<br>
@@ -50,13 +51,14 @@ font-color:black;
 
 
 	<br />
-	<form method="POST" action="/Itinerary/SelectPlaces">
+	<form method="POST" action="/Places/SelectPlaces">
 		<%
 			for (CityDTO city : allCity) {
 		%>
 		
-		<input type="radio" name="idcity" value="<%=city.getIdCity()%>" />
-		<input type="hidden" name="name_city" value="<%=city.getNamecity()%>" />
+		<input type="radio" name="idCity" value="<%=city.getIdCity()%>" />
+		<input type="hidden" name="namecity" value="<%=city.getNamecity()%>" />
+		<input type="hidden" name="state" value="<%=city.getState()%>" />
 		
 				<td><%=city.getIdCity()%></td>
 				<td><%=city.getNamecity()%></td>
@@ -66,10 +68,11 @@ font-color:black;
 		%>
 		<br>
 		<br>
-		<input type="SUBMIT" value="OK">
+		<input type="submit" value="OK">	
+
 	<br>
 	<br>
-	<a href="/Itinerary/indietro"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
+	<a href="/GestoreEventi/viaggia"><i class="fas fa-arrow-alt-circle-left fa-lg"> Back</i></a>
 	</form>
 
 </body>

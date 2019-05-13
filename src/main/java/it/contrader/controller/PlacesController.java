@@ -102,6 +102,14 @@ public class PlacesController {
 		return "places/managePlaces";
 	}
 	
+	@RequestMapping(value= "/SelectPlaces",method = RequestMethod.POST)
+	public String Selectplaces(HttpServletRequest request) {
+	 visualPlaces(request);
+	 return "itinerary/SelectPlaces";
+	
+	}
+	
+	
 	@RequestMapping(value = "/indietro", method = RequestMethod.GET)
 	public String indistro(HttpServletRequest request) {;
 		return "homeTO";
@@ -112,6 +120,9 @@ public class PlacesController {
 	public String logOut(HttpServletRequest request) {
 		request.getSession().invalidate();
 		return "index";
+	
+	
+	
 	}
 }
 
