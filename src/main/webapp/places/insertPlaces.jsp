@@ -60,6 +60,8 @@ color: black;
 		ID Città <input type="number" name="city_idcity"/>
 		<br>
 		<br>
+		Type: <input type="text" size="40" maxlength="40" name="type"/>
+		<br>
 		<br>
 		<input type="SUBMIT" value="Add">
 		<br>

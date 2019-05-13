@@ -71,6 +71,9 @@ color: black;
 		ID Città <input type="number" name="city_idcity" value="<%=updatePlaces.getCityidcity()%>"/>
 		<br>
 		<br>
+		Categoria: <input type="text" size="40" maxlength="40" name="types"value="<%=updatePlaces.getType()%>"/>
+		<br>
+		<br>
 		<br>
 			<input type="SUBMIT" value="Update">
 		

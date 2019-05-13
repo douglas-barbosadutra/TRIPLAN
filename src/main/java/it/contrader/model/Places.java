@@ -48,4 +48,8 @@ import lombok.NoArgsConstructor;
 	@Column(name = "cityidcity")
 	@NotNull
 	private Integer cityidcity;
+	
+	@Column(name = "type")
+	@NotNull
+	private String type;
 }

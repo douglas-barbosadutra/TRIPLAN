@@ -18,6 +18,7 @@ public class ConverterPlaces {
 			placesDTO.setLatitude(places.getLatitude());
 			placesDTO.setLongitude(places.getLongitude());
 			placesDTO.setCityidcity(places.getCityidcity());
+			placesDTO.setType(places.getType());
 		}
 		return placesDTO;
 	}
@@ -32,6 +33,7 @@ public class ConverterPlaces {
 			places.setLatitude(placesDTO.getLatitude());
 			places.setLongitude(placesDTO.getLongitude());
 			places.setCityidcity(placesDTO.getCityidcity());
+			places.setType(placesDTO.getType());
 		}
 		return places;
 	}

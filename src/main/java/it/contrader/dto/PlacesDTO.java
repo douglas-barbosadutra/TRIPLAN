@@ -23,6 +23,9 @@ public class PlacesDTO {
 	private Double longitude;
 	
 	private Integer cityidcity;
+	
+	private String type;
+	
 
 public double distanceTo(PlacesDTO y){
 	double deltaLat = (y.latitude - this.latitude);

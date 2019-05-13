@@ -69,6 +69,7 @@ public class PlacesController {
 		Double latitudeUpdate = Double.parseDouble(request.getParameter("latitude"));
 		Double longitudeUpdate = Double.parseDouble(request.getParameter("longitude"));
 		Integer cityidcityUpdate = Integer.parseInt(request.getParameter("city_idcity"));
+		String typeUpdate = request.getParameter("type");
 		
 		PlacesDTO places = new PlacesDTO();
 		places.setNameplaces(nameplacesUpdate);
@@ -77,6 +78,7 @@ public class PlacesController {
 		places.setLongitude(longitudeUpdate);
 		places.setCityidcity(cityidcityUpdate);
 		places.setIdPlaces(idUpdate);
+		places.setType(typeUpdate);
 		placesService.updatePlaces(places);
 		visualPlaces(request);
 		return "places/managePlaces";
@@ -91,12 +93,14 @@ public class PlacesController {
 		Double latitude = Double.parseDouble(request.getParameter("latitude"));
 		Double longitude = Double.parseDouble(request.getParameter("longitude"));
 		Integer cityidcity = Integer.parseInt(request.getParameter("city_idcity"));
+		String type = request.getParameter("type").toString();
 		PlacesDTO placesObj = new PlacesDTO();
 		placesObj.setNameplaces(nameplaces);
 		placesObj.setCityplaces(cityplaces);
 		placesObj.setLatitude(latitude);
 		placesObj.setLongitude(longitude);
 		placesObj.setCityidcity(cityidcity);
+		placesObj.setType(type);
 		placesService.insertPlaces(placesObj);
 		visualPlaces(request);
 		return "places/managePlaces";

@@ -64,6 +64,7 @@ font-color:black;
 			<th>Latitudine</th>
 			<th>Longitudine</th>
 			<th>Id città</th>
+			<th>Categoria</th>
 		</tr>
 		<%
 		for (PlacesDTO places : allPlaces) {
@@ -75,6 +76,7 @@ font-color:black;
 			<td><%=places.getLatitude()%></td>
 			<td><%=places.getLongitude()%></td>
 			<td><%=places.getCityidcity()%></td>
+			<td><%=places.getType()%></td>
 			<td class="center"><a href="/Places/updateRedirect?id=<%=places.getIdPlaces()%>"><i class="fas fa-edit" title="Update"></i></a></td>
 			<td class="center"><a href="/Places/delete?id=<%=places.getIdPlaces()%>"><i class="fas fa-trash-alt" title="Delete"></i></a></td>
 		</tr>
