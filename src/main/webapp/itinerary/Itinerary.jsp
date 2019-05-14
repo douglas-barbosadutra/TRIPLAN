@@ -52,16 +52,20 @@ font-color:black;
 
 	<br />
 	<table style="margin:20px auto;" >
+		<tr>
+			<th>ID</th>
+			<th>Attrazioni</th>
+		</tr>
 		<%
 			for (PlacesDTO places:Itinerary) {
 		%>
 		<tr>
 			<td><%=places.getIdPlaces()%></td>
 			<td><%=places.getNameplaces()%></td>
-		</tr>
 		<%
 			}
 		%>	
+		</tr>
 	</table>
 	<br>
 	<br>

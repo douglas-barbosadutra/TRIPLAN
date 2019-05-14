@@ -50,17 +50,26 @@ font-color:black;
 	
 
     <form method="POST" action="/City/selectCity">
+    	<table style="margin:20px auto;" >
+    	<tr>
+			<th>ID</th>
+			<th>Nome Evento</th>
+			<th>Città Evento</th>
+			<th>Mese Evento</th>
+		</tr>
 		<%
 			for (EventiDTO eventi : allEventi) {
 		%>
-				<td><%=eventi.getIdevento()%></td>
-				<td><%=eventi.getNameevento()%></td>
-			    <td><%=eventi.getCityevento()%></td>
-			    <td><%=eventi.getMeseevento()%></td>
-			<br>
+		<tr>
+			<td><%=eventi.getIdevento()%></td>
+			<td><%=eventi.getNameevento()%></td>
+			<td><%=eventi.getCityevento()%></td>
+			<td><%=eventi.getMeseevento()%></td>
+		</tr>
 		<%
 			}
 		%>
+		</table>
 		<br>
 		<br>
 		<input type="submit" value="OK">	

@@ -52,20 +52,26 @@ font-color:black;
 
 	<br />
 	<form method="POST" action="/Places/SelectPlaces">
+	    <table style="margin:20px auto;" >
+	    <tr>
+	    	<th></th>
+			<th>ID</th>
+			<th>Nome Città</th>
+		</tr>
 		<%
 			for (CityDTO city : allCity) {
 		%>
-		
-		<input type="radio" name="idCity" value="<%=city.getIdCity()%>" />
-		<input type="hidden" name="namecity" value="<%=city.getNamecity()%>" />
-		<input type="hidden" name="state" value="<%=city.getState()%>" />
-		
-				<td><%=city.getIdCity()%></td>
-				<td><%=city.getNamecity()%></td>
-			<br>
+		<tr>
+			<td> <input type="radio" name="idCity" value="<%=city.getIdCity()%>" />	</td>
+				<input type="hidden" name="namecity" value="<%=city.getNamecity()%>" />
+				<input type="hidden" name="state" value="<%=city.getState()%>" />
+			<td>	<%=city.getIdCity()%></td>
+			<td>	<%=city.getNamecity()%></td>
 		<%
 			}
 		%>
+		</tr>
+		</table>
 		<br>
 		<br>
 		<input type="submit" value="OK">	

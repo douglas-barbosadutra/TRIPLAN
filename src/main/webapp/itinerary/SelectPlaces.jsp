@@ -52,20 +52,27 @@ font-color:black;
 
 	<br />
 	<form method="POST" action="/Places/Itinerary">
+		<table style="margin:20px auto;" >
+	    <tr>
+	    	<th></th>
+			<th>ID</th>
+			<th>Nome Attrazioni</th>
+		</tr>
 		<%
 			for (PlacesDTO places : selectCity) {
 		%>
-		
-		<input type="checkbox" name="idcityplaces" value="<%=places.getIdPlaces()%>" />
+		<tr>
+		<td> <input type="checkbox" name="idcityplaces" value="<%=places.getIdPlaces()%>" /> </td>
 		<input type="hidden" name="name_places" value="<%=places.getNameplaces()%>" />
 		<input type="hidden" name="latitude" value="<%=places.getLatitude()%>" />
 		<input type="hidden" name="longitude" value="<%=places.getLongitude()%>" />
 				<td><%=places.getIdPlaces()%></td>
 				<td><%=places.getNameplaces()%></td>
-			<br>
 		<%
 			}
 		%>
+		</tr>
+		</table>		
 		<br>
 		<br>
 		<input type="submit" value="OK">	

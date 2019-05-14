@@ -46,12 +46,12 @@ public class PlacesService {
 	}
 	
 	public List<PlacesDTO> findAllByIdCity(int idCity) {
-		List<PlacesDTO> listPlacesDTO = new ArrayList<>();
-		for (Places place : placesRepository.findAll()) {
-			if(place.getCity().getIdCity().equals(idCity)) {
-				listPlacesDTO.add(ConverterPlaces.toDTO(place));
+			List<PlacesDTO> listPlacesDTO = new ArrayList<>();
+			for (Places place : placesRepository.findAll()) {
+				if(place.getCity().getIdCity().equals(idCity)) {
+					listPlacesDTO.add(ConverterPlaces.toDTO(place));
+				}
 			}
-		}
 		return listPlacesDTO;
 	}
 	

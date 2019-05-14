@@ -34,10 +34,6 @@ public class PlacesController {
 		request.setAttribute("allPlacesDTO", allPlaces);
 	}
 	
-	private void selectPlaces(HttpServletRequest request) {
-		
-	}
-	
 	
 	@RequestMapping(value = "/placesManagement", method = RequestMethod.GET)
 	public String placesManagement(HttpServletRequest request) {
@@ -112,11 +108,12 @@ public class PlacesController {
 	
 	@RequestMapping(value= "/SelectPlaces",method = RequestMethod.POST)
 	public String Selectplaces(HttpServletRequest request) {
-		    int idCity =Integer.parseInt(request.getParameter("idCity"));
-		    List<PlacesDTO> selectCity = this.placesService.findAllByIdCity(idCity);
-		    request.setAttribute("selectCityDTO", selectCity);
-			return "itinerary/SelectPlaces";
-		}	
+	    int idCity =Integer.parseInt(request.getParameter("idCity"));
+	    List<PlacesDTO> selectCity = this.placesService.findAllByIdCity(idCity);
+	    request.setAttribute("selectCityDTO", selectCity);
+		return "itinerary/SelectPlaces";
+	}	
+
 
 	@RequestMapping(value= "/Itinerary",method = RequestMethod.POST)
 	public String Itinerary(HttpServletRequest request) {
