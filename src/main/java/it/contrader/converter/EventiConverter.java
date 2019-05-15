@@ -13,7 +13,7 @@ public class EventiConverter extends AbstractConverter<Eventi, EventiDTO> {
 	
 	@Override
 	public Eventi toEntity(EventiDTO eventiDTO) {
-		Eventi city = new Eventi();
+		Eventi eventi = new Eventi();
 		if(eventiDTO!=null) {
 			eventi.setIdEvento(eventiDTO.getIdEvento());
 			eventi.setNameevento(eventiDTO.getNameevento());
