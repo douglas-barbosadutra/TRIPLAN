@@ -1,6 +1,5 @@
 package it.contrader.model;
 
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.*;
 import javax.persistence.GenerationType;
@@ -24,14 +23,15 @@ public class User {
 	
 	public enum UserType {
 		SUPERUSER,
-		OPERATOR,
-		TUTOR,
-		TESTUSER
+		TOUROPERATOR,
+		GESTOREHOTEL,
+		GESTOREEVENTI,
+		TESTUSER,
 	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long idUser;
 	
 	@Column(unique = true)
 	private String username;
@@ -40,20 +40,4 @@ public class User {
 
 	private UserType userType;
 	
-	private String name;
-	
-	private String surname;
-	
-	private String email;
-	
-	private String address;
-	
-	private String telnumber;
-	
-	private Date birthdate;
-	
-	private String ccc;
-	
-	@Column(columnDefinition = "boolean default false")
-	private boolean paymentStatus;
 }
