@@ -18,9 +18,9 @@ public class CityDTO {
 	
 	private List<PlacesDTO> placesDTO;
 	
-	
 	private List<EventiDTO> eventiDTO;
-	private LIst<HotelDTO> hotelDTO;
+	
+	private List<HotelDTO> hotelDTO;
 	
 	
 }
