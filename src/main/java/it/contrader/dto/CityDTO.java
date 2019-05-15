@@ -16,10 +16,11 @@ public class CityDTO {
 	
 	private String state;
 	
+	private List<PlacesDTO> placesDTO;
 	
-	private PlacesDTO placesDTO;
-	private EventiDTO eventiDTO;
-	private HotelDTO hotelDTO;
+	
+	private List<EventiDTO> eventiDTO;
+	private LIst<HotelDTO> hotelDTO;
 	
 	
 }

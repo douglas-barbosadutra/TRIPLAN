@@ -13,11 +13,11 @@ import it.contrader.dao.MyRepository;
 
 @Repository
 @Transactional
-public interface PlacesRepository extends MyRepository<User, Long>{
+public interface PlacesRepository extends MyRepository<Places, Long>{
 	
 	// TODO This should be not necessary
 	@Override
 	@Query(value = "SELECT * FROM #{#entityName} e WHERE e.idCity = ?1", nativeQuery = true)
-	List<Places> findAllBy(Long idCity);
+	List<Places> findAllBy(Long id);
 	
 }
