@@ -13,5 +13,4 @@ public interface MyRepository<Entity, ID> extends CrudRepository<Entity, ID> {
 	//Implemented in all repositories, invoked by AbstractService
 	List<Entity> findAllBy(ID id);
 
-	List<Entity> findAllByString(String string);
-}
+	}

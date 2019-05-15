@@ -35,7 +35,10 @@ public class Hotel {
 	private int numerostelle;
 
 	@ManyToOne
-	@JoinColumn(name="namecity")
+	@JoinColumn(name="idCity")
 	private City city;
 	
+	@ManyToOne
+	@JoinColumn(name="idUser")
+	private User user;
 }

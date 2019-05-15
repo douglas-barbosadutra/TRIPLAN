@@ -2,37 +2,37 @@ package it.contrader.converter;
 
 import org.springframework.stereotype.Component;
 
-import it.contrader.dto.UserDTO;
+import it.contrader.dto.SuperuserDTO;
 
-import it.contrader.model.User;
+import it.contrader.model.Superuser;
 
 @Component
-public class SuperUserConverter extends AbstractConverter<User,UserDTO> {
+public class SuperUserConverter extends AbstractConverter<Superuser,SuperuserDTO> {
 
 	@Override
-	public User toEntity(UserDTO userDTO) {
-		User user = null;
-		if (userDTO != null) {
-			user = new User();
-			user.setIdUser(userDTO.getIdUser());
-			user.setUsername(userDTO.getUsername());
-			user.setPassword(userDTO.getPassword());
-			user.setUserType(userDTO.getUserType());
+	public Superuser toEntity(SuperuserDTO superuserDTO) {
+		Superuser superuser = null;
+		if (superuserDTO != null) {
+			superuser = new Superuser();
+			superuser.setIdUser(superuserDTO.getIdUser());
+			superuser.setUsername(superuserDTO.getUsername());
+			superuser.setPassword(superuserDTO.getPassword());
+			superuser.setUserType(superuserDTO.getUserType());
 		}
-		return user;
+		return superuser;
 	}
 
 	@Override
-	public UserDTO toDTO(User user) {
-		UserDTO userDTO = null;
-		if (user != null) {
-			userDTO = new UserDTO();
-			userDTO.setIdUser(user.getIdUser());
-			userDTO.setUsername(user.getUsername());
-			userDTO.setPassword(user.getPassword());
-			userDTO.setUserType(user.getUserType());
+	public SuperuserDTO toDTO(Superuser superuser) {
+		SuperuserDTO superuserDTO = null;
+		if (superuser != null) {
+			superuserDTO = new SuperuserDTO();
+			superuserDTO.setIdUser(superuser.getIdUser());
+			superuserDTO.setUsername(superuser.getUsername());
+			superuserDTO.setPassword(superuser.getPassword());
+			superuserDTO.setUserType(superuser.getUserType());
 
 		}
-		return userDTO;
+		return superuserDTO;
 	}
 }

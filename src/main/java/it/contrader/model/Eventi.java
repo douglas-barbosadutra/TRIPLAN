@@ -32,10 +32,10 @@ public class Eventi {
 
 	
 	@ManyToOne
-	@JoinColumn(name="namecity")
+	@JoinColumn(name="idCity")
 	private City city;
 	
 	@ManyToOne
-	@JoinColumn(name="username")
+	@JoinColumn(name="idUser")
 	private User user;
 }

@@ -2,37 +2,37 @@ package it.contrader.converter;
 
 import org.springframework.stereotype.Component;
 
-import it.contrader.dto.UserDTO;
+import it.contrader.dto.GestoreHotelDTO;
 
-import it.contrader.model.User;
+import it.contrader.model.GestoreHotel;
 
 @Component
-public class GestoreHotelConverter extends AbstractConverter<User,UserDTO> {
+public class GestoreHotelConverter extends AbstractConverter<GestoreHotel,GestoreHotelDTO> {
 
 	@Override
-	public User toEntity(UserDTO userDTO) {
-		User user = null;
-		if (userDTO != null) {
-			user = new User();
-			user.setIdUser(userDTO.getIdUser());
-			user.setUsername(userDTO.getUsername());
-			user.setPassword(userDTO.getPassword());
-			user.setUserType(userDTO.getUserType());
+	public GestoreHotel toEntity(GestoreHotelDTO gestorehotelDTO) {
+		GestoreHotel gestorehotel = null;
+		if (gestorehotelDTO != null) {
+			gestorehotel = new GestoreHotel();
+			gestorehotel.setIdUser(gestorehotelDTO.getIdUser());
+			gestorehotel.setUsername(gestorehotelDTO.getUsername());
+			gestorehotel.setPassword(gestorehotelDTO.getPassword());
+			gestorehotel.setUserType(gestorehotelDTO.getUserType());
 		}
-		return user;
+		return gestorehotel;
 	}
 
 	@Override
-	public UserDTO toDTO(User user) {
-		UserDTO userDTO = null;
-		if (user != null) {
-			userDTO = new UserDTO();
-			userDTO.setIdUser(user.getIdUser());
-			userDTO.setUsername(user.getUsername());
-			userDTO.setPassword(user.getPassword());
-			userDTO.setUserType(user.getUserType());
+	public GestoreHotelDTO toDTO(GestoreHotel gestorehotel) {
+		GestoreHotelDTO gestorehotelDTO = null;
+		if (gestorehotel != null) {
+			gestorehotelDTO = new GestoreHotelDTO();
+			gestorehotelDTO.setIdUser(gestorehotel.getIdUser());
+			gestorehotelDTO.setUsername(gestorehotel.getUsername());
+			gestorehotelDTO.setPassword(gestorehotel.getPassword());
+			gestorehotelDTO.setUserType(gestorehotel.getUserType());
 
 		}
-		return userDTO;
+		return gestorehotelDTO;
 	}
 }

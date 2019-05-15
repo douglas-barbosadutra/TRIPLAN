@@ -2,37 +2,37 @@ package it.contrader.converter;
 
 import org.springframework.stereotype.Component;
 
-import it.contrader.dto.UserDTO;
+import it.contrader.dto.GestoreEventiDTO;
 
-import it.contrader.model.User;
+import it.contrader.model.GestoreEventi;
 
 @Component
-public class GestoreEventiConverter extends AbstractConverter<User,UserDTO> {
+public class GestoreEventiConverter extends AbstractConverter<GestoreEventi,GestoreEventiDTO> {
 
 	@Override
-	public User toEntity(UserDTO userDTO) {
-		User user = null;
-		if (userDTO != null) {
-			user = new User();
-			user.setIdUser(userDTO.getIdUser());
-			user.setUsername(userDTO.getUsername());
-			user.setPassword(userDTO.getPassword());
-			user.setUserType(userDTO.getUserType());
+	public GestoreEventi toEntity(GestoreEventiDTO gestoreeventiDTO) {
+		GestoreEventi gestoreeventi = null;
+		if (gestoreeventiDTO != null) {
+			gestoreeventi = new GestoreEventi();
+			gestoreeventi.setIdUser(gestoreeventiDTO.getIdUser());
+			gestoreeventi.setUsername(gestoreeventiDTO.getUsername());
+			gestoreeventi.setPassword(gestoreeventiDTO.getPassword());
+			gestoreeventi.setUserType(gestoreeventiDTO.getUserType());
 		}
-		return user;
+		return gestoreeventi;
 	}
 
 	@Override
-	public UserDTO toDTO(User user) {
-		UserDTO userDTO = null;
-		if (user != null) {
-			userDTO = new UserDTO();
-			userDTO.setIdUser(user.getIdUser());
-			userDTO.setUsername(user.getUsername());
-			userDTO.setPassword(user.getPassword());
-			userDTO.setUserType(user.getUserType());
+	public GestoreEventiDTO toDTO(GestoreEventi gestoreeventi) {
+		GestoreEventiDTO gestoreeventiDTO = null;
+		if (gestoreeventi != null) {
+			gestoreeventiDTO = new GestoreEventiDTO();
+			gestoreeventiDTO.setIdUser(gestoreeventi.getIdUser());
+			gestoreeventiDTO.setUsername(gestoreeventi.getUsername());
+			gestoreeventiDTO.setPassword(gestoreeventi.getPassword());
+			gestoreeventiDTO.setUserType(gestoreeventi.getUserType());
 
 		}
-		return userDTO;
+		return gestoreeventiDTO;
 	}
 }

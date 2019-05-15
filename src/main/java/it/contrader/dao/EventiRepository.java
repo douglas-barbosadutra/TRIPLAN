@@ -17,9 +17,8 @@ public interface EventiRepository extends MyRepository<Eventi, Long>{
 	
 	// TODO This should be not necessary
 	@Override
-	@Query(value = "SELECT * FROM #{#entityName} e WHERE e.namecity = ?1", nativeQuery = true)
-	List<Eventi> findAllByString(String namecity);
+	@Query(value = "SELECT * FROM #{#entityName} e WHERE e.idCity = ?1", nativeQuery = true)
+	List<Eventi> findAllBy(Long idCity);
 	
-	@Query(value = "SELECT * FROM #{#entityName} e WHERE e.username = ?1", nativeQuery = true)
-	List<Eventi> findAllBy(Long username);
+
 }
