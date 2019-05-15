@@ -1,8 +1,11 @@
 package it.contrader.model;
 
-import java.util.List;
-
+import java.util.Date;
+import javax.persistence.Entity;
 import javax.persistence.*;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -17,31 +20,22 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
 @OnDelete(action = OnDeleteAction.CASCADE)
-public class User {
-	
-	public enum UserType {
-		SUPERUSER,
-		TOUROPERATOR,
-		GESTOREHOTEL,
-		GESTOREEVENTI,
-		TESTUSER,
-	}
-
+public class Eventi {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idUser;
+	private long idEvento;
 	
 	@Column(unique = true)
-	private String username;
+	private String nameevento;
 	
-	private String password;
+	private String meseevento;
 
-	private UserType userType;
 	
-	@OneToMany (mappedBy = "user")
-	private List<Eventi> eventi;
+	@ManyToOne
+	@JoinColumn(name="namecity")
+	private City city;
 	
-	@OneToMany (mappedBy = "user")
-	private List<Hotel> hotel;
-	
+	@ManyToOne
+	@JoinColumn(name="username")
+	private User user;
 }
