@@ -28,7 +28,7 @@ public class City {
 	
 	private String namecity;
 	
-	private String state;
+	private String state;	
 	
 	@OneToMany (mappedBy = "city")
 	private List<Places> places;
@@ -40,7 +40,4 @@ public class City {
 	
 	@OneToMany (mappedBy = "city")
 	private List<Eventi> eventi;
-	
-	
-	
 }

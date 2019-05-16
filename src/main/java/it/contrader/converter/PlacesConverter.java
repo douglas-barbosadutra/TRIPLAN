@@ -23,7 +23,7 @@ public class PlacesConverter extends AbstractConverter<Places, PlacesDTO> {
 			places.setLongitude(placesDTO.getLongitude());
 			places.setType(placesDTO.getType());
 			places.setCity(cityConverter.toEntity(placesDTO.getCityDTO()));
-			
+
 		}
 		return places;
 	}
@@ -40,9 +40,7 @@ public class PlacesConverter extends AbstractConverter<Places, PlacesDTO> {
 			placesDTO.setLongitude(places.getLongitude());
 			placesDTO.setType(places.getType());
 			placesDTO.setCityDTO(cityConverter.toDTO(places.getCity()));
-		
-		
-		
+	
 		}
 		return placesDTO;
 	}

@@ -22,5 +22,4 @@ public class CityDTO {
 	
 	private List<HotelDTO> hotelDTO;
 	
-	
 }

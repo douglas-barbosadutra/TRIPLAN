@@ -28,10 +28,7 @@ public class PlacesDTO {
 	private String type;
 	
 	private CityDTO cityDTO;
-	
-	
-	
-	
+
 }
 	
 	

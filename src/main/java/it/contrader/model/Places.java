@@ -1,11 +1,8 @@
 package it.contrader.model;
 
 import java.util.Date;
-import javax.persistence.Entity;
+
 import javax.persistence.*;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;

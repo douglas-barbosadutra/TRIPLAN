@@ -20,14 +20,10 @@ public class EventiDTO {
 	private String nameevento;
 	
 	private String meseevento;
-
-	
 	
 	private CityDTO cityDTO;
 	
-	private UserDTO userDTO;
-	
-	
+	private UserDTO userDTO;	
 }
 	
 	

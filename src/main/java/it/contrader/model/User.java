@@ -37,7 +37,7 @@ public class User {
 	private String password;
 
 	private UserType userType;
-	
+
 	@OneToMany (mappedBy = "user")
 	private List<Eventi> eventi;
 	

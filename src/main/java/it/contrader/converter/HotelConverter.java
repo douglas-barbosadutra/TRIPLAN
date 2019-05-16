@@ -8,8 +8,12 @@ import it.contrader.model.Hotel;
 
 @Component
 public class HotelConverter extends AbstractConverter<Hotel, HotelDTO> {
-
 	
+	@Autowired
+	private CityConverter cityConverter;
+	
+	@Autowired
+	private UserConverter userConverter;
 	
 	@Override
 	public Hotel toEntity(HotelDTO hotelDTO) {
@@ -20,11 +24,9 @@ public class HotelConverter extends AbstractConverter<Hotel, HotelDTO> {
 			hotel.setLatitude(hotelDTO.getLatitude());
 			hotel.setLongitude(hotelDTO.getLongitude());
 			hotel.setNumerostelle(hotelDTO.getNumerostelle());
+			hotel.setCity(cityConverter.toEntity(hotelDTO.getCityDTO()));
+			hotel.setUser(userConverter.toEntity(hotelDTO.getUserDTO()));
 
-
-
-			
-			
 		}
 		return hotel;
 	}
@@ -39,6 +41,8 @@ public class HotelConverter extends AbstractConverter<Hotel, HotelDTO> {
 			hotelDTO.setLatitude(hotel.getLatitude());
 			hotelDTO.setLongitude(hotel.getLongitude());
 			hotelDTO.setNumerostelle(hotel.getNumerostelle());
+			hotelDTO.setCityDTO(cityConverter.toDTO(hotel.getCity()));
+			hotelDTO.setUserDTO(userConverter.toDTO(hotel.getUser()));
 
 
 		}
