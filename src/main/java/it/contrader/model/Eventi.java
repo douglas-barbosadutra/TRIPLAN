@@ -1,12 +1,8 @@
 package it.contrader.model;
 
-import java.util.Date;
-
 import javax.persistence.*;
-
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,5 +29,5 @@ public class Eventi {
 	
 	@ManyToOne
 	@JoinColumn(name="idUser")
-	private User user;
+	private GestoreEventi gestoreeventi;
 }

@@ -40,5 +40,5 @@ public class Hotel {
 	
 	@ManyToOne
 	@JoinColumn(name="idUser")
-	private User user;
+	private GestoreHotel gestorehotel;
 }

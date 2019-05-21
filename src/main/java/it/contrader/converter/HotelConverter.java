@@ -13,7 +13,7 @@ public class HotelConverter extends AbstractConverter<Hotel, HotelDTO> {
 	private CityConverter cityConverter;
 	
 	@Autowired
-	private UserConverter userConverter;
+	private GestoreHotelConverter gestorehotelConverter;
 	
 	@Override
 	public Hotel toEntity(HotelDTO hotelDTO) {
@@ -25,7 +25,7 @@ public class HotelConverter extends AbstractConverter<Hotel, HotelDTO> {
 			hotel.setLongitude(hotelDTO.getLongitude());
 			hotel.setNumerostelle(hotelDTO.getNumerostelle());
 			hotel.setCity(cityConverter.toEntity(hotelDTO.getCityDTO()));
-			hotel.setUser(userConverter.toEntity(hotelDTO.getUserDTO()));
+			hotel.setGestorehotel(gestorehotelConverter.toEntity(hotelDTO.getGestorehotelDTO()));
 
 		}
 		return hotel;
@@ -42,7 +42,7 @@ public class HotelConverter extends AbstractConverter<Hotel, HotelDTO> {
 			hotelDTO.setLongitude(hotel.getLongitude());
 			hotelDTO.setNumerostelle(hotel.getNumerostelle());
 			hotelDTO.setCityDTO(cityConverter.toDTO(hotel.getCity()));
-			hotelDTO.setUserDTO(userConverter.toDTO(hotel.getUser()));
+			hotelDTO.setGestorehotelDTO(gestorehotelConverter.toDTO(hotel.getGestorehotel()));
 
 
 		}

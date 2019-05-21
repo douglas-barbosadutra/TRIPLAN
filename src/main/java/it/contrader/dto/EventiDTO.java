@@ -23,7 +23,7 @@ public class EventiDTO {
 	
 	private CityDTO cityDTO;
 	
-	private UserDTO userDTO;	
+	private GestoreEventiDTO gestoreeventiDTO;	
 }
 	
 	

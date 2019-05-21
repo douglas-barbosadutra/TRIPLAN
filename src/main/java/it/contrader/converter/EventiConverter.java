@@ -13,7 +13,7 @@ public class EventiConverter extends AbstractConverter<Eventi, EventiDTO> {
 	private CityConverter cityConverter;
 	
 	@Autowired
-	private UserConverter userConverter;
+	private GestoreEventiConverter gestoreeventiConverter;
 	
 	@Override
 	public Eventi toEntity(EventiDTO eventiDTO) {
@@ -23,7 +23,7 @@ public class EventiConverter extends AbstractConverter<Eventi, EventiDTO> {
 			eventi.setNameevento(eventiDTO.getNameevento());
 			eventi.setMeseevento(eventiDTO.getMeseevento());
 			eventi.setCity(cityConverter.toEntity(eventiDTO.getCityDTO()));
-			eventi.setUser(userConverter.toEntity(eventiDTO.getUserDTO()));			
+			eventi.setGestoreeventi(gestoreeventiConverter.toEntity(eventiDTO.getGestoreeventiDTO()));			
 		}
 		return eventi;
 	}
@@ -37,7 +37,7 @@ public class EventiConverter extends AbstractConverter<Eventi, EventiDTO> {
 			eventiDTO.setNameevento(eventi.getNameevento());
 			eventiDTO.setMeseevento(eventi.getMeseevento());
 			eventiDTO.setCityDTO(cityConverter.toDTO(eventi.getCity()));
-			eventiDTO.setUserDTO(userConverter.toDTO(eventi.getUser()));
+			eventiDTO.setGestoreeventiDTO(gestoreeventiConverter.toDTO(eventi.getGestoreeventi()));
 
 	}
 		return eventiDTO;

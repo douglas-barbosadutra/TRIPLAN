@@ -16,6 +16,7 @@ public class CityConverter extends AbstractConverter<City, CityDTO> {
 		City city = new City();
 		if(cityDTO!=null) {
 			city.setIdCity(cityDTO.getIdCity());
+			city.setNamecity(cityDTO.getNamecity());
 			city.setState(cityDTO.getState());
 			
 			
@@ -29,6 +30,7 @@ public class CityConverter extends AbstractConverter<City, CityDTO> {
 		CityDTO cityDTO = new CityDTO();
 		if(city!=null) {
 			cityDTO.setIdCity(city.getIdCity());
+			cityDTO.setNamecity(city.getNamecity());
 			cityDTO.setState(city.getState());
 			
 		}

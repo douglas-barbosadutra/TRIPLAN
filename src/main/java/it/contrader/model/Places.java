@@ -34,6 +34,6 @@ public class Places {
 	private String type;
 	
 	@ManyToOne
-	@JoinColumn(name="idCity")
+	@JoinColumn(name="id_city")
 	private City city;
 }

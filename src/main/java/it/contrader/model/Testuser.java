@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper=false)
 @NoArgsConstructor
 @Entity
-public class TestUser extends User {
+public class Testuser extends User {
 
 }

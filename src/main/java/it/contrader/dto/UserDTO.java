@@ -1,6 +1,5 @@
 package it.contrader.dto;
 
-import java.util.Date;
 import it.contrader.model.User.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +18,6 @@ public class UserDTO {
 	private String password;
 
 	private UserType userType;
-
 	
 	public UserDTO cast() {
 		UserDTO userDTO;
@@ -33,11 +31,11 @@ public class UserDTO {
 		case GESTOREHOTEL:
 			userDTO = new GestoreHotelDTO();
 			break;
-		case GESTOREEVENTI: 
+		case GESTOREEVENTI:
 			userDTO = new GestoreEventiDTO();
 			break;
 		case TESTUSER: 
-			userDTO = new TestUserDTO();
+			userDTO = new TestuserDTO();
 			break;
 		default:
 			userDTO = null;
@@ -46,8 +44,7 @@ public class UserDTO {
 		userDTO.setIdUser(idUser);
 		userDTO.setUsername(username);
 		userDTO.setPassword(password);
-		userDTO.setUserType(userType);
-		
+		userDTO.setUserType(userType);		
 		return userDTO;
 	}
 }

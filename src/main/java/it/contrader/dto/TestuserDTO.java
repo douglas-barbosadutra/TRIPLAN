@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper=false)
 @NoArgsConstructor
-public class TestUserDTO extends UserDTO {
+public class TestuserDTO extends UserDTO {
 	
-	public TestUserDTO(long idUser, String username, String password, UserType userType) {
+	public TestuserDTO(long idUser, String username, String password, UserType userType) {
 		super(idUser, username, password, userType);
 	}
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import it.contrader.dto.LoginDTO;
 import it.contrader.dto.TourOperatorDTO;
 import it.contrader.dto.SuperuserDTO;
-import it.contrader.dto.TestUserDTO;
+import it.contrader.dto.TestuserDTO;
 import it.contrader.dto.GestoreHotelDTO;
 import it.contrader.dto.GestoreEventiDTO;
 import it.contrader.dto.UserDTO;
@@ -20,7 +20,7 @@ import it.contrader.service.TourOperatorService;
 import it.contrader.service.SuperUserService;
 import it.contrader.service.GestoreHotelService;
 import it.contrader.service.GestoreEventiService;
-import it.contrader.service.TestUserService;
+import it.contrader.service.TestuserService;
 import it.contrader.service.UserService;
 
 
@@ -38,7 +38,8 @@ public class UserController extends AbstractController<User, UserDTO>{
 	@Autowired
 	private GestoreHotelService gestorehotelService;
 	@Autowired
-	private GestoreEventiService gestoreeventiService;
+	private GestoreEventiService gestoreeventiService;	
+
 	
 	//POST Angular a different DTO depending on UserType
 	@PostMapping(value = "/login")
@@ -59,7 +60,7 @@ public class UserController extends AbstractController<User, UserDTO>{
 			GestoreHotelDTO gestoreeventi = (GestoreHotelDTO)  userdto.cast();
 			return gestoreeventi;
 		case TESTUSER:
-			TestUserDTO testuser = (TestUserDTO)  userdto.cast();
+			TestuserDTO testuser = (TestuserDTO)  userdto.cast();
 			return testuser;
 		default: break;
 		}

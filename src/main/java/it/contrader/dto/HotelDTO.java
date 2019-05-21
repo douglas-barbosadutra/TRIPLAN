@@ -20,9 +20,10 @@ public class HotelDTO {
 
 	private int numerostelle;
 
-	private UserDTO userDTO;
+	private GestoreHotelDTO gestorehotelDTO;
 	
 	private CityDTO cityDTO;
+
 
 
 }

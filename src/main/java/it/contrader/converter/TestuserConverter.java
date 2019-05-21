@@ -2,18 +2,18 @@ package it.contrader.converter;
 
 import org.springframework.stereotype.Component;
 
-import it.contrader.dto.TestUserDTO;
+import it.contrader.dto.TestuserDTO;
 
-import it.contrader.model.TestUser;
+import it.contrader.model.Testuser;
 
 @Component
-public class TestUserConverter extends AbstractConverter<TestUser,TestUserDTO> {
+public class TestuserConverter extends AbstractConverter<Testuser,TestuserDTO> {
 
 	@Override
-	public TestUser toEntity(TestUserDTO testuserDTO) {
-		TestUser testuser = null;
+	public Testuser toEntity(TestuserDTO testuserDTO) {
+		Testuser testuser = null;
 		if (testuserDTO != null) {
-			testuser = new TestUser();
+			testuser = new Testuser();
 			testuser.setIdUser(testuserDTO.getIdUser());
 			testuser.setUsername(testuserDTO.getUsername());
 			testuser.setPassword(testuserDTO.getPassword());
@@ -23,10 +23,10 @@ public class TestUserConverter extends AbstractConverter<TestUser,TestUserDTO> {
 	}
 
 	@Override
-	public TestUserDTO toDTO(TestUser testuser) {
-		TestUserDTO testuserDTO = null;
+	public TestuserDTO toDTO(Testuser testuser) {
+		TestuserDTO testuserDTO = null;
 		if (testuser != null) {
-			testuserDTO = new TestUserDTO();
+			testuserDTO = new TestuserDTO();
 			testuserDTO.setIdUser(testuser.getIdUser());
 			testuserDTO.setUsername(testuser.getUsername());
 			testuserDTO.setPassword(testuser.getPassword());
