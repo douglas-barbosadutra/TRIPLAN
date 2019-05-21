@@ -1,0 +1,8 @@
+<title>Login TRIPLAN</title>
+        <form class="login" #f="ngForm" >
+				<label for="user">Username: </label>
+				<input type="text" id="user" name="username" placeholder="Insert username" ngModel>
+				<label for="pass">Password: </label>
+				 <input type="password" id="pass" name="password" placeholder="Insert password" ngModel>
+            <button type="submit" class="btn btn-primary" (click)="login(f)">Login</button>
+		</form>

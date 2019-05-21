@@ -1,0 +1,6 @@
+export enum UserType {
+    SUPERUSER,
+    TOUROPERAOTR,
+    GESTOREHOTEL,
+    GESTOREEVENTI
+}
