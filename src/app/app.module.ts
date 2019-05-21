@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UsersComponent } from '../app/component/user/user.component';
-import { UserDetailComponent } from '../app/component/user/user-detail/user-detail.component';
 import { HeaderComponent } from '../app/component/header/header.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { LoginComponent } from '../app/component/login/login.component';
@@ -16,7 +15,6 @@ import { SuperuserDashboardComponent } from './component/dashboard/superuser-das
   declarations: [
     AppComponent,
     UsersComponent,
-    UserDetailComponent,
     HeaderComponent,
     LoginComponent,
     SuperuserDashboardComponent,

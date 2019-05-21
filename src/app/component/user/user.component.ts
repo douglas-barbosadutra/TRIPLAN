@@ -34,4 +34,11 @@ import { UserService } from 'src/app/services/user.service';
             () => this.getAll()
         );
     }
+    insert(insdto) {
+        this.userService.insert(insdto).subscribe(
+            ()=> this.getAll()
+        );
+    }
+    }
+
  }
