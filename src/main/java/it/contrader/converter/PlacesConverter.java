@@ -1,5 +1,8 @@
 package it.contrader.converter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -7,13 +10,13 @@ import it.contrader.dto.PlacesDTO;
 import it.contrader.model.Places;
 
 @Component
-public class PlacesConverter extends AbstractConverter<Places, PlacesDTO> {
+public class PlacesConverter {
 
 	@Autowired
-	private CityConverter cityConverter;
+	private static CityConverter cityConverter;
 	
-	@Override
-	public Places toEntity(PlacesDTO placesDTO) {
+
+	public static Places toEntity(PlacesDTO placesDTO) {
 		Places places = new Places();
 		if(placesDTO!=null) {
 			places.setIdPlaces(placesDTO.getIdPlaces());
@@ -29,8 +32,8 @@ public class PlacesConverter extends AbstractConverter<Places, PlacesDTO> {
 	}
 
 	
-	@Override
-	public PlacesDTO toDTO(Places places) {
+	
+	public static PlacesDTO toDTO(Places places) {
 		PlacesDTO placesDTO = new PlacesDTO();
 		if(places!=null) {
 			placesDTO.setIdPlaces(places.getIdPlaces());
@@ -43,5 +46,24 @@ public class PlacesConverter extends AbstractConverter<Places, PlacesDTO> {
 	
 		}
 		return placesDTO;
+	}
+	public static List<PlacesDTO> toListDTO(List<Places> list) {
+		List<PlacesDTO> listPlacesDTO = new ArrayList<>();
+		if (!list.isEmpty()) {
+			for (Places places : list) {
+				listPlacesDTO.add(PlacesConverter.toDTO(places));
+			}
+		}
+		return listPlacesDTO;
+	}
+
+	public static List<Places> toListEntity(List<PlacesDTO> listPlacesDTO) {
+		List<Places> list = new ArrayList<>();
+		if (!listPlacesDTO.isEmpty()) {
+			for (PlacesDTO placesDTO : listPlacesDTO) {
+				list.add(PlacesConverter.toEntity(placesDTO));
+			}
+		}
+		return list;
 	}
 }

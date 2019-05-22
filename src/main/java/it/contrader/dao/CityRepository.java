@@ -1,18 +1,18 @@
 package it.contrader.dao;
 
 import java.util.List;
-import javax.transaction.Transactional;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
+
+import org.springframework.data.repository.CrudRepository;
+
 import it.contrader.model.City;
-import it.contrader.dao.MyRepository;
 
-@Repository
-@Transactional
-public interface CityRepository extends MyRepository<City, Long>{
+public interface CityRepository extends CrudRepository<City, Integer> {
 
-	// TODO This should be not necessary
-	@Override
-	@Query(value = "SELECT * FROM #{#entityName} e", nativeQuery = true)
-	List<City> findAllBy(Long idCity);
+	public List<City> findAllByNamecity(String namecity);
+	
+	public List<City> findAll();
+
 }
+
+
+

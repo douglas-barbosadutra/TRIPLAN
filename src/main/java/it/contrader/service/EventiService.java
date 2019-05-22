@@ -1,12 +1,53 @@
 package it.contrader.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import it.contrader.converter.EventiConverter;
+import it.contrader.dao.EventiRepository;
 import it.contrader.dto.EventiDTO;
 import it.contrader.model.Eventi;
 
-
 @Service
-public class EventiService extends AbstractService<Eventi, EventiDTO> {
+public class EventiService {
+
+	private final EventiRepository eventiRepository;
+
+	@Autowired
+	public EventiService(EventiRepository eventiRepository) {
+		this.eventiRepository = eventiRepository;
+	}
+
+	public List<EventiDTO> getListaEventiDTO() {
+		return EventiConverter.toListDTO((List<Eventi>) eventiRepository.findAll());
+	}
+
+	public EventiDTO getEventiDTOById(Integer id) {
+		return EventiConverter.toDTO(eventiRepository.findById(id).get()); 
+	}
+
+
+	public boolean insertEventi(EventiDTO eventiDTO) {
+		return eventiRepository.save(EventiConverter.toEntity(eventiDTO)) != null;
+	}
+
+	public boolean updateEventi(EventiDTO eventiDTO) {
+		return eventiRepository.save(EventiConverter.toEntity(eventiDTO)) != null;
+	}
 	
-	//ALL crud methods in AbstractService
+	public void deleteEventiById(Integer id) {
+		eventiRepository.deleteById(id);
+	}
+	
+	public List<EventiDTO> findAllEventiDTO() {
+
+		List<Eventi> list = eventiRepository.findAll();
+		List<EventiDTO> eventiDTOs = new ArrayList<>();
+		list.forEach(i -> eventiDTOs.add(EventiConverter.toDTO(i)));
+		return eventiDTOs;
+	}
 }
+

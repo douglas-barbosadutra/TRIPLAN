@@ -1,10 +1,6 @@
 package it.contrader.dto;
 
 
-import java.util.Date;
-import java.util.List;
-
-import it.contrader.model.User.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 public class EventiDTO {
 
-	private long idEvento;
+	private Integer idEvento;
 	
 	private String nameevento;
 	
@@ -23,7 +19,8 @@ public class EventiDTO {
 	
 	private CityDTO cityDTO;
 	
-	private GestoreEventiDTO gestoreeventiDTO;	
+	private UserDTO userDTO;
+
 }
 	
 	

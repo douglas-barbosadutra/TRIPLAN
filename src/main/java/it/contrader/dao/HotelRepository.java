@@ -1,20 +1,19 @@
 package it.contrader.dao;
 
 import java.util.List;
-import javax.transaction.Transactional;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
+
+import org.springframework.data.repository.CrudRepository;
 
 import it.contrader.model.Hotel;
-import it.contrader.dao.MyRepository;
 
-@Repository
-@Transactional
-public interface HotelRepository extends MyRepository<Hotel, Long>{
 
-	// TODO This should be not necessary
-	@Override
-	@Query(value = "SELECT * FROM #{#entityName} e WHERE e.idCity = ?1", nativeQuery = true)
-	List<Hotel> findAllBy(Long idCity);
+public interface HotelRepository extends CrudRepository<Hotel, Integer> {
+
+	public List<Hotel> findAllByNamehotel(String namehotel);
+	
+	public List<Hotel> findAll();
 
 }
+
+
+

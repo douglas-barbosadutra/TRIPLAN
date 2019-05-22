@@ -1,16 +1,46 @@
 package it.contrader.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import it.contrader.dto.PlacesDTO;
-import it.contrader.model.Places;
+import it.contrader.service.PlacesService;
 
+@Controller
+@RequestMapping("/Places")
+public class PlacesController {
 
-@RestController
-@RequestMapping("/places")
-@CrossOrigin(origins = "http://localhost:4200")
-public class PlacesController extends AbstractController<Places, PlacesDTO> {
+	private final PlacesService placesService;
 
-	//ALL crud methods in AbstractController
+	@Autowired
+	public PlacesController(PlacesService placesService) {
+		this.placesService = placesService;
+	}
+	
+	@RequestMapping(value = "/placesManagement", method = RequestMethod.GET)
+	public List<PlacesDTO> placesManagement() {
+	return this.placesService.findAllPlacesDTO();
+	}
+
+	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+	public void delete(@RequestParam(value = "idCity") int id) {
+		this.placesService.deletePlacesById(id);
+	}
+
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
+		public void update(@RequestBody PlacesDTO places) {
+			placesService.updatePlaces(places);
+	}
+	
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
+	public void insert(@RequestBody PlacesDTO places) {
+		placesService.insertPlaces(places);
+	}
 }
+

@@ -1,6 +1,5 @@
 package it.contrader.dto;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class HotelDTO {
 
-	private long idHotel;
+	private Integer idHotel;
 
 	private String namehotel;
 	
@@ -19,11 +18,10 @@ public class HotelDTO {
 	private double longitude;
 
 	private int numerostelle;
-
-	private GestoreHotelDTO gestorehotelDTO;
 	
 	private CityDTO cityDTO;
 
+	private UserDTO userDTO;
 
 
 }

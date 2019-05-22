@@ -1,6 +1,7 @@
 package it.contrader.dto;
 
-import it.contrader.model.User.UserType;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,40 +12,15 @@ import lombok.NoArgsConstructor;
 
 public class UserDTO {
 
-	private long idUser;
+	private Integer idUser;
 	
 	private String username;
 	
 	private String password;
 
-	private UserType userType;
+	private String userType;
+
+	private List<EventiDTO> eventiDTO;
 	
-	public UserDTO cast() {
-		UserDTO userDTO;
-		switch (userType){
-		case SUPERUSER:
-			userDTO = new SuperuserDTO();
-			break;
-		case TOUROPERATOR:
-			userDTO = new TourOperatorDTO();
-			break;
-		case GESTOREHOTEL:
-			userDTO = new GestoreHotelDTO();
-			break;
-		case GESTOREEVENTI:
-			userDTO = new GestoreEventiDTO();
-			break;
-		case TESTUSER: 
-			userDTO = new TestuserDTO();
-			break;
-		default:
-			userDTO = null;
-		}
-		
-		userDTO.setIdUser(idUser);
-		userDTO.setUsername(username);
-		userDTO.setPassword(password);
-		userDTO.setUserType(userType);		
-		return userDTO;
+	private List<HotelDTO> hotelDTO;
 	}
-}

@@ -1,7 +1,5 @@
 package it.contrader.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +20,7 @@ public class Hotel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idHotel;
+	private Integer idHotel;
 
 	@Column(unique = true)
 	
@@ -40,5 +38,5 @@ public class Hotel {
 	
 	@ManyToOne
 	@JoinColumn(name="idUser")
-	private GestoreHotel gestorehotel;
+	private User user;
 }

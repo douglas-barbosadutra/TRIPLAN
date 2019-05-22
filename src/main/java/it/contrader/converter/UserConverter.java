@@ -1,16 +1,17 @@
 package it.contrader.converter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import it.contrader.dto.UserDTO;
-
 import it.contrader.model.User;
 
 @Component
-public class UserConverter extends AbstractConverter<User,UserDTO> {
+public class UserConverter  {
 
-	@Override
-	public User toEntity(UserDTO userDTO) {
+	public static User toEntity(UserDTO userDTO) {
 		User user = null;
 		if (userDTO != null) {
 			user = new User();
@@ -22,8 +23,7 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 		return user;
 	}
 
-	@Override
-	public UserDTO toDTO(User user) {
+	public static UserDTO toDTO(User user) {
 		UserDTO userDTO = null;
 		if (user != null) {
 			userDTO = new UserDTO();
@@ -34,5 +34,24 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 
 		}
 		return userDTO;
+	}
+	public static List<UserDTO> toListDTO(List<User> list) {
+		List<UserDTO> listUserDTO = new ArrayList<>();
+		if (!list.isEmpty()) {
+			for (User user : list) {
+				listUserDTO.add(UserConverter.toDTO(user));
+			}
+		}
+		return listUserDTO;
+	}
+
+	public static List<User> toListEntity(List<UserDTO> listUserDTO) {
+		List<User> list = new ArrayList<>();
+		if (!listUserDTO.isEmpty()) {
+			for (UserDTO userDTO : listUserDTO) {
+				list.add(UserConverter.toEntity(userDTO));
+			}
+		}
+		return list;
 	}
 }

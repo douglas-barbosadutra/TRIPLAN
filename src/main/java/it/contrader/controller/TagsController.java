@@ -9,38 +9,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import it.contrader.dto.CityDTO;
-import it.contrader.service.CityService;
+import it.contrader.dto.TagsDTO;
+import it.contrader.service.TagsService;
 
 @Controller
-@RequestMapping("/City")
-public class CityController {
-
-	private final CityService cityService;
+@RequestMapping("/Tags")
+public class TagsController {
+	
+	private final TagsService tagsService;
 
 	@Autowired
-	public CityController(CityService cityService) {
-		this.cityService = cityService;
+	public TagsController(TagsService tagsService) {
+		this.tagsService = tagsService;
 	}
 	
 	@RequestMapping(value = "/cityManagement", method = RequestMethod.GET)
-	public List<CityDTO> eventiManagement() {
-	return this.cityService.findAllCityDTO();
+	public List<TagsDTO> eventiManagement() {
+	return this.tagsService.findAllTagsDTO();
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-	public void delete(@RequestParam(value = "userId") int id) {
-		this.cityService.deleteCityById(id);
+	public void delete(@RequestParam(value = "idTag") int id) {
+		this.tagsService.deleteTagsById(id);
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
-		public void update(@RequestBody CityDTO city) {
-			cityService.updateCity(city);
+		public void update(@RequestBody TagsDTO tags) {
+			tagsService.updateTags(tags);
 	}
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public void insert(@RequestBody CityDTO city) {
-		cityService.insertCity(city);
+	public void insert(@RequestBody TagsDTO tags) {
+		tagsService.insertTags(tags);
 	}
 }
+
 

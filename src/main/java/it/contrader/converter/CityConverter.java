@@ -1,18 +1,19 @@
 package it.contrader.converter;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import it.contrader.dto.CityDTO;
 import it.contrader.model.City;
 
 @Component
-public class CityConverter extends AbstractConverter<City, CityDTO> {
+public class CityConverter {
 
 	
 	
-	@Override
-	public City toEntity(CityDTO cityDTO) {
+	public static City toEntity(CityDTO cityDTO) {
 		City city = new City();
 		if(cityDTO!=null) {
 			city.setIdCity(cityDTO.getIdCity());
@@ -23,10 +24,8 @@ public class CityConverter extends AbstractConverter<City, CityDTO> {
 		}
 		return city;
 	}
-
 	
-	@Override
-	public CityDTO toDTO(City city) {
+	public static CityDTO toDTO(City city) {
 		CityDTO cityDTO = new CityDTO();
 		if(city!=null) {
 			cityDTO.setIdCity(city.getIdCity());
@@ -35,5 +34,25 @@ public class CityConverter extends AbstractConverter<City, CityDTO> {
 			
 		}
 		return cityDTO;
+	}
+	
+	public static List<CityDTO> toListDTO(List<City> list) {
+		List<CityDTO> listCityDTO = new ArrayList<>();
+		if (!list.isEmpty()) {
+			for (City city : list) {
+				listCityDTO.add(CityConverter.toDTO(city));
+			}
+		}
+		return listCityDTO;
+	}
+
+	public static List<City> toListEntity(List<CityDTO> listCityDTO) {
+		List<City> list = new ArrayList<>();
+		if (!listCityDTO.isEmpty()) {
+			for (CityDTO cityDTO : listCityDTO) {
+				list.add(CityConverter.toEntity(cityDTO));
+			}
+		}
+		return list;
 	}
 }

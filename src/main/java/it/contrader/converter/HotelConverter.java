@@ -1,5 +1,8 @@
 package it.contrader.converter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -7,16 +10,16 @@ import it.contrader.dto.HotelDTO;
 import it.contrader.model.Hotel;
 
 @Component
-public class HotelConverter extends AbstractConverter<Hotel, HotelDTO> {
+public class HotelConverter  {
 	
 	@Autowired
-	private CityConverter cityConverter;
+	private static CityConverter cityConverter;
 	
 	@Autowired
-	private GestoreHotelConverter gestorehotelConverter;
+	private static UserConverter userConverter;
 	
-	@Override
-	public Hotel toEntity(HotelDTO hotelDTO) {
+	
+	public static Hotel toEntity(HotelDTO hotelDTO) {
 		Hotel hotel = new Hotel();
 		if(hotelDTO!=null) {
 			hotel.setIdHotel(hotelDTO.getIdHotel());
@@ -25,15 +28,14 @@ public class HotelConverter extends AbstractConverter<Hotel, HotelDTO> {
 			hotel.setLongitude(hotelDTO.getLongitude());
 			hotel.setNumerostelle(hotelDTO.getNumerostelle());
 			hotel.setCity(cityConverter.toEntity(hotelDTO.getCityDTO()));
-			hotel.setGestorehotel(gestorehotelConverter.toEntity(hotelDTO.getGestorehotelDTO()));
+			hotel.setUser(userConverter.toEntity(hotelDTO.getUserDTO()));
 
 		}
 		return hotel;
 	}
 
 	
-	@Override
-	public HotelDTO toDTO(Hotel hotel) {
+	public static HotelDTO toDTO(Hotel hotel) {
 		HotelDTO hotelDTO = new HotelDTO();
 		if(hotel!=null) {
 			hotelDTO.setIdHotel(hotel.getIdHotel());
@@ -42,10 +44,29 @@ public class HotelConverter extends AbstractConverter<Hotel, HotelDTO> {
 			hotelDTO.setLongitude(hotel.getLongitude());
 			hotelDTO.setNumerostelle(hotel.getNumerostelle());
 			hotelDTO.setCityDTO(cityConverter.toDTO(hotel.getCity()));
-			hotelDTO.setGestorehotelDTO(gestorehotelConverter.toDTO(hotel.getGestorehotel()));
+			hotelDTO.setUserDTO(userConverter.toDTO(hotel.getUser()));
 
 
 		}
 		return hotelDTO;
+	}
+	public static List<HotelDTO> toListDTO(List<Hotel> list) {
+		List<HotelDTO> listHotelDTO = new ArrayList<>();
+		if (!list.isEmpty()) {
+			for (Hotel hotel : list) {
+				listHotelDTO.add(HotelConverter.toDTO(hotel));
+			}
+		}
+		return listHotelDTO;
+	}
+
+	public static List<Hotel> toListEntity(List<HotelDTO> listHotelDTO) {
+		List<Hotel> list = new ArrayList<>();
+		if (!listHotelDTO.isEmpty()) {
+			for (HotelDTO hotelDTO : listHotelDTO) {
+				list.add(HotelConverter.toEntity(hotelDTO));
+			}
+		}
+		return list;
 	}
 }

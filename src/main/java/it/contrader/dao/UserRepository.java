@@ -2,22 +2,14 @@ package it.contrader.dao;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
 import it.contrader.model.User;
-import it.contrader.dao.MyRepository;
 
-@Repository
-@Transactional
-public interface UserRepository extends MyRepository<User, Long>{
+public interface UserRepository extends CrudRepository<User, Integer> {
+
+	public User findUserByUsernameAndPassword(String username,String password);
 	
-	// TODO This should be not necessary
-	@Override
-	@Query(value = "SELECT * FROM #{#entityName} e", nativeQuery = true)
-	List<User> findAllBy(Long id);
+	public List<User> findAll();
 	
-	User findByUsernameAndPassword(String username, String password);
 }

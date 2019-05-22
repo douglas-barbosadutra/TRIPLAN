@@ -1,10 +1,6 @@
 package it.contrader.dto;
 
 
-import java.util.Date;
-import java.util.List;
-
-import it.contrader.model.User.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +14,7 @@ public class PlacesDTO {
 	private static final double R= 6378.1370D;
 	private static final double CONVERT_DEGREE_TO_RADIANS = Math.PI/180D;
 	
-	private long idPlaces;
+	private Integer idPlaces;
 	
 	private String nameplaces;
 	

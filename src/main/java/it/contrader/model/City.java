@@ -22,7 +22,7 @@ public class City {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idCity;
+	private Integer idCity;
 
 	@Column(unique = true)
 	
