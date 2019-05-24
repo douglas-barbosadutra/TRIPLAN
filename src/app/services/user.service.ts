@@ -1,24 +1,34 @@
 import { Injectable } from '@angular/core';
-import { UserDTO } from 'src/app/dto/userdto';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { AbstractService } from './abstract.service';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../models/User';
 import { Observable } from 'rxjs';
-import { LoginDTO } from '../dto/logindto';
 
 @Injectable({
   providedIn: 'root'
 })
+export class UserService {
 
-export class UserService extends AbstractService<UserDTO> {
-
-    constructor(shttp: HttpClient) {
-        super(shttp);
-        this.type = 'user';
-    }
-
-
-    login(loginDTO: LoginDTO): Observable<UserDTO> {
-        return this.http.post<any>('http://localhost:8080/user/login', loginDTO);
+  constructor(private http: HttpClient) {}
+    insertUser(user: User) {
+    return this.http.post( 'http://localhost:8080/Superuser/insertUser', user);
   }
 
-}
+  showUser(): Observable<User[]> {
+    return this.http.get<User[]>('http://localhost:8080/superuser/showUser');
+  }
+
+  deleteUser(idUser: number) {
+    return this.http.delete('http://localhost:8080/superuser/deleteUser?idUser=' + idUser);
+  }
+
+  updateUser(user: User) {
+    return this.http.put( 'http://localhost:8080/superuser/updateUser', user);
+  }
+
+  findUser(idUser: number) {
+          return this.http.get('http://localhost:8080/superuser/findUser?idUser=' + idUser);
+  }
+ }
+
+
+

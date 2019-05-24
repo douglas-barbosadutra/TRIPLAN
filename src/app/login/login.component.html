@@ -1,0 +1,5 @@
+<form #f="ngForm">
+   <label>Username</label> <input type="username" name="username" placeholder="Username" ngModel>
+   <label>Password</label> <input type="password" name="password" placeholder="Password" ngModel>
+   <button  type="submit" (click)="login(f)">Login</button>
+</form>
