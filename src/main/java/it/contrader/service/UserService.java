@@ -1,6 +1,5 @@
 package it.contrader.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,6 @@ public class UserService {
 	}
 
 	public UserDTO getUserByUsernameAndPassword(String username, String password) {
-
 		final User user = userRepository.findUserByUsernameAndPassword(username, password);
 		return UserConverter.toDTO(user);
 	}
@@ -47,11 +45,7 @@ public class UserService {
 		userRepository.deleteById(id);
 	}
 	
-	public List<UserDTO> findAllUserDTO() {
-
-		List<User> list = userRepository.findAll();
-		List<UserDTO> userDTOs = new ArrayList<>();
-		list.forEach(i -> userDTOs.add(UserConverter.toDTO(i)));
-		return userDTOs;
+	public List<UserDTO> getAllUsers(){
+		return UserConverter.toListDTO(userRepository.findAll());
 	}
 }

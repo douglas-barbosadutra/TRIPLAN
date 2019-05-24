@@ -3,16 +3,18 @@ package it.contrader.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import it.contrader.dto.TagsDTO;
 import it.contrader.service.TagsService;
 
-@Controller
+@CrossOrigin
+@RestController
 @RequestMapping("/Tags")
 public class TagsController {
 	
@@ -23,7 +25,7 @@ public class TagsController {
 		this.tagsService = tagsService;
 	}
 	
-	@RequestMapping(value = "/cityManagement", method = RequestMethod.GET)
+	@RequestMapping(value = "/tagsManagement", method = RequestMethod.GET)
 	public List<TagsDTO> eventiManagement() {
 	return this.tagsService.findAllTagsDTO();
 	}
