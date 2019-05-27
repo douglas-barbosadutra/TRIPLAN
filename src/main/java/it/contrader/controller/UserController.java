@@ -41,9 +41,9 @@ public class UserController {
 		return userService.insertUser(user);
 	}
 
-	@RequestMapping(value = "/updateUser", method = RequestMethod.PUT)
-	public void update(@RequestBody UserDTO user) {
-		userService.updateUser(user);
+	@RequestMapping(value="/updateUser" , method= RequestMethod.PUT)
+	public UserDTO showUser(@RequestBody UserDTO user) {		
+		return userService.insertUser(user);
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

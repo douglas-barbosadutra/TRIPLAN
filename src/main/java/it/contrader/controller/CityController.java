@@ -32,7 +32,7 @@ public class CityController {
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-	public void delete(@RequestParam(value = "userId") int id) {
+	public void delete(@RequestParam(value = "idCity") int id) {
 		this.cityService.deleteCityById(id);
 	}
 
