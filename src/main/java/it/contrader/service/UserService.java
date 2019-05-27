@@ -33,8 +33,10 @@ public class UserService {
 		return UserConverter.toDTO(user);
 	}
 
-	public boolean insertUser(UserDTO userDTO) {
-		return userRepository.save(UserConverter.toEntity(userDTO)) != null;
+	public UserDTO insertUser(UserDTO userDTO) {
+		User user = UserConverter.toEntity(userDTO);
+		userRepository.saveAndFlush(user);
+		return UserConverter.toDTO(user);
 	}
 
 	public boolean updateUser(UserDTO userDTO) {

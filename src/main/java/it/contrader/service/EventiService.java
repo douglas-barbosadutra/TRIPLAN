@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.contrader.converter.EventiConverter;
+import it.contrader.converter.UserConverter;
 import it.contrader.dao.EventiRepository;
 import it.contrader.dto.EventiDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.model.Eventi;
 
 @Service
@@ -42,12 +44,8 @@ public class EventiService {
 		eventiRepository.deleteById(id);
 	}
 	
-	public List<EventiDTO> findAllEventiDTO() {
-
-		List<Eventi> list = eventiRepository.findAll();
-		List<EventiDTO> eventiDTOs = new ArrayList<>();
-		list.forEach(i -> eventiDTOs.add(EventiConverter.toDTO(i)));
-		return eventiDTOs;
+	public List<EventiDTO> getAllEventi(){
+		return EventiConverter.toListDTO(eventiRepository.findAll());
 	}
 }
 

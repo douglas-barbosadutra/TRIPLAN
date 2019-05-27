@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.contrader.dto.CityDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.service.CityService;
 
 @CrossOrigin
@@ -25,9 +26,9 @@ public class CityController {
 		this.cityService = cityService;
 	}
 	
-	@RequestMapping(value = "/cityManagement", method = RequestMethod.GET)
-	public List<CityDTO> eventiManagement() {
-	return this.cityService.findAllCityDTO();
+	@RequestMapping(value="/showCity" , method= RequestMethod.GET)
+	public List<CityDTO> showCity() {		
+		return cityService.getAllCity();
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)

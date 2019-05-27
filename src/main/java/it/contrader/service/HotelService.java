@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.contrader.converter.HotelConverter;
+import it.contrader.converter.UserConverter;
 import it.contrader.dao.HotelRepository;
 import it.contrader.dto.HotelDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.model.Hotel;
 
 @Service
@@ -42,11 +44,7 @@ public class HotelService {
 		hotelRepository.deleteById(idhotel);
 	}
 	
-	public List<HotelDTO> findAllHotelDTO() {
-
-		List<Hotel> list = hotelRepository.findAll();
-		List<HotelDTO> hotelDTOs = new ArrayList<>();
-		list.forEach(i -> hotelDTOs.add(HotelConverter.toDTO(i)));
-		return hotelDTOs;
+	public List<HotelDTO> getAllHotel(){
+		return HotelConverter.toListDTO(hotelRepository.findAll());
 	}
 }

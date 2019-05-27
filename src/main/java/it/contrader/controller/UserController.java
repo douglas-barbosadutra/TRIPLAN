@@ -16,13 +16,13 @@ import it.contrader.service.UserService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/superuser")
-public class SuperUserController {
+@RequestMapping("/user")
+public class UserController {
 
 	private final UserService userService;
 
 	@Autowired
-	public SuperUserController(UserService userService) {
+	public UserController(UserService userService) {
 		this.userService = userService;
 	}
 	
@@ -36,15 +36,16 @@ public class SuperUserController {
 		this.userService.deleteUserById(id);
 	}
 
-	@RequestMapping(value = "/insertUser", method = RequestMethod.POST)
-	public void insert(@RequestBody UserDTO user) {
-		userService.insertUser(user);
+	@RequestMapping(value="/insertUser", method= RequestMethod.POST)
+	public UserDTO insertUser(@RequestBody UserDTO user) {
+		return userService.insertUser(user);
 	}
 
 	@RequestMapping(value = "/updateUser", method = RequestMethod.PUT)
 	public void update(@RequestBody UserDTO user) {
 		userService.updateUser(user);
 	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public UserDTO loginControl(@RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password) {

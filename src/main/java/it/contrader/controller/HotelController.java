@@ -15,19 +15,19 @@ import it.contrader.service.HotelService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/GestoreHotel")
-public class GestoreHotelController {
+@RequestMapping("/Hotel")
+public class HotelController {
 
 	private final HotelService hotelService;
 
 	@Autowired
-	public GestoreHotelController(HotelService hotelService) {
+	public HotelController(HotelService hotelService) {
 		this.hotelService = hotelService;
 	}
 	
-	@RequestMapping(value = "/hotelManagement", method = RequestMethod.GET)
-	public List<HotelDTO> hotelManagement() {
-	return this.hotelService.findAllHotelDTO();
+	@RequestMapping(value="/showHotel" , method= RequestMethod.GET)
+	public List<HotelDTO> showPlaces() {		
+		return hotelService.getAllHotel();
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
@@ -37,7 +37,7 @@ public class GestoreHotelController {
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 		public void update(@RequestBody HotelDTO hotel) {
-			hotelService.updateHotel(hotel);
+		hotelService.updateHotel(hotel);
 	}
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)

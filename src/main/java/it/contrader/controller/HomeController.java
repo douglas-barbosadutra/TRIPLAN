@@ -30,10 +30,17 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/homesu", method = RequestMethod.GET)
-	public String homeAdmin(HttpServletRequest request) {
+	public String homeSU(HttpServletRequest request) {
 		List<UserDTO> allUser = this.userService.getListaUserDTO();
 		request.setAttribute("allUserDTO", allUser);
 		return "homesu";
+	}
+	
+	@RequestMapping(value = "/hometo", method = RequestMethod.GET)
+	public String homeTo(HttpServletRequest request) {
+		List<UserDTO> allUser = this.userService.getListaUserDTO();
+		request.setAttribute("allUserDTO", allUser);
+		return "hometo";
 	}
 
 }

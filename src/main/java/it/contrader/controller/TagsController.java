@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.contrader.dto.PlacesDTO;
 import it.contrader.dto.TagsDTO;
 import it.contrader.service.TagsService;
 
@@ -25,9 +26,9 @@ public class TagsController {
 		this.tagsService = tagsService;
 	}
 	
-	@RequestMapping(value = "/tagsManagement", method = RequestMethod.GET)
-	public List<TagsDTO> eventiManagement() {
-	return this.tagsService.findAllTagsDTO();
+	@RequestMapping(value="/showTgas" , method= RequestMethod.GET)
+	public List<TagsDTO> showTags() {		
+		return tagsService.getAllTags();
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)

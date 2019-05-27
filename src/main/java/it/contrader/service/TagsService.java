@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.contrader.converter.PlacesConverter;
 import it.contrader.converter.TagsConverter;
 import it.contrader.dao.TagsRepository;
+import it.contrader.dto.PlacesDTO;
 import it.contrader.dto.TagsDTO;
 import it.contrader.model.Tags;
 
@@ -42,11 +44,7 @@ public class TagsService {
 		tagsRepository.deleteById(id);
 	}
 	
-	public List<TagsDTO> findAllTagsDTO() {
-
-		List<Tags> list = tagsRepository.findAll();
-		List<TagsDTO> tagsDTOs = new ArrayList<>();
-		list.forEach(i -> tagsDTOs.add(TagsConverter.toDTO(i)));
-		return tagsDTOs;
+	public List<TagsDTO> getAllTags(){
+		return TagsConverter.toListDTO(tagsRepository.findAll());
 	}
 }

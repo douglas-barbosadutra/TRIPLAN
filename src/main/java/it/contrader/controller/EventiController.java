@@ -15,19 +15,19 @@ import it.contrader.service.EventiService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/GestoreEventi")
-public class GestoreEventiController {
+@RequestMapping("/Eventi")
+public class EventiController {
 
 	private final EventiService eventiService;
 
 	@Autowired
-	public GestoreEventiController(EventiService eventiService) {
+	public EventiController(EventiService eventiService) {
 		this.eventiService = eventiService;
 	}
 	
-	@RequestMapping(value = "/eventiManagement", method = RequestMethod.GET)
-	public List<EventiDTO> eventiManagement() {
-	return this.eventiService.findAllEventiDTO();
+	@RequestMapping(value="/showEventi" , method= RequestMethod.GET)
+	public List<EventiDTO> showPlaces() {		
+		return eventiService.getAllEventi();
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
@@ -37,7 +37,7 @@ public class GestoreEventiController {
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 		public void update(@RequestBody EventiDTO eventi) {
-			eventiService.updateEventi(eventi);
+		eventiService.updateEventi(eventi);
 	}
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
@@ -45,3 +45,4 @@ public class GestoreEventiController {
 		eventiService.insertEventi(eventi);
 	}
 }
+

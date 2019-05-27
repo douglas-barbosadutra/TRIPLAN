@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.contrader.converter.CityConverter;
+import it.contrader.converter.UserConverter;
 import it.contrader.dao.CityRepository;
 import it.contrader.dto.CityDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.model.City;
 
 @Service
@@ -42,11 +44,8 @@ public class CityService {
 		cityRepository.deleteById(id);
 	}
 	
-	public List<CityDTO> findAllCityDTO() {
-
-		List<City> list = cityRepository.findAll();
-		List<CityDTO> cityDTOs = new ArrayList<>();
-		list.forEach(i -> cityDTOs.add(CityConverter.toDTO(i)));
-		return cityDTOs;
+	public List<CityDTO> getAllCity(){
+		return CityConverter.toListDTO(cityRepository.findAll());
 	}
+
 }

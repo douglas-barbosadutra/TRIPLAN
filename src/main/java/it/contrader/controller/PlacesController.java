@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.contrader.dto.PlacesDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.service.PlacesService;
 
 @CrossOrigin
@@ -25,9 +26,9 @@ public class PlacesController {
 		this.placesService = placesService;
 	}
 	
-	@RequestMapping(value = "/placesManagement", method = RequestMethod.GET)
-	public List<PlacesDTO> placesManagement() {
-	return this.placesService.findAllPlacesDTO();
+	@RequestMapping(value="/showPlaces" , method= RequestMethod.GET)
+	public List<PlacesDTO> showPlaces() {		
+		return placesService.getAllPlaces();
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)

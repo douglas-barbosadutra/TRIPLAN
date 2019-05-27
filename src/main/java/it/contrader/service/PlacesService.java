@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.contrader.converter.CityConverter;
 import it.contrader.converter.PlacesConverter;
 import it.contrader.dao.PlacesRepository;
+import it.contrader.dto.CityDTO;
 import it.contrader.dto.PlacesDTO;
 import it.contrader.model.Places;
 
@@ -52,12 +54,8 @@ public class PlacesService {
 		return listPlacesDTO;
 	}
 	
-	public List<PlacesDTO> findAllPlacesDTO() {
-
-		List<Places> list = placesRepository.findAll();
-		List<PlacesDTO> placesDTOs = new ArrayList<>();
-		list.forEach(i -> placesDTOs.add(PlacesConverter.toDTO(i)));
-		return placesDTOs;
+	public List<PlacesDTO> getAllPlaces(){
+		return PlacesConverter.toListDTO(placesRepository.findAll());
 	}
 	
 	public List<PlacesDTO> getItinerary(List<PlacesDTO> places) {
