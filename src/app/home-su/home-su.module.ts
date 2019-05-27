@@ -2,18 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeSuComponent } from './home-su.component';
 import { HomeSuRoutingModule } from './home-su-routing.module';
-import { UserListComponent } from './user-list/user-list.component';
+import { TogeListComponent } from './toge-list/toge-list.component';
+import { TogeInsertComponent } from './toge-insert/toge-insert.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     HomeSuComponent,
-    UserListComponent,
+    TogeListComponent,
+    TogeInsertComponent,
 
   ],
   imports: [
     CommonModule,
-    HomeSuRoutingModule
+    HomeSuRoutingModule,
+    FormsModule
   ]
 })
 export class HomeSuModule { }

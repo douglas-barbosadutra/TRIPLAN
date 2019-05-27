@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome TRIPALNAngularProva on Angular CLI Server",
+            "name": "Launch Chrome TRIPALNAngular on Angular CLI Server",
             "type": "chrome",
             "request": "launch",
             "url": "http://localhost:4200/#",
@@ -36,7 +36,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome TRIPALNAngularProva on Angular CLI Server",
+            "name": "Launch Chrome TRIPALNAngular on Angular CLI Server",
             "type": "chrome",
             "request": "launch",
             "url": "http://localhost:4200/#",

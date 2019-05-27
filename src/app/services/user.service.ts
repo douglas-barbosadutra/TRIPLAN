@@ -10,23 +10,23 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
     insertUser(user: User) {
-    return this.http.post( 'http://localhost:8080/Superuser/insertUser', user);
+    return this.http.post( 'http://localhost:8080/user/insertUser', user);
   }
 
   showUser(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:8080/superuser/showUser');
+    return this.http.get<User[]>('http://localhost:8080/user/showUser');
   }
 
   deleteUser(idUser: number) {
-    return this.http.delete('http://localhost:8080/superuser/deleteUser?idUser=' + idUser);
+    return this.http.delete('http://localhost:8080/user/deleteUser?idUser=' + idUser);
   }
 
   updateUser(user: User) {
-    return this.http.put( 'http://localhost:8080/superuser/updateUser', user);
+    return this.http.put( 'http://localhost:8080/user/updateUser', user);
   }
 
   findUser(idUser: number) {
-          return this.http.get('http://localhost:8080/superuser/findUser?idUser=' + idUser);
+          return this.http.get('http://localhost:8080/user/findUser?idUser=' + idUser);
   }
  }
 

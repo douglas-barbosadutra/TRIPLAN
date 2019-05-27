@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent } from './layout.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { LayoutSuComponent } from './layout-su.component';
+import { NavbarSuComponent } from './navbar-su/navbar-su.component';
 import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    LayoutComponent,
-    NavbarComponent
-
+    LayoutSuComponent,
+    NavbarSuComponent,
   ],
   imports: [
     RouterModule,
     CommonModule
   ]
 })
-export class LayoutModule { }
+export class LayoutSuModule { }

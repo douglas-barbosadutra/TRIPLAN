@@ -5,16 +5,16 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-toge-list',
+  templateUrl: './toge-list.component.html',
+  styleUrls: ['./toge-list.component.css']
 })
-export class UserListComponent implements OnInit {
+export class TogeListComponent implements OnInit {
 
   userList: User[];
   user: User;
   touroperators: User[];
-  users: User[];
+  gestoreeventi: User[];
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -27,12 +27,6 @@ export class UserListComponent implements OnInit {
 
       this.userService.deleteUser(idUser).subscribe((data: any) => {
 
-        if (data) {
-          alert('Cancellazione effettuata');
-        } else {
-          alert('Cancellazione fallita');
-        }
-
         this.router.navigateByUrl('homesu');
       });
     }
@@ -43,13 +37,14 @@ export class UserListComponent implements OnInit {
 
     separate(users: User[]) {
        this.touroperators = new Array<User>();
-       this.users = new Array<User>();
+       this.gestoreeventi = new Array<User>();
        for (const user of users) {
             if (user.userType === 'touroperator') {
                 this.touroperators.push(user);
             }
-            if (user.userType === 'user') {
-                this.users.push(user);
+
+            if (user.userType === 'gestoreeventi') {
+                this.gestoreeventi.push(user);
             }
        }
 

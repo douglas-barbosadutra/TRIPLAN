@@ -5,9 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutModule } from './layout/layout.module';
+import { LayoutSuModule } from './layout-su/layout-su.module';
 import { LoginModule } from './login/login.module';
 import { HomeSuModule } from './home-su/home-su.module';
+import { LayoutToModule } from './layout-to/layout-to.module';
+import { HomeToModule } from './home-to/home-to.module';
+
 
 
 @NgModule({
@@ -18,9 +21,11 @@ import { HomeSuModule } from './home-su/home-su.module';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    LayoutModule,
+    LayoutSuModule,
     LoginModule,
-    HomeSuModule
+    HomeSuModule,
+    LayoutToModule,
+    HomeToModule
   ],
   providers: [],
   bootstrap: [AppComponent]

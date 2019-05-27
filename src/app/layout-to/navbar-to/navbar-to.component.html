@@ -1,7 +1,7 @@
   <ul class="menu">
       <li>
         <div class="dropdown">
-        <a href="/#/userInsert" class="dropbtn" >Inserisci utente</a>
+        <a [routerLink]="['insertUser']" routerLinkActive="router-link-active" class="dropbtn">Nuovo Utente</a>
         </div>
       </li>
 
@@ -10,10 +10,5 @@
         <a [routerLink]="['showUser']" routerLinkActive="router-link-active" class="dropbtn">Lista utenti</a>
         </div>
       </li>
-
-      <li >
-        <div class="dropdown">
-        <a href="/#/login" class="dropbtn">Logout</a>
-        </div>
-      </li>
+      
   </ul>

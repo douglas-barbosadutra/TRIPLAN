@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
                 if (response.userType === 'superuser') {
                     this.router.navigateByUrl('/homesu');
                 } else if (response.userType === 'touroperator') {
-                    this.router.navigateByUrl('/homeTO');
+                    this.router.navigateByUrl('/hometo');
                 } else if (response.userType === 'gestorehotel') {
                     this.router.navigateByUrl('/homeGH');
                 } else if (response.userType === 'gestoreeventi') {

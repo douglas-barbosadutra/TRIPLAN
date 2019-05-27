@@ -1,23 +1,4 @@
-<h1>Lista utenti</h1>
-	<table>
-	     <thead>
-		     <tr>
-			    <th>ID</th>
-				<th>Username</th>
-				<th>Password</th>
-		     </tr>
-		 </thead>
-		<tbody>
-	         <tr *ngFor="let user of users">
-                <td>{{user.idUser}} </td>
-                <td>{{user.username}} </td>
-                <td>{{user.password}}</td>
-                <td><button (click)="deleteUser(user.idUser)">Elimina</button></td>
-              </tr>
-        </tbody>
-    </table>
-
-<h1>Lista TourOperator </h1>
+<h1>Lista Tour Operator </h1>
     	<table>
 	     <thead>
 		     <tr>
@@ -34,4 +15,23 @@
                 <td><button (click)="deleteUser(user.idUser)">Elimina</button></td>
               </tr>
         </tbody>
-	</table>
+    </table>
+    
+    <h1>Lista Gestori Eventi </h1>
+    	<table>
+	     <thead>
+		     <tr>
+			    <th>ID</th>
+				<th>Username</th>
+				<th>Password</th>
+		     </tr>
+		 </thead>
+		<tbody>
+	         <tr *ngFor="let user of gestoreeventi">
+                <td>{{user.idUser}} </td>
+                <td>{{user.username}} </td>
+                <td>{{user.password}}</td>
+                <td><button (click)="deleteUser(user.idUser)">Elimina</button></td>
+              </tr>
+        </tbody>
+    </table>

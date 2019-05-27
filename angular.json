@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TRIPALNAngularProva": {
+    "TRIPLANAngular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/TRIPALNAngularProva",
+            "outputPath": "dist/TRIPLANAngular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TRIPALNAngularProva:build"
+            "browserTarget": "TRIPLANAngular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "TRIPALNAngularProva:build:production"
+              "browserTarget": "TRIPLANAngular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TRIPALNAngularProva:build"
+            "browserTarget": "TRIPLANAngular:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "TRIPALNAngularProva-e2e": {
+    "TRIPLANAngular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "TRIPALNAngularProva:serve"
+            "devServerTarget": "TRIPLANAngular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "TRIPALNAngularProva:serve:production"
+              "devServerTarget": "TRIPLANAngular:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "TRIPALNAngularProva"
+  "defaultProject": "TRIPLANAngular"
 }
