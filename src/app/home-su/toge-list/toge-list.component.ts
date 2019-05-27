@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/User';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -24,10 +25,8 @@ export class TogeListComponent implements OnInit {
   }
 
     deleteUser(idUser: number) {
-
       this.userService.deleteUser(idUser).subscribe((data: any) => {
-
-        this.router.navigateByUrl('homesu');
+      this.router.navigateByUrl('homesu');
       });
     }
 

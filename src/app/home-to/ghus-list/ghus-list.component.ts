@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/User';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-ghus-list',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class GhusListComponent implements OnInit {
 
- userList: User[];
+  userList: User[];
   user: User;
   gestorihotel: User[];
   users: User[];
@@ -18,6 +19,7 @@ export class GhusListComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    this.user = new User(0, '', '', '');
     this.showUser();
 
   }
@@ -48,4 +50,5 @@ export class GhusListComponent implements OnInit {
        }
 
     }
+
 }

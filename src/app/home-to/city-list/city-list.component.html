@@ -1,0 +1,18 @@
+<h1>Lista Citta' </h1>
+    	<table>
+	     <thead>
+		     <tr>
+			    <th>ID</th>
+				<th>Nome Citta'</th>
+				<th>Stato</th>
+		     </tr>
+		 </thead>
+		<tbody>
+	         <tr *ngFor="let city of cityList">
+                <td>{{city.idCity}} </td>
+                <td>{{city.namecity}} </td>
+                <td>{{city.state}}</td>
+                <td><button (click)="deleteCity(city.idCity)">Elimina</button></td>
+              </tr>
+        </tbody>
+    </table>
