@@ -7,6 +7,8 @@ import { GhusListComponent } from './ghus-list/ghus-list.component';
 import { GhusInsertComponent } from './ghus-insert/ghus-insert.component';
 import { CityListComponent } from './city-list/city-list.component';
 import { CityInsertComponent } from './city-insert/city-insert.component';
+import { PlacesListComponent } from './places-list/places-list.component';
+import { PlacesInsertComponent } from './places-insert/places-insert.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { CityInsertComponent } from './city-insert/city-insert.component';
       GhusInsertComponent,
       CityListComponent,
       CityInsertComponent,
+      PlacesListComponent,
+      PlacesInsertComponent,
   ],
   imports: [
     CommonModule,
