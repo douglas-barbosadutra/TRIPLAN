@@ -15,7 +15,7 @@ export class HotelInsertComponent implements OnInit {
   constructor(private hotelService: HotelService, private router: Router) { }
 
   ngOnInit() {
-    this.hotel = new Hotel(0, '', 0, 0, 0, 0, 0);
+    this.hotel = new Hotel(0, '', 0, 0, null , 0, null);
   }
 
     insertHotel(f: NgForm) {
