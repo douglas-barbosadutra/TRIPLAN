@@ -21,7 +21,6 @@ public class PlacesConverter {
 		if(placesDTO!=null) {
 			places.setIdPlaces(placesDTO.getIdPlaces());
 			places.setNameplaces(placesDTO.getNameplaces());
-			places.setCityplaces(placesDTO.getCityplaces());
 			places.setLatitude(placesDTO.getLatitude());
 			places.setLongitude(placesDTO.getLongitude());
 			places.setType(placesDTO.getType());
@@ -38,7 +37,6 @@ public class PlacesConverter {
 		if(places!=null) {
 			placesDTO.setIdPlaces(places.getIdPlaces());
 			placesDTO.setNameplaces(places.getNameplaces());
-			placesDTO.setCityplaces(places.getCityplaces());
 		    placesDTO.setLatitude(places.getLatitude());
 			placesDTO.setLongitude(places.getLongitude());
 			placesDTO.setType(places.getType());

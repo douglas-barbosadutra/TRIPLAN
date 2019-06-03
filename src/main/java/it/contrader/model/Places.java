@@ -31,8 +31,6 @@ public class Places {
 	@Column(unique = true)
 	private String nameplaces;
 	
-	private String cityplaces;
-
 	private double latitude;
 	
 	private double longitude;
