@@ -15,7 +15,7 @@ export class PlacesInsertComponent implements OnInit {
   constructor(private placesService: PlacesService, private router: Router) { }
 
   ngOnInit() {
-    this.places = new Places(0, '', 0, 0, '', 0);
+    this.places = new Places(0, '', 0, 0, '', null);
   }
 
     insertPlaces(f: NgForm) {

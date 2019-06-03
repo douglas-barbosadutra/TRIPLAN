@@ -18,16 +18,17 @@
 			<input type="number" name="longitude" [(ngModel)]="places.longitude">
         </div>
 
-        <div>
-			<label>ID City</label>
-			<input type="number" name="idCity" [(ngModel)]="places.idCity">
-        </div>
-        
-        
-        <div>
+       <div>
 			<label>Tipo</label>
 			<input type="text" name="type" [(ngModel)]="places.type">
-		</div>
+        </div>
+
+       <div>
+			<label>ID CIty</label>
+			<input type="number" name="idCIty" [(ngModel)]="places.cityDTO.idCity">
+        </div>
+
+
 
         <button type="submit" (click)="insertPlaces(f)">Inserisci</button>
 	</form>

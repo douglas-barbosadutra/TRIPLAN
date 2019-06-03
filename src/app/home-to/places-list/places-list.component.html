@@ -7,7 +7,7 @@
                 <th>Latitudine</th>
                 <th>Longitudine</th>
                 <th>Tipo</th>
-                <th>ID City</th>
+                <th>Nome Citta'</th>
 
 
 
@@ -20,10 +20,8 @@
                 <td>{{places.latitude}}</td>
                 <td>{{places.longitude}}</td>
                 <td>{{places.type}}</td>
-                <td>{{places.idCity}}</td>
-
-
-                <td><button (click)="deleteCity(places.idPlaces)">Elimina</button></td>
+                <td>{{places.cityDTO.namecity}}</td>
+                <td><button (click)="deletePlaces(places.idPlaces)">Elimina</button></td>
               </tr>
         </tbody>
     </table>

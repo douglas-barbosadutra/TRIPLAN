@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: darkblue;
+  background-color: orange;
 }
 
 .menu li {
@@ -19,7 +19,7 @@
 }
 
 .dropbtn {
-  background-color: darkblue;
+  background-color: orange;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -34,7 +34,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: lightblue;
+  background-color: yellow;
   width: 125px;
   z-index: 1;
 }
@@ -53,5 +53,6 @@
   display: block;
 }
 .dropdown:hover .dropbtn {
-  background-color: blue;
+  background-color: orangered;
+;
 }

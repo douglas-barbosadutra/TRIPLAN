@@ -24,7 +24,7 @@ export class PlacesListComponent implements OnInit {
     })
   }
 
-    deleteCity(idPlaces: number) {
+    deletePlaces(idPlaces: number) {
       this.placesService.deletePlaces(idPlaces).subscribe((data: any) => {
         this.router.navigateByUrl('hometo');
       });
