@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
                 } else if (response.userType === 'touroperator') {
                     this.router.navigateByUrl('/hometo');
                 } else if (response.userType === 'gestorehotel') {
-                    this.router.navigateByUrl('/homeGH');
+                    this.router.navigateByUrl('/homegh');
                 } else if (response.userType === 'gestoreeventi') {
                     this.router.navigateByUrl('/homeGE');
                 } else if (response.userType === 'user') {

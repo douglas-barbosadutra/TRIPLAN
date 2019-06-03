@@ -10,12 +10,16 @@ import { LoginModule } from './login/login.module';
 import { HomeSuModule } from './home-su/home-su.module';
 import { LayoutToModule } from './layout-to/layout-to.module';
 import { HomeToModule } from './home-to/home-to.module';
+import { LayoutGhModule } from './layout-gh/layout-gh.module';
+import { HomeGhModule } from './home-gh/home-gh.module';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     HttpClientModule,
@@ -25,7 +29,9 @@ import { HomeToModule } from './home-to/home-to.module';
     LoginModule,
     HomeSuModule,
     LayoutToModule,
-    HomeToModule
+    HomeToModule,
+    LayoutGhModule,
+    HomeGhModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
