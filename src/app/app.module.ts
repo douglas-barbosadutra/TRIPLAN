@@ -12,8 +12,8 @@ import { LayoutToModule } from './layout-to/layout-to.module';
 import { HomeToModule } from './home-to/home-to.module';
 import { LayoutGhModule } from './layout-gh/layout-gh.module';
 import { HomeGhModule } from './home-gh/home-gh.module';
-
-
+import { LayoutGeModule } from './layout-ge/layout-ge.module';
+import { HomeGeModule } from './home-ge/home-ge.module';
 
 
 @NgModule({
@@ -32,7 +32,10 @@ import { HomeGhModule } from './home-gh/home-gh.module';
     HomeToModule,
     LayoutGhModule,
     HomeGhModule,
-  ],
+    LayoutGeModule,
+    HomeGeModule,
+
+],
   providers: [],
   bootstrap: [AppComponent]
 })

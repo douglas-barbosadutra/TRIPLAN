@@ -1,0 +1,28 @@
+
+<div>
+
+	<form #f="ngForm">
+		<div>
+			<label>Nome Evento'</label>
+			<input type="text" name="nameevento" [(ngModel)]="eventi.nameevento">
+        </div>
+
+        <div>
+			<label>Mese Evento</label>
+			<input type="text" name="meseevento" [(ngModel)]="eventi.meseevento">
+		</div>
+        
+        <div>
+			<label>Citta</label>
+			<input type="number" name="idCity" [(ngModel)]="eventi.cityDTO.idCity">
+        
+        </div>
+          <div>
+			<label>Gestore Evento</label>
+			<input type="number" name="idUser" [(ngModel)]="eventi.userDTO.idUser">
+		</div>
+        
+        
+        <button type="submit" (click)="insertEvento(f)">Inserisci</button>
+	</form>
+</div>
