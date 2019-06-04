@@ -22,7 +22,7 @@ public class BookingConverter {
 			booking.setDatefrom(bookingDTO.getDatefrom());
 			booking.setDateto(bookingDTO.getDateto());
 			booking.setCosto(bookingDTO.getCosto());
-			booking.setIndex(bookingDTO.getIndex());
+			booking.setIndice(bookingDTO.getIndice());
 			booking.setPeople(bookingDTO.getPeople());
 			
 		}
@@ -38,7 +38,7 @@ public class BookingConverter {
 			bookingDTO.setDatefrom(booking.getDatefrom());
 			bookingDTO.setDateto(booking.getDateto());
 			bookingDTO.setCosto(booking.getCosto());
-			bookingDTO.setIndex(booking.getIndex());
+			bookingDTO.setIndice(booking.getIndice());
 			bookingDTO.setPeople(booking.getPeople());
 		}
 		return bookingDTO;

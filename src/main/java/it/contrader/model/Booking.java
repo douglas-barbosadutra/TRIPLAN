@@ -37,7 +37,7 @@ public class Booking {
 	
 	private Integer costo;
 	
-	private Integer index;
+	private Integer indice;
 	
 	private Integer people;
 
