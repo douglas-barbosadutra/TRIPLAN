@@ -35,4 +35,7 @@ public class City {
 	
 	@OneToMany (mappedBy = "city")
 	private List<Places> places;
+	
+	@OneToMany (mappedBy = "city")
+	private List<Image> image;
 }

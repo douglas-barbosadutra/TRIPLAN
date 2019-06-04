@@ -21,4 +21,6 @@ public class CityDTO {
 	
 	private List<BookingDTO> bookingDTO;
 	
+	private List<ImageDTO> imageDTO;
+
 }

@@ -20,4 +20,5 @@ public class ImageDTO {
 	
 	private String type;
 
+	private CityDTO cityDTO;
 	}

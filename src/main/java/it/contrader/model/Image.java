@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -32,5 +34,9 @@ public class Image {
 	private BlobType image;
 	
 	private String type;
+	
+	@ManyToOne
+	@JoinColumn(name="idCity")
+	private City city;
 
 }
