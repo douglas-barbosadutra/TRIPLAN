@@ -1,0 +1,51 @@
+package it.contrader.dto;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class PlacesDTO {
+
+	private static final double R= 6378.1370D;
+	private static final double CONVERT_DEGREE_TO_RADIANS = Math.PI/180D;
+	
+	private Integer idplaces;
+	
+	private String nameplaces;
+	
+	private String cityplaces;
+
+	private Double longitude;
+	
+	private Double latitude;
+	
+	private String category;
+	
+    private Integer durata;
+	
+	private Integer fascia;
+	
+	private Integer costo;
+    
+	Double lati= latitude*CONVERT_DEGREE_TO_RADIANS; 
+	Double longi = longitude*CONVERT_DEGREE_TO_RADIANS;
+	
+	public double distanceTo(PlacesDTO y){
+		double deltaLat = (y.lati - this.lati);
+		double deltaLon = (y.longi - this.longi);
+		 double a = Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2)
+		            + Math.cos(this.latitude) * Math.cos(y.latitude)
+		            * Math.sin(deltaLon / 2) * Math.sin(deltaLon / 2);
+		 double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		 double distance = R * c * 1000;
+		 return Math.sqrt(distance);
+	}
+
+}
+	
+	
