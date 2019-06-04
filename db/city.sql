@@ -4,5 +4,5 @@ LIMIT 0, 1000
 
 -- Date: 2019-06-04 17:40
 */
-INSERT INTO `` (`id_city`,`namecity`,`type`) VALUES (1,'roma','cultura');
-INSERT INTO `` (`id_city`,`namecity`,`type`) VALUES (2,'amsterdam','divertimento');
+INSERT INTO `city` (`id_city`,`namecity`,`type`) VALUES (1,'roma','cultura');
+INSERT INTO `city` (`id_city`,`namecity`,`type`) VALUES (2,'amsterdam','divertimento');
