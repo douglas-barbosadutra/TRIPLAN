@@ -1,5 +1,6 @@
 package it.contrader.dto;
 
+import java.sql.Date;
 import java.text.DateFormat;
 import java.util.List;
 
@@ -18,9 +19,9 @@ public class BookingDTO {
 	
 	private String citybook;
 	
-	private DateFormat datefrom;
+	private Date datefrom;
 	
-	private DateFormat dateto;
+	private Date dateto;
 	
 	private Integer costo;
 	

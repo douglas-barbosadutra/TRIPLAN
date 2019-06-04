@@ -1,5 +1,6 @@
 package it.contrader.model;
 
+import java.sql.Date;
 import java.text.DateFormat;
 import java.util.List;
 
@@ -31,9 +32,9 @@ public class Booking {
 	
 	private String citybook;	
 	
-	private DateFormat datefrom;
+	private Date datefrom;
 	
-	private DateFormat dateto;
+	private Date dateto;
 	
 	private Integer costo;
 	
