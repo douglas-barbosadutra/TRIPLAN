@@ -36,4 +36,7 @@ public class User {
 
 	private String userType;
 
+	@OneToMany (mappedBy = "user")
+	private List<Booking> booking;
+
 }

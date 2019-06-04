@@ -17,8 +17,8 @@ public class CityDTO {
 	
 	private String type;
 	
+	private List<PlacesDTO> placesDTO;
 	
-	
-
+	private List<BookingDTO> bookingDTO;
 	
 }

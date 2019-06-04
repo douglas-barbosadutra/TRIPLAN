@@ -30,7 +30,9 @@ public class City {
 	
 	private String type;	
 	
-
+	@OneToMany (mappedBy = "city")
+	private List<Booking> booking;
 	
-
+	@OneToMany (mappedBy = "city")
+	private List<Places> places;
 }

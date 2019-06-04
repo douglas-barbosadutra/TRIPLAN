@@ -20,4 +20,5 @@ public class UserDTO {
 
 	private String userType;
 
+	List<BookingDTO> bookingDTO;
 	}

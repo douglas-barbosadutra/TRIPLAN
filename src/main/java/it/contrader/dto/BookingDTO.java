@@ -16,7 +16,7 @@ public class BookingDTO {
 
 	private String username;
 	
-	private String city;
+	private String citybook;
 	
 	private DateFormat datefrom;
 	
@@ -28,9 +28,9 @@ public class BookingDTO {
 	
 	private Integer people;
 	
+	private CityDTO cityDTO;
 	
-	
-	
+	private UserDTO userDTO;
 	
 	
 	

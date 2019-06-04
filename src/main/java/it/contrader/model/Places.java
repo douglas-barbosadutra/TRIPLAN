@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.OnDelete;
@@ -46,6 +48,9 @@ public class Places {
 	
 	private Integer fascia;
 	
-	
+	@ManyToOne
+	@JoinColumn(name="idCity")
+	private City city;
+
 
 }

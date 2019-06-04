@@ -32,6 +32,8 @@ public class PlacesDTO {
 	
 	private Integer costo;
     
+	private CityDTO cityDTO;
+	
 	Double lati= latitude*CONVERT_DEGREE_TO_RADIANS; 
 	Double longi = longitude*CONVERT_DEGREE_TO_RADIANS;
 	

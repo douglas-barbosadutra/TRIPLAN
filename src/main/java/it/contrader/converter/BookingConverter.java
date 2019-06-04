@@ -18,7 +18,7 @@ public class BookingConverter {
 		if(bookingDTO!=null) {
 			booking.setIdBooking(bookingDTO.getIdBooking());
 			booking.setUsername(bookingDTO.getUsername());
-			booking.setCity(bookingDTO.getCity());
+			booking.setCitybook(bookingDTO.getCitybook());
 			booking.setDatefrom(bookingDTO.getDatefrom());
 			booking.setDateto(bookingDTO.getDateto());
 			booking.setCosto(bookingDTO.getCosto());
@@ -34,7 +34,7 @@ public class BookingConverter {
 		if(booking!=null) {
 			bookingDTO.setIdBooking(booking.getIdBooking());
 			bookingDTO.setUsername(booking.getUsername());
-			bookingDTO.setCity(booking.getCity());
+			bookingDTO.setCitybook(booking.getCitybook());
 			bookingDTO.setDatefrom(booking.getDatefrom());
 			bookingDTO.setDateto(booking.getDateto());
 			bookingDTO.setCosto(booking.getCosto());

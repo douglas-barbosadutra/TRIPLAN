@@ -29,7 +29,7 @@ public class Booking {
 	
 	private String username;
 	
-	private String city;	
+	private String citybook;	
 	
 	private DateFormat datefrom;
 	
@@ -41,6 +41,13 @@ public class Booking {
 	
 	private Integer people;
 
-	
+	@ManyToOne
+	@JoinColumn(name="idUser")
+	private User user;
 
+	@ManyToOne
+	@JoinColumn(name="idCity")
+	private City city;
+
+	
 }
