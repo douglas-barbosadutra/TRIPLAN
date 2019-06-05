@@ -10,4 +10,5 @@ public interface ImageRepository extends JpaRepository<Image, Integer> {
 	
 	public List<Image> findAll();
 	
+	
 }
