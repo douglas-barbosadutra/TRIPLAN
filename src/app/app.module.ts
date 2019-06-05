@@ -14,6 +14,8 @@ import { LayoutGhModule } from './layout-gh/layout-gh.module';
 import { HomeGhModule } from './home-gh/home-gh.module';
 import { LayoutGeModule } from './layout-ge/layout-ge.module';
 import { HomeGeModule } from './home-ge/home-ge.module';
+import { LayoutUserModule } from './layout-user/layout-user.module';
+import { HomeUserModule } from './home-user/home-user.module';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { HomeGeModule } from './home-ge/home-ge.module';
     HomeGhModule,
     LayoutGeModule,
     HomeGeModule,
+    LayoutUserModule,
+    HomeUserModule,
 
 ],
   providers: [],
