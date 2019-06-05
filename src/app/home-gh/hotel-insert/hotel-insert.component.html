@@ -1,0 +1,40 @@
+<h1>Inserisci hotel</h1>
+
+<div>
+
+	<form #f="ngForm">
+		<div>
+			<label>Nome Hotel</label>
+			<input type="text" name="namehotel" [(ngModel)]="hotel.namehotel">
+        </div>
+
+        <div>
+			<label>Latitudine</label>
+			<input type="number" name="latitude" [(ngModel)]="hotel.latitude">
+        </div>
+        
+        <div>
+		    <label>Longitudine</label>
+		    <input type="number" name="longitude" [(ngModel)]="hotel.longitude">
+        </div>
+        
+        <div>
+			<label>Id City</label>
+			<input type="number" name="id_city" [(ngModel)]="hotel.cityDTO.idCity">
+        </div>
+        
+        <div>
+			<label>Numero Stelle</label>
+			<input type="number" name="numerostelle" [(ngModel)]="hotel.numerostelle">
+        </div>
+        
+        <div>
+			<label>Id Gestore Hotel</label>
+			<input type="number" name="id_user" [(ngModel)]="hotel.userDTO.idUser">
+        </div>
+        
+	   
+
+        <button type="submit" (click)="insertHotel(f)">Inserisci</button>
+	</form>
+</div>

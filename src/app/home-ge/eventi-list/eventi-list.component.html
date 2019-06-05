@@ -1,0 +1,18 @@
+<h1>Lista eventi</h1>
+    	<table>
+	     <thead>
+		     <tr>
+			    <th>ID</th>
+				<th>Nome Evento</th>
+				<th>Mese Evento</th>
+		     </tr>
+		 </thead>
+		<tbody>
+	         <tr *ngFor="let eventi of eventiList">
+                <td>{{eventi.idEvento}} </td>
+                <td>{{eventi.nameevento}} </td>
+                <td>{{eventi.meseevento}}</td>
+                <td><button (click)="deleteEvento(eventi.idEvento)">Elimina</button></td>
+              </tr>
+        </tbody>
+    </table>

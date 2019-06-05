@@ -1,0 +1,26 @@
+<h1>Lista Hotel </h1>
+    	<table>
+	     <thead>
+		     <tr>
+			    <th>ID</th>
+				<th>Nome Hotel</th>
+                <th>Latitudine</th>
+                <th>Longitudine</th>
+                <th>Citta'</th>
+                <th>Numero Stelle</th>
+                <th>Gestore Hotel</th>
+		     </tr>
+		 </thead>
+		<tbody>
+	         <tr *ngFor="let hotel of hotelList">
+                <td>{{hotel.idHotel}} </td>
+                <td>{{hotel.namehotel}} </td>
+                <td>{{hotel.latitude}}</td>
+                <td>{{hotel.longitude}}</td>
+                <td>{{hotel.cityDTO.namecity}}</td>
+                <td>{{hotel.numerostelle}}</td>
+                <td>{{hotel.userDTO.username}}</td>
+                <td><button (click)="deleteHotel(hotel.idHotel)">Elimina</button></td>
+              </tr>
+        </tbody>
+    </table>

@@ -1,0 +1,18 @@
+<h1>Inserisci Citta'</h1>
+
+<div>
+
+	<form #f="ngForm">
+		<div>
+			<label>Nome Citta'</label>
+			<input type="text" name="namecity" [(ngModel)]="city.namecity">
+        </div>
+
+        <div>
+			<label>Stato</label>
+			<input type="state" name="state" [(ngModel)]="city.state">
+		</div>
+
+        <button type="submit" (click)="insertCity(f)">Inserisci</button>
+	</form>
+</div>

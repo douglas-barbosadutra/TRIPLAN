@@ -1,0 +1,27 @@
+<h1>Lista Attrazioni</h1>
+    	<table>
+	     <thead>
+		     <tr>
+			    <th>ID</th>
+				<th>Nome Attrazione</th>
+                <th>Latitudine</th>
+                <th>Longitudine</th>
+                <th>Tipo</th>
+                <th>Nome Citta'</th>
+
+
+
+		     </tr>
+		 </thead>
+		<tbody>
+	         <tr *ngFor="let places of placesList">
+                <td>{{places.idPlaces}} </td>
+                <td>{{places.nameplaces}} </td>
+                <td>{{places.latitude}}</td>
+                <td>{{places.longitude}}</td>
+                <td>{{places.type}}</td>
+                <td>{{places.cityDTO.namecity}}</td>
+                <td><button (click)="deletePlaces(places.idPlaces)">Elimina</button></td>
+              </tr>
+        </tbody>
+    </table>

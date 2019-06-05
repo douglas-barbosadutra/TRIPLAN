@@ -1,0 +1,35 @@
+<h1>Inserisci Attrazione</h1>
+
+<div>
+
+	<form #f="ngForm">
+		<div>
+			<label>Nome Attrazione</label>
+			<input type="text" name="nameplaces" [(ngModel)]="places.nameplaces">
+        </div>
+
+        <div>
+			<label>Latitudine</label>
+			<input type="number" name="latitude" [(ngModel)]="places.latitude">
+        </div>
+        
+        <div>
+			<label>Longitudine</label>
+			<input type="number" name="longitude" [(ngModel)]="places.longitude">
+        </div>
+
+       <div>
+			<label>Tipo</label>
+			<input type="text" name="type" [(ngModel)]="places.type">
+        </div>
+
+       <div>
+			<label>ID CIty</label>
+			<input type="number" name="idCIty" [(ngModel)]="places.cityDTO.idCity">
+        </div>
+
+
+
+        <button type="submit" (click)="insertPlaces(f)">Inserisci</button>
+	</form>
+</div>
