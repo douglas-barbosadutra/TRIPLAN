@@ -1,1 +1,28 @@
-<h1> Benvenuto su Triplan, User </h1>
+<form #f="ngForm">
+<div align="center">
+     <br> <br>
+    <h1 style="color:orange;font-family:Roboto, sans-serif;font-weight: bold;">Benvenuto su Triplan </h1>
+    <br>
+    <h3 style="color:brown;font-style: italic;"> Da dove vuoi partire?</h3>
+    <input type="text" placeholder="Partenza" name="cityfrom" class="d-flex" style="color:brown;font-style: italic;"   ngModel/>
+    <br>
+    <h3 style="color:brown;font-style: italic;">Inserisci una data indicativa di partenza</h3>
+    <input type="date" placeholder="Data di partenza" name="datefrom" class="d-flex" style="color:brown;font-style: italic;"   ngModel/>
+    <br>
+    <h3 style="color:brown;font-style: italic;">Inserisci la durata del viaggio in giorni</h3>
+    <input type="number" placeholder="0" name="ndays" class="d-flex" style="color:brown;font-style: italic;"   ngModel/>
+    <br>
+    <h3 style="color:brown;font-style: italic;">Numero di persone</h3>
+    <input type="number" placeholder="0" name="people" class="d-flex"  style="color:brown;font-style: italic;"  ngModel/>
+    <br>
+     <h3 style="color:brown;font-style: italic;">Seleziona il Budget</h3>
+    <select style="color:brown;font-style: italic;" >
+        <option value ="economico" style="color:brown;font-style: italic;">Economico </option> 
+        <option value="normale" style="color:brown;font-style: italic;" >Normale</option>
+        <option value="vip" style="color:brown;font-style: italic;">VIP</option>
+    </select>
+    <br>
+    <br>
+    <button id="image" style="background-image: url( 'C:\Users\Contrader_18099\Documents\CONTRADER\TRIPLANAngularNew\src\assets\img\TriPlan_UiUx1.png');
+"> </button>
+</div>
