@@ -45,5 +45,12 @@ public class CityController {
 	public void insert(@RequestBody CityDTO city) {
 		cityService.insertCity(city);
 	}
-}
+
+    
+}	
+
+
+
+
+
 

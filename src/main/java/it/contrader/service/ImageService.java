@@ -1,14 +1,18 @@
 package it.contrader.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.contrader.converter.ImageConverter;
+import it.contrader.converter.PlacesConverter;
 import it.contrader.dao.ImageRepository;
 import it.contrader.dto.ImageDTO;
+import it.contrader.dto.PlacesDTO;
 import it.contrader.model.Image;
+import it.contrader.model.Places;
 
 @Service
 public class ImageService {
@@ -45,4 +49,6 @@ public class ImageService {
 	public List<ImageDTO> getAllImages(){
 		return ImageConverter.toListDTO(imageRepository.findAll());
 	}
-}
+    
+	
+	}
