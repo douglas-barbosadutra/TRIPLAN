@@ -47,6 +47,16 @@ public class PlacesService {
 		return PlacesConverter.toListDTO(placesRepository.findAll());
 	}
 	
+	
+	public List<PlacesDTO> findAllByIdCity(int idCity) {
+		List<PlacesDTO> listPlacesDTO = new ArrayList<>();
+		for (Places place : placesRepository.findAll()) {
+			if(place.getCity().getIdCity().equals(idCity)) {
+				listPlacesDTO.add(PlacesConverter.toDTO(place));
+			}
+		}
+	return listPlacesDTO;
+}
 	public List<PlacesDTO> getItinerary(List<PlacesDTO> places) {
 		List<PlacesDTO> itinerary = new ArrayList<>();
 		double bestDistance;

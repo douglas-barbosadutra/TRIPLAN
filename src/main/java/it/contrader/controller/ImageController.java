@@ -51,21 +51,22 @@ public class ImageController {
 	}
 
 	@RequestMapping(value= "/selectImage", method = RequestMethod.GET)
-    public CityDTO selectImage(@RequestParam(value = "idImage") String id2 ) { 
-    Integer id = Integer.parseInt("idImage");
-	ImageDTO immagine = this.imageService.getImageDTOById(id);    
-    List<ImageDTO> immagini= new ArrayList<>();
-    immagini.add(immagine);
-    List<ImageDTO> scelta1 = new ArrayList<>();
-    List<ImageDTO> scelta2 =new ArrayList<>();
-    int i;
-    scelta1.add(immagini.get(0));
-    for (i=0; i< immagini.size();)  { 
-     if (immagini.get(i).getType()== immagini.get(i+1).getType()){ 
-    		scelta1.add(immagini.get(i+1));} 
-     else { 
-    	  scelta2.add(immagini.get(i+1));}
-	}    
+    public CityDTO selectImage(@RequestParam(value = "idImage") String listIdImage[] ) { 
+		List<ImageDTO> immagini= new ArrayList<>();
+		for (String id : listIdImage) {
+			  int IdImage=Integer.parseInt(id);
+	          ImageDTO immagine= this.imageService.getImageDTOById(IdImage);
+		      immagini.add(immagine);}
+      List<ImageDTO> scelta1 = new ArrayList<>();
+      List<ImageDTO> scelta2 =new ArrayList<>();
+      int i;
+      scelta1.add(immagini.get(0));
+      for (i=0; i< immagini.size()-1;i++)  { 
+           if (immagini.get(i).getType()== immagini.get(i+1).getType()){ 
+    		   scelta1.add(immagini.get(i+1));} 
+           else { 
+    	        scelta2.add(immagini.get(i+1));}
+	    }    
     List<ImageDTO> sceltadefinitiva = new ArrayList<>();
 	for(ImageDTO p : scelta1){ 
 	  if (scelta1.size()>=scelta2.size()){ 
@@ -73,7 +74,7 @@ public class ImageController {
 	  else { 
 	      sceltadefinitiva.addAll(scelta2);}
       }
-    return sceltadefinitiva.get(i).getCityDTO();
+    return sceltadefinitiva.get(0).getCityDTO();
 
    }
 }

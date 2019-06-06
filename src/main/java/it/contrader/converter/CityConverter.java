@@ -3,14 +3,17 @@ package it.contrader.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import it.contrader.dto.CityDTO;
+import it.contrader.dto.ImageDTO;
 import it.contrader.model.City;
 
 @Component
 public class CityConverter {
-
+	@Autowired
+	private static ImageConverter imageConverter;
 	
 	
 	public static City toEntity(CityDTO cityDTO) {

@@ -3,6 +3,7 @@ package it.contrader.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import it.contrader.dto.ImageDTO;
@@ -10,7 +11,9 @@ import it.contrader.model.Image;
 
 @Component
 public class ImageConverter  {
-
+	@Autowired
+	private static CityConverter cityConverter;
+	
 	public static Image toEntity(ImageDTO imageDTO) {
 		Image image = null;
 		if (imageDTO != null) {
@@ -18,6 +21,7 @@ public class ImageConverter  {
 			image.setIdImage(imageDTO.getIdImage());
 			image.setImage(imageDTO.getImage());
 			image.setType(imageDTO.getType());
+			image.setCity(cityConverter.toEntity(imageDTO.getCityDTO()));
 		}
 		return image;
 	}
@@ -29,7 +33,7 @@ public class ImageConverter  {
 			imageDTO.setIdImage(image.getIdImage());
 			imageDTO.setImage(image.getImage());
 			imageDTO.setType(image.getType());
-		}
+			imageDTO.setCityDTO(cityConverter.toDTO(image.getCity()));		}
 		return imageDTO;
 	}
 	public static List<ImageDTO> toListDTO(List<Image> list) {

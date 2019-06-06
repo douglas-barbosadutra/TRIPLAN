@@ -12,6 +12,8 @@ import it.contrader.model.Places;
 @Component
 public class PlacesConverter {
 
+	@Autowired
+	private static CityConverter cityConverter;
 	
 
 	public static Places toEntity(PlacesDTO placesDTO) {
@@ -26,7 +28,7 @@ public class PlacesConverter {
 			places.setCosto(placesDTO.getCosto());
 			places.setFascia(placesDTO.getFascia());
 			places.setDurata(placesDTO.getDurata());
-			
+			places.setCity(cityConverter.toEntity(placesDTO.getCityDTO()));
 
 		}
 		return places;
@@ -46,6 +48,7 @@ public class PlacesConverter {
 			placesDTO.setCosto(places.getCosto());
 	        placesDTO.setDurata(places.getDurata());
 		    placesDTO.setFascia(places.getFascia());
+		    placesDTO.setCityDTO(cityConverter.toDTO(places.getCity()));
 		}
 		return placesDTO;
 	}
