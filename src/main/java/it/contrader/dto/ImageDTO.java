@@ -16,7 +16,7 @@ public class ImageDTO {
 
 	private Integer idImage;
 	
-	private BlobType image;
+	private String image;
 	
 	private String type;
 

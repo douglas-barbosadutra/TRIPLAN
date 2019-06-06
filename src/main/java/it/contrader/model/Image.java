@@ -31,7 +31,7 @@ public class Image {
 	private Integer idImage;
 	
 	@Column(unique = true)
-	private BlobType image;
+	private String image;
 	
 	private String type;
 	

@@ -50,9 +50,10 @@ public class ImageController {
 		return imageService.insertImage(image);
 	}
 
-	@RequestMapping(value= "/selectImage", method = RequestMethod.POST)
-    public CityDTO selectImage(@RequestParam(value = "idImage") int id) { 
-    ImageDTO immagine = this.imageService.getImageDTOById(id);    
+	@RequestMapping(value= "/selectImage", method = RequestMethod.GET)
+    public CityDTO selectImage(@RequestParam(value = "idImage") String id2 ) { 
+    Integer id = Integer.parseInt("idImage");
+	ImageDTO immagine = this.imageService.getImageDTOById(id);    
     List<ImageDTO> immagini= new ArrayList<>();
     immagini.add(immagine);
     List<ImageDTO> scelta1 = new ArrayList<>();
