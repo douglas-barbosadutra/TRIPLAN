@@ -58,11 +58,12 @@ public class ImageController {
     List<ImageDTO> scelta1 = new ArrayList<>();
     List<ImageDTO> scelta2 =new ArrayList<>();
     int i;
+    scelta1.add(immagini.get(0));
     for (i=0; i< immagini.size();)  { 
      if (immagini.get(i).getType()== immagini.get(i+1).getType()){ 
-    		scelta1.add(immagini.get(i));}
+    		scelta1.add(immagini.get(i+1));} 
      else { 
-    	  scelta2.add(immagini.get(i));}
+    	  scelta2.add(immagini.get(i+1));}
 	}    
     List<ImageDTO> sceltadefinitiva = new ArrayList<>();
 	for(ImageDTO p : scelta1){ 
