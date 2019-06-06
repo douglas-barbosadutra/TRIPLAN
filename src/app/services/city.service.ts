@@ -24,10 +24,6 @@ export class CityService {
   updateCity(city: City) {
     return this.http.put( 'http://localhost:8080/City/update', city);
   }
-
-  findCity(idCity: number) {
-          return this.http.get('http://localhost:8080/city/findCity?idCity=' + idCity);
-  }
  }
 
 

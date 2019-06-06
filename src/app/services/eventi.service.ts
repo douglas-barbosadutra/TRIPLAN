@@ -24,10 +24,6 @@ export class EventiService {
   updateEvento(eventi: Eventi) {
     return this.http.put( 'http://localhost:8080/Eventi/update', eventi);
   }
-
-  findEvento(idEvento: number) {
-          return this.http.get('http://localhost:8080/Eventi/findEvento?idEvento=' + idEvento);
-  }
  }
 
 

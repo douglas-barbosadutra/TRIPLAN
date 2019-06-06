@@ -24,10 +24,6 @@ export class HotelService {
   updateHotel(hotel: Hotel) {
     return this.http.put( 'http://localhost:8080/Hotel/update', hotel);
   }
-
-  findHotel(idHotel: number) {
-          return this.http.get('http://localhost:8080/Hotel/findHotel?idHotel=' + idHotel);
-  }
  }
 
 

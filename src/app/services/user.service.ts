@@ -24,10 +24,6 @@ export class UserService {
   updateUser(user: User) {
     return this.http.put( 'http://localhost:8080/user/updateUser', user);
   }
-
-  findUser(idUser: number) {
-          return this.http.get('http://localhost:8080/user/findUser?idUser=' + idUser);
-  }
  }
 
 

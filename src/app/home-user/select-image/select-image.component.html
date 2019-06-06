@@ -1,0 +1,10 @@
+<h1>Immagini</h1>
+    	<form #idImage="ngForm">
+        <table>
+	         <tr *ngFor="let image of imageList">
+			    <th> <input type="checkbox" name="idImage[]" value="{{image.idImage}}"></th>
+                <th> <img src="{{image.image}}" style="height:300px; width:300px;"/></th>
+             </tr>
+        </table>
+        <button type="submit" (click)="selectImage(idImage)">Selezione</button>
+        </form>

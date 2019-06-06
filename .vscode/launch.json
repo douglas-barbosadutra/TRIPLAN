@@ -107,6 +107,118 @@
             "url": "http://localhost:4200/#",
             "webRoot": "${workspaceFolder}",
             "port": 9246
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (2)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9249
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (3)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9204
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (4)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9291
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (5)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9206
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (6)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9272
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (7)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9254
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (8)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9225
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (9)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9201
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (10)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9237
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (11)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9236
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (12)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9219
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (13)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9291
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (14)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9267
+        },
+        {
+            "name": "Launch Chrome TRIPLANAngularNew on Angular CLI Server (15)",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/#",
+            "webRoot": "${workspaceFolder}",
+            "port": 9252
         }
     ]
 }{
