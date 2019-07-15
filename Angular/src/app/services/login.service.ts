@@ -17,7 +17,7 @@ import { User } from '../models/User';
 export class LoginService {
   private wrkUser: LoginDTO;
   constructor(private http: HttpClient) {
-    this.wrkUser = new LoginDTO('', '');
+    this.wrkUser = new LoginDTO();
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
@@ -40,13 +40,13 @@ export class LoginService {
   }
 
   login(logindto:LoginDTO) {
-    console.log('wwww');
+   // console.log('wwww');
     return this.http.post('http://localhost:8080/api/authenticate', logindto);
 
   }
 
   getUserLogged(username: string) {
-    console.log('qua: ', this.auth());
+  //  console.log('qua: ', this.auth());
     return this.http.get('http://localhost:8080/api/users/' + username, {
       headers: {
           Authorization: this.auth()
