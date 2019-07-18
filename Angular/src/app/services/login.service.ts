@@ -7,7 +7,6 @@ import { LoginDTO } from '../dto/LoginDTO';
 import {  GoogleLoginProvider } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 import { UserLogDTO } from '../dto/UserLogDTO';
-import { User } from '../models/User';
 
 
 @Injectable({

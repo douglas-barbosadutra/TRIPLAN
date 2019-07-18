@@ -1,0 +1,11 @@
+<mat-toolbar color="accent">
+  <span class="example-fill-remaining-space"></span>
+  <button mat-button [matMenuTriggerFor]="menu" class="menu">Gestisci i Dati</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="['showUser']" routerLinkActive="router-link-active" class="dropbtn">Modifica Utenti</button>
+  <button mat-menu-item>Modifica Città</button>
+  <button mat-menu-item>Modifica Immagini</button>
+</mat-menu>
+<img src="https://i.ibb.co/9cwGs0n/Logo.png" class="logo">
+
+</mat-toolbar>

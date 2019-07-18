@@ -1,17 +1,62 @@
-.image{
-	margin-bottom: 1rem;
-	display: -ms-flexbox;
-	-ms-flex: 0 0 auto;
-	flex: 0 0 auto;
-	-ms-flex-flow: row wrap;
-	flex-flow: row wrap;
-	-ms-flex-align: center;
-	align-items: center;
-	margin-bottom: 0;
-	max-width: 200px;
-	text-align: center;
-	display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+.input{
+	width: 400px;
+	color: white;
+}
+
+::ng-deep.mat-focused .mat-form-field-label {
+	color: white !important;
+   }
+  
+::ng-deep.mat-form-field-underline {
+	background-color: white !important;
+  } 
+  
+::ng-deep.mat-form-field-ripple {
+	background-color: white !important;
+}
+
+::ng-deep.mat-form-field-placeholder {
+color: white !important;
+}
+
+.userl{
+	margin-left: 760px;
+	margin-top: 10px;
+}
+
+.passl{
+	margin-left: 760px;
+	margin-top: 30px;
+}
+
+.butlog{
+	position: absolute;
+	left: 770px;
+	top: 450px;
+	font-size:25px;
+	color: white;
+	background-color: rgb(250, 176, 58);
+	border-radius: 10px;
+	border: 2px solid;
+	width: 150px;
+	height: 50px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.butreg{
+	position: absolute;
+	left: 950px;
+	top: 450px;
+	font-size:25px;
+	color: white;
+	background-color: rgb(250, 176, 58);
+	border-radius: 10px;
+	border: 2px solid;
+	width: 150px;
+	height: 50px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+:plaer-shown{
+	color: white;
 }

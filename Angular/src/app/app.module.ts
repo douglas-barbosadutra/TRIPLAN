@@ -5,25 +5,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
-import { ProvaComponent } from './page/prova/prova.component';
+import { LayoutAdminModule } from './layout-admin/layout-admin.module';
+import { HomeAdminModule } from './home-admin/home-admin.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProvaComponent,
-    
+    AppComponent,    
     
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-	AppRoutingModule,
-  LoginModule,
-  
- 
-
-
-  ],
+	  AppRoutingModule,
+    LoginModule,
+    LayoutAdminModule,
+    HomeAdminModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

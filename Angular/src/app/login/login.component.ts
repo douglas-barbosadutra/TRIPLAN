@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/User';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { LoginDTO } from '../dto/LoginDTO';
 import { UserDTO } from '../dto/UserDTO';
@@ -12,7 +10,7 @@ import { UserDTO } from '../dto/UserDTO';
 })
 export class LoginComponent implements OnInit {
 
-    user: User;
+    user: UserDTO;
 
     private idUtenteLocale: number;
     public loginDTO: LoginDTO;
@@ -27,6 +25,8 @@ export class LoginComponent implements OnInit {
 
     }
     ngOnInit() {
+        document.body.classList.add('login');
+
     }
     
     
